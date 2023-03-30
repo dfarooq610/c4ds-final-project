@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 // @ts-ignore
 import Chapter1  from "./pages/Chapter1";
+import "./utils/styles/style.scss";
 
 function App() {
   const [count, setCount] = useState(0)
