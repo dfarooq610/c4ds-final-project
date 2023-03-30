@@ -1,20 +1,20 @@
 // Draw Basemap
 export function drawBasemap(g, projection, data, className, stroke = "#FFFFFF", strokeWidth = 1, fill = "#E0E0E0", fillOpacity = 1) {
-    
+
     let geoPathGenerator = d3.geoPath().projection(projection);
-    
+
     let path = g
-    .append("g")
-    .selectAll("path")
-    .data(data.features)
-    .enter()
-    .append("path")
-    .attr("class", className)
-    .attr("d", geoPathGenerator)
-    .attr("stroke", stroke)
-    .attr("stroke-width", strokeWidth)
-    .attr("fill", fill)
-    .attr("fill-opacity", fillOpacity);
+        .append("g")
+        .selectAll("path")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("class", className)
+        .attr("d", geoPathGenerator)
+        .attr("stroke", stroke)
+        .attr("stroke-width", strokeWidth)
+        .attr("fill", fill)
+        .attr("fill-opacity", fillOpacity);
 
     return path;
 }

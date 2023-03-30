@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
+// @ts-ignore
 import { Scrollama, Step } from 'react-scrollama';
+import stateBoundaries from "../data/state_boundaries.json";
+import countyBoundaries from "../data/counties_geo.json";
+import complex from "../data/complex_data.json";
+import countyBigStreets from "../data/county_bigstreets_reg.json";
+import countyMedStreets from "../data/county_medstreets_reg.json";
+import shelters from "../data/shelters.json";
+import fires from "../data/fire_points2.json";
+import fireBoundary from "../data/fire_boundary.json";
+import cityBoundaries from "../data/city_poly.json";
+import routes from "../data/route_sim2.json";
 
 export default function Chapter1 ({}) {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);

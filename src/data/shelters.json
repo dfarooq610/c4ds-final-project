@@ -1,0 +1,42 @@
+[
+    {
+      "openDate": 715,
+      "closeDate": 720,
+      "name": "Omak Corner Stone Church",
+      "id": "omak",
+      "lat": 48.4154885,
+      "long": -119.5249234
+    },
+    {
+      "openDate": 716,
+      "closeDate": 720,
+      "name": "Chelan High School",
+      "id": "chelan",
+      "lat": 47.8350729,
+      "long": -120.0229256
+    },
+    {
+      "openDate": 717,
+      "closeDate": 720,
+      "name": "Brewster High School",
+      "id": "brewster",
+      "lat": 48.0938878,
+      "long": -119.7881553
+    },
+    {
+      "openDate": 720,
+      "closeDate": 725,
+      "name": "Twisp Valley Grange",
+      "id": "twisp",
+      "lat": 48.3655114,
+      "long": -120.1264168
+    },
+    {
+      "openDate": 724,
+      "closeDate": 731,
+      "name": "Red Barn",
+      "id": "winthrop",
+      "lat": 48.4769116,
+      "long": -120.1880758
+    }
+  ]
