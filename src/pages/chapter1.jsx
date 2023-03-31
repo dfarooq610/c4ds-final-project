@@ -39,15 +39,59 @@ function initMainVis() {
             .center([initialCenterX, initialCenterY]);
 }
 
-function initTimelineVis() {
+// Create days label
+// Description an array for each date 
+// Return array
+export function daysLabel(days, dates) {
+    let days2 = []
+    days.forEach(function(d) {
+
+        let x = dates.filter(function(j) {
+            return j.date === d;
+        });
+        days2.push(x[0].day)
+    })
+
+    return days2;
+}
+
+// Title Unique Array
+// Returns the unique values of a variable in a dataset as an array
+export function uniqueArray(data, variable) {
+    let all = data.map(function (d) {
+        return d[variable];
+    });
+
+    return [...new Set(all)];
+}
+
+function initTimelineVis(complex) {
 
     const width = 1000, height = 100;
+    const margin = {top: 0, right: 10, bottom: 50, left: 10};
 
-    d3.select(`#${timelineVis}`)
+    const days = uniqueArray(complex, "date").sort(function(a, b) {return a - b});
+    const days2 = daysLabel(days, complex);
+    const xWidth = (width - margin.left - margin.right)/days.length;
+
+    let svg = d3.select(`#${timelineVis}`)
         .append("svg")
         .attr("viewBox", `0 0 ${width} ${height}`)
         .attr("preserveAspectRatio", "xMidYMid meet")
         .classed("svg-content", true);
+
+    const july = svg.append("text")
+        .attr("class","axis--label")
+        .attr("x", margin.left + xWidth*17/2)
+        .attr("y", height-margin.bottom/4)
+        .text("July");
+
+    const august = svg.append("text")
+        .attr("class","axis--label")
+        .attr("x", margin.left + xWidth*17 + xWidth*27/2)
+        .attr("y", height-margin.bottom/4)
+        .text("August");
+
 }
 
 function initContainmentVis() {
@@ -76,8 +120,8 @@ function initBurnVis() {
     d3.select(`#${burnVis}`)
         .append("svg")
         .attr("viewBox", `0 0 ${width} ${width}`)
-        .attr("preserveAspectRatio", "xMidYMid meet")
-        .classed("svg-content", true);
+        // .attr("preserveAspectRatio", "xMidYMid meet")
+        // .classed("svg-content", true);
 }
 
 function initLegendVis() {
@@ -94,7 +138,6 @@ function initLegendVis() {
         .classed("svg-content", true);
 }
 
-
 export default function Chapter1 ({}) {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
 
@@ -106,7 +149,7 @@ export default function Chapter1 ({}) {
 
   useEffect(() => {
     initMainVis();
-    initTimelineVis();
+    initTimelineVis(complex);
     initContainmentVis();
     initBurnVis();
     initLegendVis();
