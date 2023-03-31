@@ -126,18 +126,34 @@ function initTimelineVis(complex) {
 
 function initContainmentVis() {
 
-    // margin: {top: 0, right: 10, bottom: 20, left: 10}
-    // barHeight: 50
-    // min: 0
-    // max: 100
-
+    const margin = {top: 0, right: 10, bottom: 20, left: 10};
+    const min = 0, max = 100, barHeight = 50;
     const width = 400, height = 100;
 
-    d3.select(`#${containmentVis}`)
+    let svg = d3.select(`#${containmentVis}`)
         .append("svg")
         .attr("viewBox", `0 0 ${width} ${height}`)
         .attr("preserveAspectRatio", "xMidYMid meet")
         .classed("svg-content", true);
+
+    let xScaleContainment = d3.scaleLinear()
+        .domain([min, max])
+        .range([margin.left, width - margin.right]);
+
+    svg
+        .append("rect")
+        .attr("x", margin.left)
+        .attr("y", 0)
+        .attr("class", "containment")
+        .attr("width", xScaleContainment(min))
+        .attr("height", barHeight)
+        .attr("fill", "#FFFFFF")
+
+    let xAxisContainment = svg
+        .append("g")
+        .attr("class","axis")
+        .attr("transform",`translate(0, ${height-margin.bottom})`)
+        .call(d3.axisBottom().scale(xScaleContainment).ticks(2));
 }
 
 function initBurnVis(complex) {

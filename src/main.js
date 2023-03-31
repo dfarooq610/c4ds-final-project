@@ -32,42 +32,6 @@ function drawVis(stateBoundaries, countyBoundaries, okBigStreets, okMedStreets, 
         speed: 1000
     }
 
-    // Timeline
-    paramsTimeline["speed"] = params.speed
-
-
-
-    svgBurn
-        .append("rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("class", "burn")
-        .attr("width", xScaleBurn(paramsBurn.min))
-        .attr("height", yScaleBurn(paramsBurn.max))
-        .attr("fill", "#FFFFFF")
-
-    // Containment
-    paramsContainment["speed"] = params.speed
-
-    let xScaleContainment = d3.scaleLinear()
-        .domain([paramsContainment.min, paramsContainment.max])
-        .range([paramsContainment.margin.left, paramsContainment.width - paramsContainment.margin.right]);
-
-    svgContainment
-        .append("rect")
-        .attr("x", paramsContainment.margin.left)
-        .attr("y", 0)
-        .attr("class", "containment")
-        .attr("width", xScaleContainment(paramsContainment.min))
-        .attr("height", paramsContainment.barHeight)
-        .attr("fill", "#FFFFFF")
-
-    let xAxisContainment = svgContainment
-        .append("g")
-        .attr("class","axis")
-        .attr("transform",`translate(0, ${paramsContainment.height-paramsContainment.margin.bottom})`)
-        .call(d3.axisBottom().scale(xScaleContainment).ticks(2));
-
     //Legend
     paramsLegend["min"] = d3.min(fires, function(d) {return d.nDays; });
     paramsLegend["max"] = d3.max(fires, function(d) {return d.nDays; });
