@@ -9,6 +9,12 @@ import routes from "../data/route_sim2.json";
 import fires from "../data/fire_points2.json";
 
 let projection;
+let routesInitial = routes.features.filter((d) => d.properties.type === "initial");
+
+// let userZoom = function(event) {
+//     g
+//     .attr("transform", `scale(${event.transform.k}) translate(${event.transform.x}, ${event.transform.y})`);
+// }
 
 export function initMapVis(chartId) {
 
@@ -43,6 +49,13 @@ export function initMapVis(chartId) {
     // Draw Points
     createShelter(chartId, shelters);
     createFire(chartId, fires);
+    createHouses(chartId, routesInitial, "households");
+
+    // var zoom = d3.zoom()
+    // .scaleExtent([0, 15])
+    // .on("zoom", userZoom);
+
+    // svgMap.call(zoom);
 }
 
 // Draw Basemap
@@ -89,25 +102,29 @@ export function drawPath(chartId, data, className, stroke = "#D7D7D7", strokeWid
 }
 
 // Create households
-export function createHouses(g, projection, data, className, paramsMap) {
+export function createHouses(chartId, data, className) {
 
     // console.log(data)
-    let points = g
-    .append("g")
+    // let points = g
+    // .append("g")
 
+
+    let points = d3.select(`#${chartId} svg`)
+                .append("g")
+    
     points
-    .selectAll("circle")
-    .data(data)
-    .enter()
-    .append("circle")
-        .attr("class", className)
-        .attr("cx", function(d) {return projection([d.properties.x, d.properties.y])[0];})
-        .attr("cy", function(d) {return projection([d.properties.x, d.properties.y])[1];})
-        .attr("r", 1)
-        .attr("fill", "#36479D")
-        .attr("fill-opacity", .5)
-        .attr("stroke", "#36479D")
-        .attr("stroke-opacity", 1);
+        .selectAll("circle")
+        .data(data)
+        .enter()
+        .append("circle")
+            .attr("class", className)
+            .attr("cx", function(d) {return projection([d.properties.x, d.properties.y])[0];})
+            .attr("cy", function(d) {return projection([d.properties.x, d.properties.y])[1];})
+            .attr("r", 1)
+            .attr("fill", "#36479D")
+            .attr("fill-opacity", .5)
+            .attr("stroke", "#36479D")
+            .attr("stroke-opacity", 1);
 
     // let tw = g.node().clientWidth;
     // let th = g.node().clientHeight;

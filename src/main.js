@@ -39,19 +39,8 @@ function drawVis(stateBoundaries, countyBoundaries, okBigStreets, okMedStreets, 
     let routesInitial = routes.features.filter((d) => d.properties.type === "initial");
     let housePoints = Map.createHouses(g, projection, routesInitial, "households", paramsMap);
 
-    let userZoom = function(event) {
-        g
-        .attr("transform", `scale(${event.transform.k}) translate(${event.transform.x}, ${event.transform.y})`);
-    }
 
-    var zoom = d3.zoom()
-    .scaleExtent([0, 15])
-    .on("zoom", userZoom)
-
-    svgMap.call(zoom);
-
-
-    console.log(params)
+    // console.log(params)
     
 
     // Timer
