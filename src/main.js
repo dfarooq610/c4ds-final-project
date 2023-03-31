@@ -53,12 +53,6 @@ function drawVis(stateBoundaries, countyBoundaries, okBigStreets, okMedStreets, 
         .attr("y", paramsTimeline.height-paramsTimeline.margin.bottom/4)
         .text("August");
 
-    let xScaleTimeline = d3.scaleBand()
-        .domain(days)
-        .range([paramsTimeline.margin.left, paramsTimeline.width - paramsTimeline.margin.right])
-        .paddingInner(0.5)
-        .paddingOuter(0.2);
-
     let xAxisTimeline = svgTimeline
         .append("g")
         .attr("class","axis")
