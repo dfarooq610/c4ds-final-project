@@ -64,7 +64,7 @@ export default function Chapter1 ({}) {
 
         {/* I'm sticky. The current triggered step index is: {currentStepIndex} */}
       </div>
-      //debug
+      {/* debug */}
       <Scrollama offset={0.5} onStepEnter={onStepEnter}>
         {arr.map((_, stepIndex) => (
           <Step data={stepIndex} key={stepIndex}>
@@ -75,7 +75,7 @@ export default function Chapter1 ({}) {
                 opacity: currentStepIndex === stepIndex ? 1 : 0.2,
               }}
             >
-            <p>{complexFiltered[stepIndex].story}</p>
+            <p className="story">{complexFiltered[stepIndex].story}</p>
               {/* I'm a Scrollama Step of index {stepIndex} */}
             </div>
           </Step>
