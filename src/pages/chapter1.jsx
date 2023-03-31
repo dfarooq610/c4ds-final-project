@@ -13,17 +13,14 @@ import cityBoundaries from "../data/city_poly.json";
 import routes from "../data/route_sim2.json";
 import * as d3 from 'd3';
 
+import { initLegendVis } from "../components/Legend";
+import { uniqueArray } from "../utils/global";
+
 const mainVis = "Main-Vis";
 const timelineVis = "Timeline-Vis";
 const containmentVis = "Containment-Vis";
 const burnVis = "Burn-Vis";
 const legendVis = "Burn-Vis";
-
-//https://gka.github.io/palettes/#/22|s|ffcc55,f68c1f,ea2c24|ffffe0,ff005e,93003a|1|1
-const colors = ['#ffcc55', '#ffc751', '#fec24d', '#febd4a', '#fdb846', '#fdb343', '#fcae3f',
-    '#fba93c', '#fba33a', '#fa9e37', '#f99934', '#f99432', '#f88e30', '#f7892e', 
-    '#f6832c', '#f57d2b', '#f47829', '#f47228', '#f36c27', '#f26526', '#f15f25', 
-    '#f05825', '#ee5124', '#ed4924', '#ec4124', '#eb3724', '#ea2c24'];
 
 let projection;
 
@@ -63,16 +60,6 @@ export function daysLabel(days, dates) {
     })
 
     return days2;
-}
-
-// Title Unique Array
-// Returns the unique values of a variable in a dataset as an array
-export function uniqueArray(data, variable) {
-    let all = data.map(function (d) {
-        return d[variable];
-    });
-
-    return [...new Set(all)];
 }
 
 function initTimelineVis(complex) {
@@ -196,34 +183,6 @@ function initBurnVis(complex) {
         .attr("width", xScaleBurn(min))
         .attr("height", yScaleBurn(max))
         .attr("fill", "#FFFFFF")
-}
-
-function initLegendVis(fires) {
-
-    // margin: {top: 0, right: 10, bottom: 20, left: 10},
-    // barHeight: 50
-
-    const width = 200, height = 200;
-
-    const min = d3.min(fires, function(d) {return d.nDays; });
-    const max = d3.max(fires, function(d) {return d.nDays; });
-    const nDaysUni = uniqueArray(fires, "nDays").sort(function(a, b) {return a - b});
-
-    colorScale = d3.scaleOrdinal()
-        .domain(nDaysUni)
-        .range(colors);
-
-    rScale = d3.scaleSqrt()
-        .domain([min, max])
-        .range([1, 5]);
-
-    d3.select(`#${legendVis}`)
-        .append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        // .attr("viewBox", `0 0 ${width} ${width}`)
-        // .attr("preserveAspectRatio", "xMidYMid meet")
-        // .classed("svg-content", true);
 }
 
 export default function Chapter1 ({}) {
