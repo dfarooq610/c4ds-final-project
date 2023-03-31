@@ -79,7 +79,9 @@ export default function Chapter1 ({}) {
                 border: '1px',
                 opacity: currentStepIndex === stepIndex ? 1 : 0.2,
               }}
+              className="step"
             >
+                <p className="date">{complexFiltered[stepIndex].month_name + " " + complexFiltered[stepIndex].day}</p>
                 <p className="story">{complexFiltered[stepIndex].story}</p>
             </div>
           </Step>
