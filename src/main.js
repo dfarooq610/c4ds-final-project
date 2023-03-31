@@ -1,99 +1,13 @@
-import * as Helper from './modules/helper_functions.js';
 import * as Timer from './modules/timer.js'
 import * as Map from './modules/map.js';
 import * as Containment from "./modules/containment.js";
 import * as Story from "./modules/storyline.js";
 import * as Burn from "./modules/burn.js"
 
-// Timeline
-const paramsTimeline = {
-    selector: "timeline",
-    margin: {top: 0, right: 10, bottom: 50, left: 10},
-    width: 1000,
-    height: 100,
-    barHeight: 50
-}
-
-const svgTimeline = d3.select(`#${paramsTimeline.selector}`)
-    .append("svg")
-    .attr("viewBox", `0 0 ${paramsTimeline.width} ${paramsTimeline.height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet")
-    .classed("svg-content", true);
-
-// Burn
-const paramsBurn = {
-    selector: "burn",
-    margin: 0,
-    width: 400
-}
-
-const svgBurn = d3.select(`#${paramsBurn.selector}`)
-    .append("svg")
-    .attr("viewBox", `0 0 ${paramsBurn.width} ${paramsBurn.width}`)
-    .attr("preserveAspectRatio", "xMidYMid meet")
-    .classed("svg-content", true);
-
-// Containment
-const paramsContainment = {
-    selector: "containment",
-    margin: {top: 0, right: 10, bottom: 20, left: 10},
-    width: 400,
-    height: 100,
-    barHeight: 50,
-    min: 0,
-    max: 100
-}
-
-const svgContainment = d3.select(`#${paramsContainment.selector}`)
-    .append("svg")
-    .attr("viewBox", `0 0 ${paramsContainment.width} ${paramsContainment.height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet")
-    .classed("svg-content", true);
-
 // Story
 const paramsStory = {
     selector: "story"
 }
-
-// Legend
-const paramsLegend = {
-    selector: "legend",
-    margin: {top: 0, right: 10, bottom: 20, left: 10},
-    width: 200,
-    height: 200,
-}
-
-const svgLegend = d3.select(`#${paramsLegend.selector}`)
-    .append("svg")
-    .attr("viewBox", `0 0 ${paramsLegend.width} ${paramsLegend.height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet")
-    .classed("svg-content", true);
-
-//Map
-const paramsMap = {
-    selector: "chart",
-    width: 500,
-    height: 300,
-    margin: {top: 0, right: 10, bottom: 50, left: 10},
-    initialScale: 20000,
-    initialCenterX: -24,
-    initialCenterY: 48.25
-}
-
-const svgMap = d3.select(`#${paramsMap.selector}`)
-    .append("svg")
-    .attr("viewBox", `0 0 ${paramsMap.width} ${paramsMap.height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet")
-    .classed("svg-content", true);
-
-let g = svgMap.append("g");
-
-let projection = d3.geoAlbers()
-    .translate([paramsMap.width / 2, paramsMap.height / 2])
-    .scale(paramsMap.initialScale)
-    .center([paramsMap.initialCenterX, paramsMap.initialCenterY]);
-
-// Helper.collapsibleTable();
 
 function drawVis(stateBoundaries, countyBoundaries, okBigStreets, okMedStreets, data, shelters, fires, fireBoundary, cityBoundaries, routes) {
 
@@ -213,7 +127,7 @@ function drawVis(stateBoundaries, countyBoundaries, okBigStreets, okMedStreets, 
     const colors = ['#ffcc55', '#ffc751', '#fec24d', '#febd4a', '#fdb846', '#fdb343', '#fcae3f',
                     '#fba93c', '#fba33a', '#fa9e37', '#f99934', '#f99432', '#f88e30', '#f7892e', 
                     '#f6832c', '#f57d2b', '#f47829', '#f47228', '#f36c27', '#f26526', '#f15f25', 
-                    '#f05825', '#ee5124', '#ed4924', '#ec4124', '#eb3724', '#ea2c24']
+                    '#f05825', '#ee5124', '#ed4924', '#ec4124', '#eb3724', '#ea2c24'];
 
     const colorScale = d3.scaleOrdinal()
         .domain(paramsLegend.nDaysUni)
