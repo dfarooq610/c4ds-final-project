@@ -78,7 +78,7 @@ export default function Chapter1 ({}) {
             <div
               style={{
                 margin: '50vh 0',
-                border: '1px solid gray',
+                border: '1px',
                 opacity: currentStepIndex === stepIndex ? 1 : 0.2,
               }}
             >
