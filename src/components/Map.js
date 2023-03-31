@@ -109,10 +109,9 @@ export function createHouses(chartId, data, className = "household") {
     // let points = g
     // .append("g")
 
-
     let points = d3.select(`#${chartId} svg`)
                 .append("g")
-    
+
     points
         .selectAll("circle")
         .data(data)
