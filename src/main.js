@@ -35,8 +35,6 @@ function drawVis(stateBoundaries, countyBoundaries, okBigStreets, okMedStreets, 
     //Legend
     //Map
     Map.createLegend(svgLegend, rScale, colorScale, paramsLegend.max)
-    Map.drawPath(g, projection, okBigStreets.features, "big-streets", "#000000", 1.5);
-    Map.drawPath(g, projection, okMedStreets.features, "med-streets", "#000000", 1);
 
     let routesInitial = routes.features.filter((d) => d.properties.type === "initial");
 

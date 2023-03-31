@@ -6,14 +6,12 @@ import shelters from "../data/shelters.json";
 import fires from "../data/fire_points2.json";
 import fireBoundary from "../data/fire_boundary.json";
 import routes from "../data/route_sim2.json";
-import * as d3 from 'd3';
 
 import { initContainmentVis } from "../components/Containment";
 import { initLegendVis } from "../components/Legend";
 import { initBurnVis } from "../components/Burn";
 import { initTimelineVis } from "../components/Timeline";
 import { initMapVis } from "../components/Map";
-import { uniqueArray } from "../utils/global";
 
 const mapVis = "Map-Vis";
 const timelineVis = "Timeline-Vis";
@@ -39,7 +37,7 @@ export default function Chapter1 ({}) {
   }, [])
 
   return (
-    <div style={{ margin: '50vh 0', border: '2px dashed skyblue' }}>
+    <div style={{ margin: '100vh 0', border: '2px dashed skyblue' }}>
       <div style={{ position: 'sticky', top: 0, border: '1px solid orchid' }}>
         <div>
             <div id="main">
