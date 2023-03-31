@@ -2,6 +2,8 @@ import * as d3 from 'd3';
 import stateBoundaries from "../data/state_boundaries.json";
 import countyBoundaries from "../data/counties_geo.json";
 import cityBoundaries from "../data/city_poly.json";
+import countyBigStreets from "../data/county_bigstreets_reg.json";
+import countyMedStreets from "../data/county_medstreets_reg.json";
 
 let projection;
 
@@ -19,7 +21,7 @@ export function initMapVis(chartId) {
             // .attr("preserveAspectRatio", "xMidYMid meet")
             // .classed("svg-content", true);
 
-    let g = svg.append("g");
+    // let g = svg.append("g");
 
     projection = d3.geoAlbers()
             .translate([width / 2, height / 2])
@@ -29,6 +31,9 @@ export function initMapVis(chartId) {
     drawBasemap(chartId, stateBoundaries, "state");
     drawBasemap(chartId, countyBoundaries, "county");
     drawBasemap(chartId, cityBoundaries, "city", "#141225", .5, "#141225", .5);
+
+    drawPath(chartId, countyBigStreets.features, "big-streets", "#000000", 1.5);
+    drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
 }
 
 // Draw Basemap
@@ -36,7 +41,7 @@ export function drawBasemap(chartId, data, className, stroke = "#FFFFFF", stroke
 
     let geoPathGenerator = d3.geoPath().projection(projection);
 
-    let path = d3.select(`#${chartId} svg g`)
+    let path = d3.select(`#${chartId} svg`)
         .append("g")
         .selectAll("path")
         .data(data.features)
@@ -53,11 +58,11 @@ export function drawBasemap(chartId, data, className, stroke = "#FFFFFF", stroke
 }
 
 // Draw path
-export function drawPath(g, projection, data, className, stroke = "#D7D7D7", strokeWidth = 1, strokeOpacity = .5, fill ="none", fillOpacity) {
+export function drawPath(chartId, data, className, stroke = "#D7D7D7", strokeWidth = 1, strokeOpacity = .5, fill ="none", fillOpacity) {
 
     let geoPathGenerator = d3.geoPath().projection(projection);
 
-    let path = g
+    let path = d3.select(`#${chartId} svg`)
         .append("g")
         .selectAll("path")
         .data(data)
