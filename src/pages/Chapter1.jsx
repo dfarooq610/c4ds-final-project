@@ -74,7 +74,9 @@ export default function Chapter1 ({}) {
                 opacity: currentStepIndex === stepIndex ? 1 : 0.2,
               }}
             >
-              I'm a Scrollama Step of index {stepIndex}
+
+            <p>{complexFiltered[stepIndex].story}</p>
+              {/* I'm a Scrollama Step of index {stepIndex} */}
             </div>
           </Step>
         ))}
