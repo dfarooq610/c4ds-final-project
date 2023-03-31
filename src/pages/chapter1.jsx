@@ -29,9 +29,11 @@ function initMainVis() {
 
     d3.select(`#${mainVis}`)
             .append("svg")
-            .attr("viewBox", `0 0 ${width} ${height}`)
-            .attr("preserveAspectRatio", "xMidYMid meet")
-            .classed("svg-content", true);
+            .attr("width", width)
+            .attr("height", height)
+            // .attr("viewBox", `0 0 ${width} ${height}`)
+            // .attr("preserveAspectRatio", "xMidYMid meet")
+            // .classed("svg-content", true);
 
     projection = d3.geoAlbers()
             .translate([width / 2, height / 2])
@@ -76,9 +78,11 @@ function initTimelineVis(complex) {
 
     let svg = d3.select(`#${timelineVis}`)
         .append("svg")
-        .attr("viewBox", `0 0 ${width} ${height}`)
-        .attr("preserveAspectRatio", "xMidYMid meet")
-        .classed("svg-content", true);
+        .attr("width", width)
+        .attr("height", height)
+        // .attr("viewBox", `0 0 ${width} ${height}`)
+        // .attr("preserveAspectRatio", "xMidYMid meet")
+        // .classed("svg-content", true);
 
     const july = svg.append("text")
         .attr("class","axis--label")
