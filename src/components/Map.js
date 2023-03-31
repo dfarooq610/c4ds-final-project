@@ -4,6 +4,7 @@ import countyBoundaries from "../data/counties_geo.json";
 import cityBoundaries from "../data/city_poly.json";
 import countyBigStreets from "../data/county_bigstreets_reg.json";
 import countyMedStreets from "../data/county_medstreets_reg.json";
+import shelters from "../data/shelters.json";
 
 let projection;
 
@@ -28,12 +29,17 @@ export function initMapVis(chartId) {
             .scale(initialScale)
             .center([initialCenterX, initialCenterY]);
 
+    // Draw Polygons
     drawBasemap(chartId, stateBoundaries, "state");
     drawBasemap(chartId, countyBoundaries, "county");
     drawBasemap(chartId, cityBoundaries, "city", "#141225", .5, "#141225", .5);
 
+    // Draw paths
     drawPath(chartId, countyBigStreets.features, "big-streets", "#000000", 1.5);
     drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
+
+    // Draw Points
+    createShelter(chartId, shelters);
 }
 
 // Draw Basemap
@@ -166,14 +172,17 @@ export function updateHouses(g, projection, data, speed) {
 
 // Create initial shelter points
 // Shelter points are initially not visible
-export function createShelter(g, projection, data) {
+export function createShelter(chartId, shelters) {
 
-    let points = g
-        .append("g")
+    // let points = g
+    //     .append("g")
+
+    let points = d3.select(`#${chartId} svg`)
+                .append("g")
 
     points
         .selectAll("path")
-        .data(data)
+        .data(shelters)
         .enter()
         .append("path")
             .attr("class", "shelters")
@@ -186,7 +195,7 @@ export function createShelter(g, projection, data) {
 
     points
         .selectAll("circle")
-        .data(data)
+        .data(shelters)
         .enter()
         .append("circle")
             .attr("class", "shelters")
