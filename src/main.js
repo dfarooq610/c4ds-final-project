@@ -33,53 +33,9 @@ function drawVis(stateBoundaries, countyBoundaries, okBigStreets, okMedStreets, 
     }
 
     // Timeline
-    paramsTimeline["min"] = d3.min(data, function(d) {return d.date; });
-    paramsTimeline["max"] = d3.max(data, function(d) {return d.date; });
     paramsTimeline["speed"] = params.speed
 
-    let days = Helper.uniqueArray(data, "date").sort(function(a, b) {return a - b});
-    let days2 = Timer.daysLabel(days, data);
-    let xWidth = (paramsTimeline.width - paramsTimeline.margin.left - paramsTimeline.margin.right)/days.length;
 
-    const july = svgTimeline.append("text")
-        .attr("class","axis--label")
-        .attr("x", paramsTimeline.margin.left + xWidth*17/2)
-        .attr("y", paramsTimeline.height-paramsTimeline.margin.bottom/4)
-        .text("July");
-
-    const august = svgTimeline.append("text")
-        .attr("class","axis--label")
-        .attr("x", paramsTimeline.margin.left + xWidth*17 + xWidth*27/2)
-        .attr("y", paramsTimeline.height-paramsTimeline.margin.bottom/4)
-        .text("August");
-
-    let xAxisTimeline = svgTimeline
-        .append("g")
-        .attr("class","axis")
-        .attr("transform",`translate(0, ${paramsTimeline.height-paramsTimeline.margin.bottom})`)
-        .call(d3.axisBottom().scale(xScaleTimeline).tickValues(days).tickFormat((d, i) => days2[i]));
-
-    svgTimeline
-        .append("rect")
-        .attr("x", xScaleTimeline(paramsTimeline.min))
-        .attr("y", 0)
-        .attr("class", "timeline")
-        .attr("width", xScaleTimeline.bandwidth())
-        .attr("height", paramsTimeline.barHeight)
-        .attr("fill", "#473F41")
-
-    // Burn
-    paramsBurn["min"] = d3.min(data, function(d) {return d.size;});
-    paramsBurn["max"] = d3.max(data, function(d) {return d.size});
-    paramsBurn["speed"] = params.speed
-
-    const xScaleBurn = d3.scaleSqrt()
-        .domain([paramsBurn.min, paramsBurn.max])
-        .range([paramsBurn.margin, paramsBurn.width - paramsBurn.margin]);
-
-    const yScaleBurn = d3.scaleSqrt()
-        .domain([paramsBurn.min, paramsBurn.max])
-        .range([paramsBurn.width - paramsBurn.margin, paramsBurn.margin]);
 
     svgBurn
         .append("rect")

@@ -140,18 +140,36 @@ function initContainmentVis() {
         .classed("svg-content", true);
 }
 
-function initBurnVis() {
+function initBurnVis(complex) {
 
-    // margin: {top: 0, right: 10, bottom: 50, left: 10}
-    // barHeight: 50
-
+    // const margin = {top: 0, right: 10, bottom: 50, left: 10}
+    const barHeight = 50;
     const width = 400;
+    const min = d3.min(complex, function(d) {return d.size;});
+    const max = d3.max(complex, function(d) {return d.size});
 
-    d3.select(`#${burnVis}`)
+    const xScaleBurn = d3.scaleSqrt()
+        .domain([min, max])
+        .range([0, width]);
+
+    const yScaleBurn = d3.scaleSqrt()
+        .domain([min, max])
+        .range([width, 0]);
+
+    let svg = d3.select(`#${burnVis}`)
         .append("svg")
         .attr("viewBox", `0 0 ${width} ${width}`)
         // .attr("preserveAspectRatio", "xMidYMid meet")
         // .classed("svg-content", true);
+
+    svg
+        .append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("class", "burn")
+        .attr("width", xScaleBurn(min))
+        .attr("height", yScaleBurn(max))
+        .attr("fill", "#FFFFFF")
 }
 
 function initLegendVis() {
@@ -181,17 +199,33 @@ export default function Chapter1 ({}) {
     initMainVis();
     initTimelineVis(complex);
     initContainmentVis();
-    initBurnVis();
+    initBurnVis(complex);
     initLegendVis();
   }, [])
 
   return (
     <div style={{ margin: '50vh 0', border: '2px dashed skyblue' }}>
       <div style={{ position: 'sticky', top: 0, border: '1px solid orchid' }}>
-        <div id="main">
-            <div className="chart" id={mainVis}></div>
-            <div className="chart" id={timelineVis}></div>
+        <div>
+            <div id="main">
+                <div className="chart" id={mainVis}></div>
+                <div className="chart" id={timelineVis}></div>
+            </div>
+            {/* <div id="sidebar-right">
+                <div className="container" style="margin-top: 0px">
+                    <h3 style="margin-left:0;margin-top:0">Percent fire contained</h3>
+                    <div id="containment"></div>
+                </div>
+                <div className="container">
+                    <h3 style="margin-left:0">Acres burnt (square acres)</h3>
+                    <div id="burn"></div>
+                </div>
+                <div className="container">
+                    <p id="story"></p>
+                </div>
+            </div> */}
         </div>
+
         I'm sticky. The current triggered step index is: {currentStepIndex}
       </div>
       <Scrollama offset={0.5} onStepEnter={onStepEnter} debug>
