@@ -40,10 +40,10 @@ export default function Chapter1 ({}) {
   let arr = Array.from(Array(complexFiltered.length).keys());
 
   return (
-    <div style={{ margin: '100vh 0', border: '2px dashed skyblue' }}>
-      <div style={{ position: 'sticky', top: 0, border: '1px solid orchid' }}>
+    <div style={{ margin: '100vh 0' }}>
+      <div style={{ position: 'sticky', top: 20 }}>
         <div>
-            <div id="main">
+            <div>
                 <div className="chart" id={mapVis}></div>
                 <div className="chart" id={timelineVis}></div>
             </div>

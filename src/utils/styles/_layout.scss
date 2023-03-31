@@ -3,5 +3,10 @@
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-  }
-  
+}
+
+.Main {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: minmax(200px, 66%) minmax(300px, 33%);
+}
