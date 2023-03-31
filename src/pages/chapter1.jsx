@@ -14,6 +14,7 @@ import routes from "../data/route_sim2.json";
 import * as d3 from 'd3';
 
 import { initLegendVis } from "../components/Legend";
+import { initBurnVis } from "../components/Burn";
 import { uniqueArray } from "../utils/global";
 
 const mainVis = "Main-Vis";
@@ -151,40 +152,6 @@ function initContainmentVis() {
         .call(d3.axisBottom().scale(xScaleContainment).ticks(2));
 }
 
-function initBurnVis(complex) {
-
-    // const margin = {top: 0, right: 10, bottom: 50, left: 10}
-    const barHeight = 50;
-    const width = 400;
-    const min = d3.min(complex, function(d) {return d.size;});
-    const max = d3.max(complex, function(d) {return d.size});
-
-    const xScaleBurn = d3.scaleSqrt()
-        .domain([min, max])
-        .range([0, width]);
-
-    const yScaleBurn = d3.scaleSqrt()
-        .domain([min, max])
-        .range([width, 0]);
-
-    let svg = d3.select(`#${burnVis}`)
-        .append("svg")
-        .attr("width", width)
-        .attr("height", width)
-        // .attr("viewBox", `0 0 ${width} ${width}`)
-        // .attr("preserveAspectRatio", "xMidYMid meet")
-        // .classed("svg-content", true);
-
-    svg
-        .append("rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("class", "burn")
-        .attr("width", xScaleBurn(min))
-        .attr("height", yScaleBurn(max))
-        .attr("fill", "#FFFFFF")
-}
-
 export default function Chapter1 ({}) {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
 
@@ -198,8 +165,8 @@ export default function Chapter1 ({}) {
     initMainVis();
     initTimelineVis(complex);
     initContainmentVis();
-    initBurnVis(complex);
-    initLegendVis(fires);
+    initBurnVis(burnVis, complex);
+    initLegendVis(legendVis, fires);
   }, [])
 
   return (

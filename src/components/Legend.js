@@ -4,7 +4,7 @@ import { colors, uniqueArray } from "../utils/global";
 let colorScale, maxDays, max, rScale;
 const legendVis = "Burn-Vis";
 
-export function initLegendVis(fires) {
+export function initLegendVis(chartId, fires) {
 
     // margin: {top: 0, right: 10, bottom: 20, left: 10},
     // barHeight: 50
@@ -24,7 +24,7 @@ export function initLegendVis(fires) {
         .domain(nDaysUni)
         .range(colors);
 
-    d3.select(`#${legendVis}`)
+    d3.select(`#${chartId}`)
         .append("svg")
         .attr("width", width)
         .attr("height", height)
@@ -32,13 +32,13 @@ export function initLegendVis(fires) {
         // .attr("preserveAspectRatio", "xMidYMid meet")
         // .classed("svg-content", true);
 
-    createLegend();
+    createLegend(chartId);
 }
 
 // Create Legend
-function createLegend() {
+function createLegend(chartId) {
 
-    let svg = d3.select(`#${legendVis} svg`)
+    let svg = d3.select(`#${chartId} svg`)
 
     svg.append("text")
         .attr("x", 10)
