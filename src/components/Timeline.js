@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import { uniqueArray } from "../utils/global";
 
-let xScale;
+let xScale, barHeight;
 
 // Create days label
 // Description an array for each date 
@@ -30,7 +30,7 @@ export function initTimelineVis(chartId, complex) {
 
     const min = d3.min(complex, function(d) {return d.date; });
     const max = d3.max(complex, function(d) {return d.date; });
-    const barHeight = 50;
+    barHeight = 50;
 
     xScale = d3.scaleBand()
         .domain(days)
@@ -72,4 +72,29 @@ export function initTimelineVis(chartId, complex) {
         .attr("width", xScale.bandwidth())
         .attr("height", barHeight)
         .attr("fill", "#FFFFFF")
+}
+
+export function drawTimelineVis(xScale, complex) {
+
+    let bar = select(`#${chartId} svg`)
+        .selectAll("rect")
+            .data(complex)
+            .enter()
+            .attr("x", function(d) {return xScale(d.date)})
+            .attr("y", 0)
+            .attr("class", "timeline")
+            .attr("width", xScale.bandwidth())
+            .attr("height", barHeight)
+            .attr("fill", "#473F41");
+
+    let b = svg.selectAll(".timeline")
+            .data(complex, function(d) { return d.date; });
+
+    b.transition()
+        .attr("x", function(d) {return xScale(d.date)})
+        .attr("y", 0)
+        .attr("class", "timeline")
+        .attr("width", xScale.bandwidth())
+        .attr("height", barHeight)
+        .attr("fill", "#473F41");
 }
