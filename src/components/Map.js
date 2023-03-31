@@ -19,7 +19,7 @@ let routesInitial = routes.features.filter((d) => d.properties.type === "initial
 
 export function initMapVis(chartId) {
 
-    const width =  500, height = 400, initialScale = 20000,
+    const width = 650, height = 500, initialScale = 25000,
         initialCenterX = -24,
         initialCenterY = 48.25;
 

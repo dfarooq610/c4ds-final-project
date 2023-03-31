@@ -48,7 +48,7 @@ export default function Chapter1 ({}) {
     <div >
       <div style={{ position: 'sticky', top: 20, right: 20}}>
         <div>
-            <div>
+            <div className="Chart-Container">
                 <div className="chart" id={mapVis}></div>
                 {/* <div className="chart" id={timelineVis}></div> */}
             </div>
