@@ -35,6 +35,10 @@ export default function Chapter1 ({}) {
     initLegendVis(legendVis, fires);
   }, [])
 
+  let complexFiltered = complex.filter(d => d.story !== "");
+
+  let arr = Array.from(Array(complexFiltered.length).keys());
+
   return (
     <div style={{ margin: '100vh 0', border: '2px dashed skyblue' }}>
       <div style={{ position: 'sticky', top: 0, border: '1px solid orchid' }}>
@@ -61,7 +65,7 @@ export default function Chapter1 ({}) {
         I'm sticky. The current triggered step index is: {currentStepIndex}
       </div>
       <Scrollama offset={0.5} onStepEnter={onStepEnter} debug>
-        {[1, 2, 3, 4].map((_, stepIndex) => (
+        {arr.map((_, stepIndex) => (
           <Step data={stepIndex} key={stepIndex}>
             <div
               style={{
