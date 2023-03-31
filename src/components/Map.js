@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 import stateBoundaries from "../data/state_boundaries.json";
 import countyBoundaries from "../data/counties_geo.json";
+import cityBoundaries from "../data/city_poly.json";
 
 let projection;
 
@@ -27,10 +28,11 @@ export function initMapVis(chartId) {
 
     drawBasemap(chartId, stateBoundaries, "state");
     drawBasemap(chartId, countyBoundaries, "county");
+    drawBasemap(chartId, cityBoundaries, "city", "#141225", .5, "#141225", .5);
 }
 
 // Draw Basemap
-export function drawBasemap(chartId, data, className) {
+export function drawBasemap(chartId, data, className, stroke = "#FFFFFF", strokeWidth = 1, fill = "#E0E0E0", fillOpacity=1) {
 
     let geoPathGenerator = d3.geoPath().projection(projection);
 
@@ -42,10 +44,10 @@ export function drawBasemap(chartId, data, className) {
         .append("path")
         .attr("class", className)
         .attr("d", geoPathGenerator)
-        .attr("stroke", "#FFFFFF")
-        .attr("stroke-width", 1)
-        .attr("fill", "#E0E0E0")
-        .attr("fill-opacity", 1);
+        .attr("stroke",stroke)
+        .attr("stroke-width", strokeWidth)
+        .attr("fill", fill)
+        .attr("fill-opacity", fillOpacity);
 
     return path;
 }
