@@ -1,3 +1,27 @@
+import * as d3 from 'd3';
+
+let projection;
+
+export function initMapVis(chartId) {
+
+    const width =  500, height =  300, initialScale = 20000,
+        initialCenterX = -24,
+        initialCenterY = 48.25;
+
+    d3.select(`#${chartId}`)
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            // .attr("viewBox", `0 0 ${width} ${height}`)
+            // .attr("preserveAspectRatio", "xMidYMid meet")
+            // .classed("svg-content", true);
+
+    projection = d3.geoAlbers()
+            .translate([width / 2, height / 2])
+            .scale(initialScale)
+            .center([initialCenterX, initialCenterY]);
+}
+
 // Draw Basemap
 export function drawBasemap(g, projection, data, className, stroke = "#FFFFFF", strokeWidth = 1, fill = "#E0E0E0", fillOpacity = 1) {
 

@@ -17,37 +17,14 @@ import { initContainmentVis } from "../components/Containment";
 import { initLegendVis } from "../components/Legend";
 import { initBurnVis } from "../components/Burn";
 import { initTimelineVis } from "../components/Timeline";
+import { initMapVis } from "../components/Map";
 import { uniqueArray } from "../utils/global";
 
-const mainVis = "Main-Vis";
+const mapVis = "Map-Vis";
 const timelineVis = "Timeline-Vis";
 const containmentVis = "Containment-Vis";
 const burnVis = "Burn-Vis";
 const legendVis = "Burn-Vis";
-
-let projection;
-
-let xScaleTimeline, colorScale, rScale;
-
-function initMainVis() {
-
-    const width =  500, height =  300, initialScale = 20000,
-        initialCenterX = -24,
-        initialCenterY = 48.25;
-
-    d3.select(`#${mainVis}`)
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            // .attr("viewBox", `0 0 ${width} ${height}`)
-            // .attr("preserveAspectRatio", "xMidYMid meet")
-            // .classed("svg-content", true);
-
-    projection = d3.geoAlbers()
-            .translate([width / 2, height / 2])
-            .scale(initialScale)
-            .center([initialCenterX, initialCenterY]);
-}
 
 export default function Chapter1 ({}) {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
@@ -59,7 +36,7 @@ export default function Chapter1 ({}) {
   };
 
   useEffect(() => {
-    initMainVis();
+    initMapVis(mapVis);
     initTimelineVis(timelineVis, complex);
     initContainmentVis(containmentVis);
     initBurnVis(burnVis, complex);
@@ -71,7 +48,7 @@ export default function Chapter1 ({}) {
       <div style={{ position: 'sticky', top: 0, border: '1px solid orchid' }}>
         <div>
             <div id="main">
-                <div className="chart" id={mainVis}></div>
+                <div className="chart" id={mapVis}></div>
                 <div className="chart" id={timelineVis}></div>
             </div>
             {/* <div id="sidebar-right">
