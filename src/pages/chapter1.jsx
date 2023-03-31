@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // @ts-ignore
 import { Scrollama, Step } from 'react-scrollama';
 import stateBoundaries from "../data/state_boundaries.json";
@@ -11,6 +11,21 @@ import fires from "../data/fire_points2.json";
 import fireBoundary from "../data/fire_boundary.json";
 import cityBoundaries from "../data/city_poly.json";
 import routes from "../data/route_sim2.json";
+import * as d3 from 'd3';
+
+const mainVis = "Main-Vis"
+
+function initMainVis() {
+
+    const width =  500, height =  300;
+
+    d3.select(`#${mainVis}`)
+            .append("svg")
+            .attr("viewBox", `0 0 ${width} ${height}`)
+            .attr("preserveAspectRatio", "xMidYMid meet")
+            .classed("svg-content", true);
+
+}
 
 export default function Chapter1 ({}) {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
@@ -21,9 +36,14 @@ export default function Chapter1 ({}) {
     setCurrentStepIndex(data);
   };
 
+  useEffect(() => {
+    initMainVis();
+  }, [])
+
   return (
     <div style={{ margin: '50vh 0', border: '2px dashed skyblue' }}>
       <div style={{ position: 'sticky', top: 0, border: '1px solid orchid' }}>
+        <div className="chart" id={mainVis}></div>
         I'm sticky. The current triggered step index is: {currentStepIndex}
       </div>
       <Scrollama offset={0.5} onStepEnter={onStepEnter} debug>
