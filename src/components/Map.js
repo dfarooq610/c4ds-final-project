@@ -1,4 +1,6 @@
 import * as d3 from 'd3';
+import stateBoundaries from "../data/state_boundaries.json";
+import countyBoundaries from "../data/counties_geo.json";
 
 let projection;
 
@@ -8,7 +10,7 @@ export function initMapVis(chartId) {
         initialCenterX = -24,
         initialCenterY = 48.25;
 
-    d3.select(`#${chartId}`)
+    let svg = d3.select(`#${chartId}`)
             .append("svg")
             .attr("width", width)
             .attr("height", height)
@@ -16,18 +18,23 @@ export function initMapVis(chartId) {
             // .attr("preserveAspectRatio", "xMidYMid meet")
             // .classed("svg-content", true);
 
+    let g = svg.append("g");
+
     projection = d3.geoAlbers()
             .translate([width / 2, height / 2])
             .scale(initialScale)
             .center([initialCenterX, initialCenterY]);
+
+    drawBasemap(chartId, stateBoundaries, "state");
+    drawBasemap(chartId, countyBoundaries, "county");
 }
 
 // Draw Basemap
-export function drawBasemap(g, projection, data, className, stroke = "#FFFFFF", strokeWidth = 1, fill = "#E0E0E0", fillOpacity = 1) {
+export function drawBasemap(chartId, data, className) {
 
     let geoPathGenerator = d3.geoPath().projection(projection);
 
-    let path = g
+    let path = d3.select(`#${chartId} svg g`)
         .append("g")
         .selectAll("path")
         .data(data.features)
@@ -35,10 +42,10 @@ export function drawBasemap(g, projection, data, className, stroke = "#FFFFFF", 
         .append("path")
         .attr("class", className)
         .attr("d", geoPathGenerator)
-        .attr("stroke", stroke)
-        .attr("stroke-width", strokeWidth)
-        .attr("fill", fill)
-        .attr("fill-opacity", fillOpacity);
+        .attr("stroke", "#FFFFFF")
+        .attr("stroke-width", 1)
+        .attr("fill", "#E0E0E0")
+        .attr("fill-opacity", 1);
 
     return path;
 }
