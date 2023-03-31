@@ -14,7 +14,7 @@ const mapVis = "Map-Vis";
 const timelineVis = "Timeline-Vis";
 const containmentVis = "Containment-Vis";
 const burnVis = "Burn-Vis";
-const legendVis = "Burn-Vis";
+const legendVis = "Legend-Vis";
 
 export default function Chapter1 ({}) {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
@@ -49,8 +49,13 @@ export default function Chapter1 ({}) {
       <div style={{ position: 'sticky', top: 20, right: 20}}>
         <div>
             <div className="Chart-Container">
-                <div className="chart" id={mapVis}></div>
-                {/* <div className="chart" id={timelineVis}></div> */}
+                <div className="SideBar">
+                    <div className="chart" id={legendVis}></div>
+                </div>
+                <div className="MainChart">
+                    <div className="chart" id={mapVis}></div>
+                    {/* <div className="chart" id={timelineVis}></div> */}
+                </div>
             </div>
             {/* <div id="sidebar-right">
                 <div className="container" style="margin-top: 0px">
@@ -60,9 +65,6 @@ export default function Chapter1 ({}) {
                 <div className="container">
                     <h3 style="margin-left:0">Acres burnt (square acres)</h3>
                     <div id="burn"></div>
-                </div>
-                <div className="container">
-                    <p id="story"></p>
                 </div>
             </div> */}
         </div>

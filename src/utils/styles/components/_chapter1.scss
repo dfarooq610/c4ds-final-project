@@ -20,4 +20,9 @@
     -moz-transform: translateX(55%);
     -webkit-transform: translateX(55%);
     transform: translateX(55%);
+    display: flex;
+    flex-direction: row;
+    // display: grid;
+    // grid-gap: .25rem;
+    // grid-template-columns: minmax(50px, 20%) minmax(20px, 80%);
 }
