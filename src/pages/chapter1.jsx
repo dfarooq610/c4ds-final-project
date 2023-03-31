@@ -27,7 +27,7 @@ const colors = ['#ffcc55', '#ffc751', '#fec24d', '#febd4a', '#fdb846', '#fdb343'
 
 let projection;
 
-let xScaleTimeline;
+let xScaleTimeline, colorScale, rScale;
 
 function initMainVis() {
 
@@ -208,6 +208,14 @@ function initLegendVis(fires) {
     const min = d3.min(fires, function(d) {return d.nDays; });
     const max = d3.max(fires, function(d) {return d.nDays; });
     const nDaysUni = uniqueArray(fires, "nDays").sort(function(a, b) {return a - b});
+
+    colorScale = d3.scaleOrdinal()
+        .domain(nDaysUni)
+        .range(colors);
+
+    rScale = d3.scaleSqrt()
+        .domain([min, max])
+        .range([1, 5]);
 
     d3.select(`#${legendVis}`)
         .append("svg")
