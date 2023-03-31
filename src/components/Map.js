@@ -5,6 +5,8 @@ import cityBoundaries from "../data/city_poly.json";
 import countyBigStreets from "../data/county_bigstreets_reg.json";
 import countyMedStreets from "../data/county_medstreets_reg.json";
 import shelters from "../data/shelters.json";
+import routes from "../data/route_sim2.json";
+import fires from "../data/fire_points2.json";
 
 let projection;
 
@@ -40,6 +42,7 @@ export function initMapVis(chartId) {
 
     // Draw Points
     createShelter(chartId, shelters);
+    createFire(chartId, fires);
 }
 
 // Draw Basemap
@@ -263,14 +266,17 @@ export function updateShelter(g, projection, data, fill, r, opacity) {
 
 
 // Create initial fire points
-export function createFire(g, data) {
+export function createFire(chartId, fires) {
 
-    let points = g
-            .append("g")
+    // let points = g
+    //         .append("g")
+
+    let points = d3.select(`#${chartId} svg`)
+                .append("g")
 
     points
         .selectAll("circle")
-        .data(data)
+        .data(fires)
         // .enter()
         // .append("circle")
 

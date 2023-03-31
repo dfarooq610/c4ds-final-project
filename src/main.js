@@ -37,9 +37,6 @@ function drawVis(stateBoundaries, countyBoundaries, okBigStreets, okMedStreets, 
     Map.createLegend(svgLegend, rScale, colorScale, paramsLegend.max)
 
     let routesInitial = routes.features.filter((d) => d.properties.type === "initial");
-
-    let shelterPoints = Map.createShelter(g, projection, shelters);
-    let firePoints = Map.createFire(g, fires);
     let housePoints = Map.createHouses(g, projection, routesInitial, "households", paramsMap);
 
     let userZoom = function(event) {
