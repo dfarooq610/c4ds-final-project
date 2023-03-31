@@ -50,7 +50,7 @@ export default function Chapter1 ({}) {
         <div>
             <div>
                 <div className="chart" id={mapVis}></div>
-                <div className="chart" id={timelineVis}></div>
+                {/* <div className="chart" id={timelineVis}></div> */}
             </div>
             {/* <div id="sidebar-right">
                 <div className="container" style="margin-top: 0px">
