@@ -13,6 +13,7 @@ import cityBoundaries from "../data/city_poly.json";
 import routes from "../data/route_sim2.json";
 import * as d3 from 'd3';
 
+import { initContainmentVis } from "../components/Containment";
 import { initLegendVis } from "../components/Legend";
 import { initBurnVis } from "../components/Burn";
 import { uniqueArray } from "../utils/global";
@@ -118,40 +119,6 @@ function initTimelineVis(complex) {
         .attr("fill", "#FFFFFF")
 }
 
-function initContainmentVis() {
-
-    const margin = {top: 0, right: 10, bottom: 20, left: 10};
-    const min = 0, max = 100, barHeight = 50;
-    const width = 400, height = 100;
-
-    let svg = d3.select(`#${containmentVis}`)
-        .append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        // .attr("viewBox", `0 0 ${width} ${height}`)
-        // .attr("preserveAspectRatio", "xMidYMid meet")
-        // .classed("svg-content", true);
-
-    let xScaleContainment = d3.scaleLinear()
-        .domain([min, max])
-        .range([margin.left, width - margin.right]);
-
-    svg
-        .append("rect")
-        .attr("x", margin.left)
-        .attr("y", 0)
-        .attr("class", "containment")
-        .attr("width", xScaleContainment(min))
-        .attr("height", barHeight)
-        .attr("fill", "#FFFFFF")
-
-    let xAxisContainment = svg
-        .append("g")
-        .attr("class","axis")
-        .attr("transform",`translate(0, ${height-margin.bottom})`)
-        .call(d3.axisBottom().scale(xScaleContainment).ticks(2));
-}
-
 export default function Chapter1 ({}) {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
 
@@ -164,7 +131,7 @@ export default function Chapter1 ({}) {
   useEffect(() => {
     initMainVis();
     initTimelineVis(complex);
-    initContainmentVis();
+    initContainmentVis(containmentVis);
     initBurnVis(burnVis, complex);
     initLegendVis(legendVis, fires);
   }, [])

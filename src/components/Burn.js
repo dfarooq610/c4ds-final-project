@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 
-let xScaleBurn, yScaleBurn;
+let xScale, yScale;
 
 export function initBurnVis(chartId, complex) {
 
@@ -10,11 +10,11 @@ export function initBurnVis(chartId, complex) {
     const min = d3.min(complex, function(d) {return d.size;});
     const max = d3.max(complex, function(d) {return d.size});
 
-    xScaleBurn = d3.scaleSqrt()
+    xScale = d3.scaleSqrt()
         .domain([min, max])
         .range([0, width]);
 
-    yScaleBurn = d3.scaleSqrt()
+    yScale = d3.scaleSqrt()
         .domain([min, max])
         .range([width, 0]);
 
@@ -31,8 +31,8 @@ export function initBurnVis(chartId, complex) {
         .attr("x", 0)
         .attr("y", 0)
         .attr("class", "burn")
-        .attr("width", xScaleBurn(min))
-        .attr("height", yScaleBurn(max))
+        .attr("width", xScale(min))
+        .attr("height", yScale(max))
         .attr("fill", "#FFFFFF")
 }
 
