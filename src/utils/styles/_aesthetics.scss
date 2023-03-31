@@ -1,4 +1,13 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 html, body {
     background: linear-gradient(150deg, #0A0D14, #6857A5);
     color: $appColor;
+    text-align: left;
+}
+
+.axis--label {
+    fill: #D8D8D8;
 }

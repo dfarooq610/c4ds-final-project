@@ -1,34 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// @ts-ignore
+import Chapter1  from "./pages/Chapter1";
 import "./utils/styles/style.scss";
+// import { ReactComponent as Lightning } './assets/lightning.svg';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="Header">
+        <h1>Flee</h1>
+        <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>
+        <p>Officially, the disastor event and state of emergency is declared. The fire started from a lightning strike on July 15th, 2014 and ended on August 14th, 2014. However, impacts from the fire were felt much longer than the timeline of the official event.</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <Chapter1></Chapter1>
     </div>
   )
 }
