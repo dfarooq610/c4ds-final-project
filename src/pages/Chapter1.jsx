@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
 import complex from "../data/complex_data.json";
 import fires from "../data/fire_points2.json";
-import fireBoundary from "../data/fire_boundary.json";
-import routes from "../data/route_sim2.json";
 
 import { initContainmentVis } from "../components/Containment";
 import { initLegendVis } from "../components/Legend";
@@ -47,8 +45,8 @@ export default function Chapter1 ({}) {
   let arr = Array.from(Array(complexFiltered.length).keys());
 
   return (
-    <div style={{ margin: '100vh 0' }}>
-      <div style={{ position: 'sticky', top: 20 }}>
+    <div >
+      <div style={{ position: 'sticky', top: 20, right: 20}}>
         <div>
             <div>
                 <div className="chart" id={mapVis}></div>
@@ -82,7 +80,7 @@ export default function Chapter1 ({}) {
                 opacity: currentStepIndex === stepIndex ? 1 : 0.2,
               }}
             >
-            <p className="story">{complexFiltered[stepIndex].story}</p>
+                <p className="story">{complexFiltered[stepIndex].story}</p>
             </div>
           </Step>
         ))}
