@@ -21,6 +21,8 @@ const legendVis = "Burn-Vis"
 
 let projection;
 
+let xScaleTimeline;
+
 function initMainVis() {
 
     const width =  500, height =  300, initialScale = 20000,
@@ -76,6 +78,12 @@ function initTimelineVis(complex) {
     const days2 = daysLabel(days, complex);
     const xWidth = (width - margin.left - margin.right)/days.length;
 
+    xScaleTimeline = d3.scaleBand()
+        .domain(days)
+        .range([margin.left, width - margin.right])
+        .paddingInner(0.5)
+        .paddingOuter(0.2);
+
     let svg = d3.select(`#${timelineVis}`)
         .append("svg")
         .attr("width", width)
@@ -95,6 +103,13 @@ function initTimelineVis(complex) {
         .attr("x", margin.left + xWidth*17 + xWidth*27/2)
         .attr("y", height-margin.bottom/4)
         .text("August");
+
+    const xAxisTimeline = svg
+        .append("g")
+        .attr("class","axis")
+        .attr("transform",`translate(0, ${height-margin.bottom})`)
+        .call(d3.axisBottom().scale(xScaleTimeline).tickValues(days).tickFormat((d, i) => days2[i]));
+
 
 }
 
@@ -119,7 +134,7 @@ function initBurnVis() {
     // margin: {top: 0, right: 10, bottom: 50, left: 10}
     // barHeight: 50
 
-    const width = 400, height = 100;
+    const width = 400;
 
     d3.select(`#${burnVis}`)
         .append("svg")
