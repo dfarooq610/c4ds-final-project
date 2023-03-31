@@ -7,6 +7,7 @@ import countyMedStreets from "../data/county_medstreets_reg.json";
 import shelters from "../data/shelters.json";
 import routes from "../data/route_sim2.json";
 import fires from "../data/fire_points2.json";
+import complex from "../data/complex_data.json";
 
 let projection;
 let routesInitial = routes.features.filter((d) => d.properties.type === "initial");
@@ -49,7 +50,7 @@ export function initMapVis(chartId) {
     // Draw Points
     createShelter(chartId, shelters);
     createFire(chartId, fires);
-    createHouses(chartId, routesInitial, "households");
+    createHouses(chartId, routesInitial, "household");
 
     // var zoom = d3.zoom()
     // .scaleExtent([0, 15])
@@ -102,7 +103,7 @@ export function drawPath(chartId, data, className, stroke = "#D7D7D7", strokeWid
 }
 
 // Create households
-export function createHouses(chartId, data, className) {
+export function createHouses(chartId, data, className = "household") {
 
     // console.log(data)
     // let points = g
@@ -162,10 +163,14 @@ function getNonZeroRandomNumber(min, max) {
 
 // Updates the households
 //Adapted from http://bl.ocks.org/JMStewart/6455921
-export function updateHouses(g, projection, data, speed) {
+export function updateHouses(data) {
 
-    let c = g.selectAll("circle")
-    .data(data, function(d) {return d.properties.id;});
+    // console.log(data)
+    let g = d3.selectAll(`g .household`);
+
+    // console.log(g)
+    let c = g
+        .data(data, function(d) {return d.properties.id;});
 
     c
     .enter()
@@ -173,7 +178,7 @@ export function updateHouses(g, projection, data, speed) {
     .merge(c)
         .transition()
         .delay(function(d, i) {return 10*getNonZeroRandomNumber(399, 299)})
-        .duration(speed)
+        .duration(1000)
         .tween("pathTween", function(d, i) {
             return pathTween(drawPath(g, projection, [d], "yellow", 0))
         });
@@ -364,3 +369,28 @@ export function updateFire(g, projection, data, date, colorScale, rScale) {
     .remove();
 }
 
+
+export function UpdateMapVis(chartId, date) {
+    // date = parseInt(date);
+    // console.log(date)
+    // console.log(chartId)
+
+    let complexFiltered = complex.filter(d => d.story !== "");
+    let dataUpdate = complexFiltered.filter((d) => d.date === date);
+    let firesUpdate = fires.filter((d) => date >= d.startDate);
+
+    let sheltersUpdate = shelters.filter((d) => date >= d.openDate && date <= d.closeDate);
+    let housesUpdate = routes.features.filter((d) => d.properties.evacDate === date);
+
+    // Burn.draw(svgBurn, paramsBurn, xScaleBurn, yScaleBurn, dataUpdate);
+    // Containment.draw(svgContainment, paramsContainment, xScaleContainment, dataUpdate);
+    // Timer.draw(svgTimeline, paramsTimeline, xScaleTimeline, dataUpdate);
+
+    updateHouses(housesUpdate);
+    // updateShelter(shelterPoints, projection, sheltersUpdate, "#EE2C25", 8, 1);
+    // updateFire(firePoints, projection, firesUpdate, date, colorScale, rScale);
+
+    // if (date === 826) {
+    //     drawPath(g, projection, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);
+    // }
+}

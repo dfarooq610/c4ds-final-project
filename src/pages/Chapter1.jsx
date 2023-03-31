@@ -10,7 +10,7 @@ import { initContainmentVis } from "../components/Containment";
 import { initLegendVis } from "../components/Legend";
 import { initBurnVis } from "../components/Burn";
 import { initTimelineVis } from "../components/Timeline";
-import { initMapVis } from "../components/Map";
+import { initMapVis, UpdateMapVis } from "../components/Map";
 
 const mapVis = "Map-Vis";
 const timelineVis = "Timeline-Vis";
@@ -27,6 +27,8 @@ export default function Chapter1 ({}) {
     setCurrentStepIndex(data);
   };
 
+  let complexFiltered = complex.filter(d => d.story !== "");
+
   useEffect(() => {
     initMapVis(mapVis);
     initTimelineVis(timelineVis, complex);
@@ -35,9 +37,18 @@ export default function Chapter1 ({}) {
     initLegendVis(legendVis, fires);
   }, [])
 
-  let complexFiltered = complex.filter(d => d.story !== "");
+  useEffect(() => {
+
+    if (currentStepIndex !== null) {
+
+        console.log(complexFiltered[currentStepIndex].date__1)
+        UpdateMapVis(mapVis, complexFiltered[currentStepIndex].date__1);
+    }
+  }, [currentStepIndex])
 
   let arr = Array.from(Array(complexFiltered.length).keys());
+
+  console.log(currentStepIndex)
 
   return (
     <div style={{ margin: '100vh 0' }}>
@@ -78,6 +89,8 @@ export default function Chapter1 ({}) {
             <p className="story">{complexFiltered[stepIndex].story}</p>
               {/* I'm a Scrollama Step of index {stepIndex} */}
             </div>
+
+            {/* {UpdateMapVis(mapVis, complexFiltered[stepIndex].date)} */}
           </Step>
         ))}
       </Scrollama>
