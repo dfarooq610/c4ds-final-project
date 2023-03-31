@@ -13,11 +13,14 @@ import cityBoundaries from "../data/city_poly.json";
 import routes from "../data/route_sim2.json";
 import * as d3 from 'd3';
 
-const mainVis = "Main-Vis"
+const mainVis = "Main-Vis";
+let projection;
 
 function initMainVis() {
 
-    const width =  500, height =  300;
+    const width =  500, height =  300, initialScale = 20000,
+        initialCenterX = -24,
+        initialCenterY = 48.25;
 
     d3.select(`#${mainVis}`)
             .append("svg")
@@ -25,6 +28,10 @@ function initMainVis() {
             .attr("preserveAspectRatio", "xMidYMid meet")
             .classed("svg-content", true);
 
+    projection = d3.geoAlbers()
+            .translate([width / 2, height / 2])
+            .scale(initialScale)
+            .center([initialCenterX, initialCenterY]);
 }
 
 export default function Chapter1 ({}) {
