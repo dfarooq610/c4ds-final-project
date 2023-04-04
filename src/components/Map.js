@@ -17,47 +17,6 @@ let routesInitial = routes.features.filter((d) => d.properties.type === "initial
 //     .attr("transform", `scale(${event.transform.k}) translate(${event.transform.x}, ${event.transform.y})`);
 // }
 
-export function initMapVis(chartId) {
-
-    const width = 650, height = 500, initialScale = 25000,
-        initialCenterX = -24,
-        initialCenterY = 48.25;
-
-    let svg = d3.select(`#${chartId}`)
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            // .attr("viewBox", `0 0 ${width} ${height}`)
-            // .attr("preserveAspectRatio", "xMidYMid meet")
-            // .classed("svg-content", true);
-
-    // let g = svg.append("g");
-
-    projection = d3.geoAlbers()
-            .translate([width / 2, height / 2])
-            .scale(initialScale)
-            .center([initialCenterX, initialCenterY]);
-
-    // Draw Polygons
-    drawBasemap(chartId, stateBoundaries, "state");
-    drawBasemap(chartId, countyBoundaries, "county");
-    drawBasemap(chartId, cityBoundaries, "city", "#141225", .5, "#141225", .5);
-
-    // Draw paths
-    drawPath(chartId, countyBigStreets.features, "big-streets", "#000000", 1.5);
-    drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
-
-    // Draw Points
-    createShelter(chartId, shelters);
-    createFire(chartId, fires);
-    createHouses(chartId, routesInitial, "household");
-
-    // var zoom = d3.zoom()
-    // .scaleExtent([0, 15])
-    // .on("zoom", userZoom);
-
-    // svgMap.call(zoom);
-}
 
 // Draw Basemap
 export function drawBasemap(chartId, data, className, stroke = "#FFFFFF", strokeWidth = 1, fill = "#E0E0E0", fillOpacity=1) {
@@ -103,7 +62,7 @@ export function drawPath(chartId, data, className, stroke = "#D7D7D7", strokeWid
 }
 
 // Create households
-export function createHouses(chartId, data, className = "household") {
+export function initHouses(chartId, data, className = "household") {
 
     // console.log(data)
     // let points = g
@@ -162,14 +121,19 @@ function getNonZeroRandomNumber(min, max) {
 
 // Updates the households
 //Adapted from http://bl.ocks.org/JMStewart/6455921
-export function updateHouses(data) {
+export function updateHouses(chartId, date) {
+    console.log(chartId, date)
 
-    // console.log(data)
-    let g = d3.selectAll(`g .household`);
+    let data = routes.features.filter((d) => d.properties.evacDate === date);
 
-    // console.log(g)
-    let c = g
-        .data(data, function(d) {return d.properties.id;});
+    console.log(data)
+    let g = d3.selectAll(`#${chartId} g .household`);
+    console.log(g)
+
+
+    // // console.log(g)
+        let c = g
+            .data(data, function(d) {return d.properties.id;});
 
     c
     .enter()
@@ -179,7 +143,7 @@ export function updateHouses(data) {
         .delay(function(d, i) {return 10*getNonZeroRandomNumber(399, 299)})
         .duration(1000)
         .tween("pathTween", function(d, i) {
-            return pathTween(drawPath(g, projection, [d], "yellow", 0))
+            return pathTween(drawPath(chartId, [d], "escape-route"))
         });
 
     function pathTween(path) {
@@ -196,98 +160,129 @@ export function updateHouses(data) {
 
 // Create initial shelter points
 // Shelter points are initially not visible
-export function createShelter(chartId, shelters) {
+export function initShelter(chartId, shelters) {
 
     // let points = g
     //     .append("g")
 
     let points = d3.select(`#${chartId} svg`)
                 .append("g")
+                .attr("class", "shelters")
 
     points
         .selectAll("path")
         .data(shelters)
         .enter()
         .append("path")
-            .attr("class", "shelters")
+            .attr("class", "shelter")
             .attr("transform", d => "translate(" + [
-            projection([d.long, d.lat])[0],
-            projection([d.long, d.lat])[1]] + ")")
+                projection([d.long, d.lat])[0],
+                projection([d.long, d.lat])[1]] + ")")
             .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
             .attr("fill", "#FFFFFF")
             .attr("fill-opacity", 0)
 
-    points
-        .selectAll("circle")
-        .data(shelters)
-        .enter()
-        .append("circle")
-            .attr("class", "shelters")
-            .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
-            .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
-            .attr("r", 8)
-            .attr("fill", "#FFFFFF")
-            .attr("stroke", "#FFFFFF")
-            .attr("stroke-weight", 2)
-            .attr("fill-opacity", 0)
-            .attr("stroke-opacity", 0);
-
-    return points;
+    // points
+    //     .selectAll("circle")
+    //     .data(shelters)
+    //     .enter()
+    //     .append("circle")
+    //         .attr("class", "shelters")
+    //         .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
+    //         .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
+    //         .attr("r", 8)
+    //         .attr("fill", "#FFFFFF")
+    //         .attr("stroke", "#FFFFFF")
+    //         .attr("stroke-weight", 2)
+    //         .attr("fill-opacity", 0)
+    //         .attr("stroke-opacity", 0);
 }
 
 // Update shelter points
-export function updateShelter(g, projection, data, fill, r, opacity) {
+export function updateShelter(chartId, date, fill, r, opacity) {
 
-    let c = g.selectAll("circle")
-        .data(data, function(d) {return d.id;});
+    let data = shelters.filter((d) => date >= d.openDate && date <= d.closeDate);
 
-        c
-        .enter()
-        .append("circle")
-            .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
-            .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
-            .attr("stroke", "#FFFFFF")
-            .attr("fill", "#FFFFFF")
-            .attr("r", r)
-            .attr("stroke-opacity", opacity)
-            .attr("fill-opacity", .2)
-        .merge(c)
-            .transition()
-            .duration(1000)
+    console.log(data)
 
-    c.exit()
-        .transition()
-        .attr("r", 0)
-        .attr("opacity", 0)
-        .duration(1000)
-        .remove();
+    let svg = d3.selectAll(`#${chartId} svg`);
 
-    let s = g.selectAll("path")
-        .data(data, function(d) {return d.id;});
+    let node = svg
+    .select(".shelters")
+    .selectAll("symbol")
+        .data(data, d => d.id)
+        .join(
+            enter  => enter
+                .append("path")
+                    .attr("transform", d => "translate(" + [
+                        projection([d.long, d.lat])[0],
+                        projection([d.long, d.lat])[1]] + ")")
+                    .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
+                    .attr("fill", fill)
+                    .attr("opacity", opacity),
+            update => update
+                // .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
+                // .attr("fill", fill)
+                .attr("opacity", opacity),
+            exit => exit
+                .transition()
+                .attr("r", 0)
+                .attr("opacity", 0)
+                .duration(1000)
+                .remove()
+        )
 
-    s
-    .enter()
-    .append("path")
-        .attr("transform", d => "translate(" + [
-        projection([d.long, d.lat])[0],
-        projection([d.long, d.lat])[1]] + ")")
-        .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
-        .attr("fill", fill)
-        .attr("opacity", opacity)
-    .merge(s)
-        .transition()
-        .duration(1000)
+    // svg.append("g").attr("class", "nodes");
+    //     .data(data, function(d) {return d.id;});
 
-    s.exit()
-        .transition()
-        .attr("opacity", 0)
-        .duration(1000)
-        .remove();
+    //     c
+    //     .enter()
+    //     .append("circle")
+    //         .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
+    //         .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
+    //         .attr("stroke", "#FFFFFF")
+    //         .attr("fill", "#FFFFFF")
+    //         .attr("r", r)
+    //         .attr("stroke-opacity", opacity)
+    //         .attr("fill-opacity", .2)
+    //     .merge(c)
+    //         .transition()
+    //         .duration(1000)
+
+    // c.exit()
+    //     .transition()
+    //     .attr("r", 0)
+    //     .attr("opacity", 0)
+    //     .duration(1000)
+    //     .remove();
+
+    // let s = d3.selectAll(`#${chartId} .shelters`)
+    //     .selectAll("path")
+    //     .data(data, function(d) {return d.id;});
+
+    // s
+    // .enter()
+    // .append("path")
+    //     .attr("transform", d => "translate(" + [
+    //     projection([d.long, d.lat])[0],
+    //     projection([d.long, d.lat])[1]] + ")")
+    //     .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
+    //     .attr("fill", fill)
+    //     .attr("opacity", opacity)
+    // .merge(s)
+    //     .transition()
+    //     .duration(1000)
+
+    // s.exit()
+    //     .transition()
+    //     .attr("opacity", 0)
+    //     .duration(1000)
+    //     .remove();
 }
 
 
 // Create initial fire points
-export function createFire(chartId, fires) {
+export function initFire(chartId, fires) {
 
     // let points = g
     //         .append("g")
@@ -298,8 +293,9 @@ export function createFire(chartId, fires) {
     points
         .selectAll("circle")
         .data(fires)
-        // .enter()
-        // .append("circle")
+        .enter()
+        .append("circle")
+        .attr("class", "fire-point")
 
     return points;
 }
@@ -315,9 +311,11 @@ function fireBurnNDays(date, d) {
 }
 
 // Update fire points
-export function updateFire(g, projection, data, date, colorScale, rScale) {
+export function updateFire(g, projection, date, colorScale, rScale) {
 
-    let c = g.selectAll("circle")
+    const data = fires.filter((d) => date >= d.startDate);
+
+    let c = d3.selectAll(`#${chartId} .fire-point`)
         .data(data, function(d) {return d.id;});
 
         c
@@ -368,26 +366,61 @@ export function updateFire(g, projection, data, date, colorScale, rScale) {
     .remove();
 }
 
+export function initMapVis(chartId) {
 
-export function UpdateMapVis(chartId, date) {
-    // date = parseInt(date);
-    // console.log(date)
-    // console.log(chartId)
+    const width = 650, height = 500, initialScale = 25000,
+        initialCenterX = -24,
+        initialCenterY = 48.25;
 
-    let complexFiltered = complex.filter(d => d.story !== "");
-    let dataUpdate = complexFiltered.filter((d) => d.date === date);
-    let firesUpdate = fires.filter((d) => date >= d.startDate);
+    let svg = d3.select(`#${chartId}`)
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            // .attr("viewBox", `0 0 ${width} ${height}`)
+            // .attr("preserveAspectRatio", "xMidYMid meet")
+            // .classed("svg-content", true);
 
-    let sheltersUpdate = shelters.filter((d) => date >= d.openDate && date <= d.closeDate);
-    let housesUpdate = routes.features.filter((d) => d.properties.evacDate === date);
+    // let g = svg.append("g");
+
+    projection = d3.geoAlbers()
+            .translate([width / 2, height / 2])
+            .scale(initialScale)
+            .center([initialCenterX, initialCenterY]);
+
+    // Draw Polygons
+    drawBasemap(chartId, stateBoundaries, "state");
+    drawBasemap(chartId, countyBoundaries, "county");
+    drawBasemap(chartId, cityBoundaries, "city", "#141225", .5, "#141225", .5);
+
+    // Draw paths
+    drawPath(chartId, countyBigStreets.features, "big-streets", "#000000", 1.5);
+    drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
+
+    // Draw Points
+    initShelter(chartId, shelters);
+    initFire(chartId, fires);
+    initHouses(chartId, routesInitial, "household");
+
+    // var zoom = d3.zoom()
+    // .scaleExtent([0, 15])
+    // .on("zoom", userZoom);
+
+    // svgMap.call(zoom);
+}
+
+export function updateMapVis(chartId, date) {
+
+    // let complexFiltered = complex.filter(d => d.story !== "");
+    // let dataUpdate = complexFiltered.filter((d) => d.date === date);
+
 
     // Burn.draw(svgBurn, paramsBurn, xScaleBurn, yScaleBurn, dataUpdate);
     // Containment.draw(svgContainment, paramsContainment, xScaleContainment, dataUpdate);
     // Timer.draw(svgTimeline, paramsTimeline, xScaleTimeline, dataUpdate);
 
-    updateHouses(housesUpdate);
-    // updateShelter(shelterPoints, projection, sheltersUpdate, "#EE2C25", 8, 1);
-    // updateFire(firePoints, projection, firesUpdate, date, colorScale, rScale);
+    // updateHouses(chartId, date);
+    updateShelter(chartId, date, "#EE2C25", 8, 1);
+    // updateFire(projection, date, colorScale, rScale);
 
     // if (date === 826) {
     //     drawPath(g, projection, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);

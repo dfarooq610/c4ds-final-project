@@ -8,7 +8,7 @@ import { initContainmentVis } from "../components/Containment";
 import { initLegendVis } from "../components/Legend";
 import { initBurnVis } from "../components/Burn";
 import { initTimelineVis } from "../components/Timeline";
-import { initMapVis, UpdateMapVis } from "../components/Map";
+import { initMapVis, updateMapVis } from "../components/Map";
 
 const mapVis = "Map-Vis";
 const timelineVis = "Timeline-Vis";
@@ -38,7 +38,7 @@ export default function Chapter1 ({}) {
   useEffect(() => {
 
     if (currentStepIndex !== null) {
-        // UpdateMapVis(mapVis, complexFiltered[currentStepIndex].date__1);
+      updateMapVis(mapVis, complexFiltered[currentStepIndex].date__1);
     }
   }, [currentStepIndex])
 
