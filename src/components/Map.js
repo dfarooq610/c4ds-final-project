@@ -209,6 +209,10 @@ export function updateShelter(chartId, date, fill, r, opacity) {
 
     let node = svg
     .select(".shelters")
+
+    console.log(node)
+
+    node
     .selectAll("symbol")
         .data(data, d => d.id)
         .join(
