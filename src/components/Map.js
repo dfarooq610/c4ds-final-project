@@ -75,29 +75,31 @@ function getNonZeroRandomNumber(min, max) {
 // Updates the households
 //Adapted from http://bl.ocks.org/JMStewart/6455921
 export function updateHouses(chartId, date) {
-    console.log(chartId, date)
 
     let data = routes.features.filter((d) => d.properties.evacDate === date);
 
-    console.log(data)
-    let g = d3.selectAll(`#${chartId} g .household`);
-    console.log(g)
-
-
-    // // console.log(g)
-        let c = g
-            .data(data, function(d) {return d.properties.id;});
-
-    c
-    .enter()
-    .append("circle")
-    .merge(c)
-        .transition()
-        .delay(function(d, i) {return 10*getNonZeroRandomNumber(399, 299)})
-        .duration(1000)
-        .tween("pathTween", function(d, i) {
-            return pathTween(drawPath(chartId, [d], "escape-route"))
-        });
+    d3.select(`#${chartId} svg`)
+        .selectAll(".house-points")
+        .data(data, d => d.properties.id)
+        .join(
+            enter => enter
+                .append("circle")
+                .attr("class", "household")
+                .attr("cx", function(d) {return projection([d.properties.x, d.properties.y])[0];})
+                .attr("cy", function(d) {return projection([d.properties.x, d.properties.y])[1];})
+                .attr("r", 1)
+                .attr("fill", "#36479D")
+                .attr("fill-opacity", .5)
+                .attr("stroke", "#36479D")
+                .attr("stroke-opacity", 1),
+            update => update
+                .transition()
+                .delay(function(d, i) {return 10*getNonZeroRandomNumber(399, 299)})
+                .duration(1000)
+                .tween("pathTween", function(d, i) {
+                    return pathTween(drawPath(chartId, [d], "escape-route"))
+                })
+    );
 
     function pathTween(path) {
         var length = path.node().getTotalLength(); // Get the length of the path
@@ -116,7 +118,7 @@ export function updateShelter(chartId, date) {
 
     let data = shelters.filter((d) => date >= d.openDate && date <= d.closeDate);
 
-    console.log(data)
+    // console.log(data)
 
     d3.select(`#${chartId} svg`)
         .selectAll(".shelter-points")
@@ -230,21 +232,6 @@ export function initMapVis(chartId) {
     drawPath(chartId, countyBigStreets.features, "big-streets", "#000000", 1.5);
     drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
      
-    d3.select(`#${chartId} svg`)
-        .append("g")
-        .attr("class", "households")
-        .selectAll("circle")
-        .data(routesInitial)
-        .enter()
-        .append("circle")
-            .attr("class", "household")
-            .attr("cx", function(d) {return projection([d.properties.x, d.properties.y])[0];})
-            .attr("cy", function(d) {return projection([d.properties.x, d.properties.y])[1];})
-            .attr("r", 1)
-            .attr("fill", "#36479D")
-            .attr("fill-opacity", .5)
-            .attr("stroke", "#36479D")
-            .attr("stroke-opacity", 1);
 
     // var zoom = d3.zoom()
     // .scaleExtent([0, 15])
@@ -258,12 +245,11 @@ export function updateMapVis(chartId, date) {
     // let complexFiltered = complex.filter(d => d.story !== "");
     // let dataUpdate = complexFiltered.filter((d) => d.date === date);
 
-
     // Burn.draw(svgBurn, paramsBurn, xScaleBurn, yScaleBurn, dataUpdate);
     // Containment.draw(svgContainment, paramsContainment, xScaleContainment, dataUpdate);
     // Timer.draw(svgTimeline, paramsTimeline, xScaleTimeline, dataUpdate);
 
-    // updateHouses(chartId, date);
+    updateHouses(chartId, date);
     updateShelter(chartId, date);
     updateFire(chartId, date);
 
