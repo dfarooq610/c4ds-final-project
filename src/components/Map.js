@@ -122,22 +122,25 @@ export function updateShelter(chartId, date) {
         .selectAll(".shelter-points")
         .data(data, d => d.id)
         .join(
-            enter  => enter
-            .append("path")
+            enter => enter
+                .append("path")
                    .attr("transform", d => "translate(" + [
                         projection([d.long, d.lat])[0],
                         projection([d.long, d.lat])[1]] + ")")
                     .attr("d", d3.symbol().type(d3.symbolCross).size(100))
-                    .attr("fill", "#EE2C25"),
+                    .transition()
+                    .duration(1000)
+                    .attr("fill", "#EE2C25")
+                    .style('opacity', 1),
                 update => update
                     .attr("transform", d => "translate(" + [
-                    projection([d.long, d.lat])[0],
-                    projection([d.long, d.lat])[1]] + ")"),
+                        projection([d.long, d.lat])[0],
+                        projection([d.long, d.lat])[1]] + ")"),
                 exit => exit
                     .transition()
                     .duration(1000)
                     .attr("d", d3.symbol().size(0))
-                    .attr("opacity", 0)
+                    .style("opacity", 0)
                     .remove()
     );
 }
