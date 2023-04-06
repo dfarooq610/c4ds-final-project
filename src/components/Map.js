@@ -22,8 +22,6 @@ let routesInitial = routes.features.filter((d) => d.properties.type === "initial
 colorScale.domain(uniqueArray(fires, "nDays").sort(function(a, b) {return a - b}))
 rScale.domain(d3.extent(fires, function(d) {return d.nDays; }))
 
-console.log(d3.extent(fires, function(d) {return d.nDays; }))
-
 // Draw Basemap
 export function drawBasemap(chartId, data, className, stroke = "#FFFFFF", strokeWidth = 1, fill = "#E0E0E0", fillOpacity=1) {
 
@@ -223,8 +221,8 @@ export function updateFire(chartId, date) {
         .join(
             enter  => enter
             .append("circle")
-                .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
-                .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
+                .attr("cx", function(d) {return projection([d.LonRand, d.LatRand])[0];})
+                .attr("cy", function(d) {return projection([d.LonRand, d.LatRand])[1];})
                 .attr("r", function(d) {
                     if (date >= d.endDate) {
                         return .5;
@@ -253,8 +251,8 @@ export function updateFire(chartId, date) {
                         return 1;
                     }
                 }),
-            update => update
-                // .attr("opacity", d => opacityScale(d.confusion))
+            update => update,
+            exit => exit.remove()
     );
 
     // let c = d3.selectAll(".fire-point")
