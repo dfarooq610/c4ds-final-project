@@ -253,7 +253,7 @@ export function updateMapVis(chartId, date) {
     updateShelter(chartId, date);
     updateFire(chartId, date);
 
-    // if (date === 826) {
-    //     drawPath(g, projection, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);
-    // }
+    if (date === 826) {
+        drawPath(chartId, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);
+    }
 }
