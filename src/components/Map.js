@@ -228,31 +228,6 @@ export function initMapVis(chartId) {
     // Draw paths
     drawPath(chartId, countyBigStreets.features, "big-streets", "#000000", 1.5);
     drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
-
-    // Draw Points
-    d3.select(`#${chartId} svg`)
-        .append("g")
-        .attr("class", "fires")
-        .selectAll("circle")
-        .data(fires)
-        .enter()
-        .append("circle")
-            .attr("class", "fire");
-
-    d3.select(`#${chartId} svg`)
-        .append("g")
-        .attr("class", "shelters")
-        .selectAll("path")
-        .data(shelters)
-        .enter()
-            .append("path")
-                .attr("class", "shelter")
-                .attr("transform", d => "translate(" + [
-                    projection([d.long, d.lat])[0],
-                    projection([d.long, d.lat])[1]] + ")")
-                .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
-                .attr("fill", "#FFFFFF")
-                .attr("fill-opacity", 0);
      
     d3.select(`#${chartId} svg`)
         .append("g")
