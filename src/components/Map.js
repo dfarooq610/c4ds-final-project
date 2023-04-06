@@ -118,51 +118,6 @@ export function updateShelter(chartId, date) {
 
     console.log(data)
 
-    // d3.select(`#${chartId} svg`)
-    //     .selectAll(".shelter-points")
-    //     .data(data, d => d.id)
-    //     .join(
-    //         enter  => enter
-    //         .append("circle")
-    //             .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
-    //             .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
-    //             .attr("stroke", "#FFFFFF")
-    //             .attr("fill", "#FFFFFF")
-    //             .attr("r", r)
-    //             .attr("stroke-opacity", opacity)
-    //             .attr("fill-opacity", .2),
-    //             update => update,
-    //             exit => exit.remove()
-    // );
-
-    // svg.append("g").attr("class", "nodes");
-    //     .data(data, function(d) {return d.id;});
-
-    //     c
-    //     .enter()
-    //     .append("circle")
-    //         .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
-    //         .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
-    //         .attr("stroke", "#FFFFFF")
-    //         .attr("fill", "#FFFFFF")
-    //         .attr("r", r)
-    //         .attr("stroke-opacity", opacity)
-    //         .attr("fill-opacity", .2)
-    //     .merge(c)
-    //         .transition()
-    //         .duration(1000)
-
-    // c.exit()
-    //     .transition()
-    //     .attr("r", 0)
-    //     .attr("opacity", 0)
-    //     .duration(1000)
-    //     .remove();
-
-    // let s = d3.selectAll(`#${chartId} .shelters`)
-    //     .selectAll("path")
-    //     .data(data, function(d) {return d.id;});
-
     d3.select(`#${chartId} svg`)
         .selectAll(".shelter-points")
         .data(data, d => d.id)
@@ -172,33 +127,19 @@ export function updateShelter(chartId, date) {
                    .attr("transform", d => "translate(" + [
                         projection([d.long, d.lat])[0],
                         projection([d.long, d.lat])[1]] + ")")
-                    .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
+                    .attr("d", d3.symbol().type(d3.symbolCross).size(100))
                     .attr("fill", "#EE2C25"),
-                update => update,
+                update => update
+                    .attr("transform", d => "translate(" + [
+                    projection([d.long, d.lat])[0],
+                    projection([d.long, d.lat])[1]] + ")"),
                 exit => exit
-                    .attr("d", d3.symbol().type(d3.symbolCross).size("0"))
-                    .attr("opacity", "0")
+                    .transition()
+                    .duration(1000)
+                    .attr("d", d3.symbol().size(0))
+                    .attr("opacity", 0)
                     .remove()
     );
-
-    // s
-    // .enter()
-    // .append("path")
-    //     .attr("transform", d => "translate(" + [
-    //     projection([d.long, d.lat])[0],
-    //     projection([d.long, d.lat])[1]] + ")")
-    //     .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
-    //     .attr("fill", fill)
-    //     .attr("opacity", opacity)
-    // .merge(s)
-    //     .transition()
-    //     .duration(1000)
-
-    // s.exit()
-    //     .transition()
-    //     .attr("opacity", 0)
-    //     .duration(1000)
-    //     .remove();
 }
 
 function fireBurnNDays(date, d) {
