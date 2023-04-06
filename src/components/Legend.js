@@ -85,18 +85,9 @@ function createLegend(chartId) {
         .attr("fill", "#D8D8D8")
         .text("shelter")
 
-    svg.append("circle")
-        .attr("cx", 20)
-        .attr("cy", 220)
-        .attr("r", 8)
-        .attr("fill", "#D7D7D7")
-        .attr("stroke", "#D7D7D7")
-        .attr("stroke-width", 2)
-        .attr("fill-opacity", .2);
-
     svg.append("path")
         .attr("transform", d => "translate(" + [20, 220] + ")")
-        .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
+        .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
         .attr("fill", "#EE2C25");
 
     svg.append("text")
