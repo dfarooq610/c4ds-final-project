@@ -112,42 +112,28 @@ export function updateHouses(chartId, date) {
 }
 
 // Update shelter points
-export function updateShelter(chartId, date, fill, r, opacity) {
+export function updateShelter(chartId, date) {
 
     let data = shelters.filter((d) => date >= d.openDate && date <= d.closeDate);
 
     console.log(data)
 
-    let svg = d3.selectAll(`#${chartId} svg`);
-
-    let node = svg
-    .select(".shelters")
-
-    console.log(node)
-
-    node
-    .selectAll("symbol")
-        .data(data, d => d.id)
-        .join(
-            enter  => enter
-                .append("path")
-                    .attr("transform", d => "translate(" + [
-                        projection([d.long, d.lat])[0],
-                        projection([d.long, d.lat])[1]] + ")")
-                    .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
-                    .attr("fill", fill)
-                    .attr("opacity", opacity),
-            update => update
-                // .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
-                // .attr("fill", fill)
-                .attr("opacity", opacity),
-            exit => exit
-                .transition()
-                .attr("r", 0)
-                .attr("opacity", 0)
-                .duration(1000)
-                .remove()
-        )
+    // d3.select(`#${chartId} svg`)
+    //     .selectAll(".shelter-points")
+    //     .data(data, d => d.id)
+    //     .join(
+    //         enter  => enter
+    //         .append("circle")
+    //             .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
+    //             .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
+    //             .attr("stroke", "#FFFFFF")
+    //             .attr("fill", "#FFFFFF")
+    //             .attr("r", r)
+    //             .attr("stroke-opacity", opacity)
+    //             .attr("fill-opacity", .2),
+    //             update => update,
+    //             exit => exit.remove()
+    // );
 
     // svg.append("g").attr("class", "nodes");
     //     .data(data, function(d) {return d.id;});
@@ -176,6 +162,24 @@ export function updateShelter(chartId, date, fill, r, opacity) {
     // let s = d3.selectAll(`#${chartId} .shelters`)
     //     .selectAll("path")
     //     .data(data, function(d) {return d.id;});
+
+    d3.select(`#${chartId} svg`)
+        .selectAll(".shelter-points")
+        .data(data, d => d.id)
+        .join(
+            enter  => enter
+            .append("path")
+                   .attr("transform", d => "translate(" + [
+                        projection([d.long, d.lat])[0],
+                        projection([d.long, d.lat])[1]] + ")")
+                    .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
+                    .attr("fill", "#EE2C25"),
+                update => update,
+                exit => exit
+                    .attr("d", d3.symbol().type(d3.symbolCross).size("0"))
+                    .attr("opacity", "0")
+                    .remove()
+    );
 
     // s
     // .enter()
@@ -213,10 +217,8 @@ export function updateFire(chartId, date) {
 
     const data = fires.filter((d) => date >= d.startDate);
 
-    let svg = d3.select(`#${chartId} svg`)
-
-    svg
-        .selectAll(".fire-point")
+    d3.select(`#${chartId} svg`)
+        .selectAll(".fire-points")
         .data(data, d => d.id)
         .join(
             enter  => enter
@@ -254,56 +256,6 @@ export function updateFire(chartId, date) {
             update => update,
             exit => exit.remove()
     );
-
-    // let c = d3.selectAll(".fire-point")
-    //     .data(data, function(d) {return d.id;});
-
-    //     c
-    //     .enter()
-    //     .append("circle")
-    //         .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
-    //         .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
-    //         .attr("r", function(d) {
-    //             if (date >= d.endDate) {
-    //                 return .5;
-    //             } else {
-    //                 return rScale(fireBurnNDays(date, d));
-    //             }
-    //         })
-    //         .attr("fill", function(d) { 
-    //             if (date >= d.endDate) {
-    //                 return "#473F41";
-    //             } else {
-    //                 return colorScale(fireBurnNDays(date, d));
-    //             }
-    //         })
-    //         .attr("stroke", function(d) {
-    //             if (date >= d.endDate) {
-    //                 return "#473F41";
-    //             } else {
-    //                 return colorScale(fireBurnNDays(date, d));
-    //             }
-    //         })
-    //         .attr("fill-opacity", function(d) {
-    //             if (date >= d.endDate) {
-    //                 return .3;
-    //             } else {
-    //                 return 1;
-    //             }
-    //         })
-    //         .attr("stroke-opacity", 1)
-    //         .attr("stroke-width", .5)
-    //     .merge(c)
-    //         .transition()
-    //         .duration(500)
-    //         .ease(d3.easeCircleIn)
-
-    // c.exit()
-    // .transition()
-    // .duration(3000)
-    // .ease(d3.easeCircleOut)
-    // .attr("r", .5)
-    // .remove();
 }
 
 export function initMapVis(chartId) {
@@ -395,7 +347,7 @@ export function updateMapVis(chartId, date) {
     // Timer.draw(svgTimeline, paramsTimeline, xScaleTimeline, dataUpdate);
 
     // updateHouses(chartId, date);
-    // updateShelter(chartId, date, "#EE2C25", 8, 1);
+    updateShelter(chartId, date);
     updateFire(chartId, date);
 
     // if (date === 826) {
