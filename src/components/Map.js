@@ -9,6 +9,7 @@ import routes from "../data/route_sim2.json";
 import fires from "../data/fire_points2.json";
 import complex from "../data/complex_data.json";
 import {colorScale, rScale, uniqueArray} from "../utils/global";
+import fireBoundary from "../data/fire_boundary.json";
 
 let projection;
 let routesInitial = routes.features.filter((d) => d.properties.type === "initial");
