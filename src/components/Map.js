@@ -205,15 +205,13 @@ export function initMapVis(chartId) {
         initialCenterX = -24,
         initialCenterY = 48.25;
 
-    let svg = d3.select(`#${chartId}`)
+    d3.select(`#${chartId}`)
             .append("svg")
             .attr("width", width)
             .attr("height", height)
             // .attr("viewBox", `0 0 ${width} ${height}`)
             // .attr("preserveAspectRatio", "xMidYMid meet")
             // .classed("svg-content", true);
-
-    // let g = svg.append("g");
 
     projection = d3.geoAlbers()
             .translate([width / 2, height / 2])
