@@ -1,3 +1,5 @@
+import * as d3 from 'd3';
+
 //https://gka.github.io/palettes/#/22|s|ffcc55,f68c1f,ea2c24|ffffe0,ff005e,93003a|1|1
 export const colors = ['#ffcc55', '#ffc751', '#fec24d', '#febd4a', '#fdb846', '#fdb343', '#fcae3f',
     '#fba93c', '#fba33a', '#fa9e37', '#f99934', '#f99432', '#f88e30', '#f7892e', 
@@ -13,3 +15,9 @@ export function uniqueArray(data, variable) {
 
     return [...new Set(all)];
 }
+
+export let colorScale = d3.scaleOrdinal()
+    .range(colors);
+
+export let rScale = d3.scaleSqrt()
+    .range([1, 5]);

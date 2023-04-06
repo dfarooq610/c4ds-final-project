@@ -8,6 +8,7 @@ import shelters from "../data/shelters.json";
 import routes from "../data/route_sim2.json";
 import fires from "../data/fire_points2.json";
 import complex from "../data/complex_data.json";
+import {colorScale, rScale, uniqueArray} from "../utils/global";
 
 let projection;
 let routesInitial = routes.features.filter((d) => d.properties.type === "initial");
@@ -17,6 +18,11 @@ let routesInitial = routes.features.filter((d) => d.properties.type === "initial
 //     .attr("transform", `scale(${event.transform.k}) translate(${event.transform.x}, ${event.transform.y})`);
 // }
 
+
+colorScale.domain(uniqueArray(fires, "nDays").sort(function(a, b) {return a - b}))
+rScale.domain(d3.extent(fires, function(d) {return d.nDays; }))
+
+console.log(d3.extent(fires, function(d) {return d.nDays; }))
 
 // Draw Basemap
 export function drawBasemap(chartId, data, className, stroke = "#FFFFFF", strokeWidth = 1, fill = "#E0E0E0", fillOpacity=1) {
@@ -59,57 +65,6 @@ export function drawPath(chartId, data, className, stroke = "#D7D7D7", strokeWid
         .attr("fill", fill);
 
     return path;
-}
-
-// Create households
-export function initHouses(chartId, data, className = "household") {
-
-    // console.log(data)
-    // let points = g
-    // .append("g")
-
-    let points = d3.select(`#${chartId} svg`)
-                .append("g")
-
-    points
-        .selectAll("circle")
-        .data(data)
-        .enter()
-        .append("circle")
-            .attr("class", className)
-            .attr("cx", function(d) {return projection([d.properties.x, d.properties.y])[0];})
-            .attr("cy", function(d) {return projection([d.properties.x, d.properties.y])[1];})
-            .attr("r", 1)
-            .attr("fill", "#36479D")
-            .attr("fill-opacity", .5)
-            .attr("stroke", "#36479D")
-            .attr("stroke-opacity", 1);
-
-    // let tw = g.node().clientWidth;
-    // let th = g.node().clientHeight;
-    // let sx = tw / paramsMap.width;
-    // let sy = th / paramsMap.height;
-
-    // let tooltip = d3.select(`#tooltip`)
-    //     .append("div")
-    //     .attr("class", "tooltip");
-    
-    // points.on("mouseover", function(e, d) {
-
-    //     console.log(d)
-    //     let x = sx*(+d3.select(this).attr("cx")) + 20;
-    //     let y = sy*(+d3.select(this).attr("cy")) - 10;
-
-    //     tooltip.style("visibility", "visible")
-    //         .style("top", `${y}px`)
-    //         .style("left", `${x}px`)
-    //         // .html(`${d.properties.place}`);
-
-    // }).on("mouseout", function() {
-    //     tooltip.style("visibility", "hidden");
-    // });
-
-    return points;
 }
 
 // https://stackoverflow.com/questions/13455042/random-number-between-negative-and-positive-value
@@ -156,46 +111,6 @@ export function updateHouses(chartId, date) {
                 .attr("cy", point.y) // Set the cy
         }
     }
-}
-
-// Create initial shelter points
-// Shelter points are initially not visible
-export function initShelter(chartId, shelters) {
-
-    // let points = g
-    //     .append("g")
-
-    let points = d3.select(`#${chartId} svg`)
-                .append("g")
-                .attr("class", "shelters")
-
-    points
-        .selectAll("path")
-        .data(shelters)
-        .enter()
-        .append("path")
-            .attr("class", "shelter")
-            .attr("transform", d => "translate(" + [
-                projection([d.long, d.lat])[0],
-                projection([d.long, d.lat])[1]] + ")")
-            .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
-            .attr("fill", "#FFFFFF")
-            .attr("fill-opacity", 0)
-
-    // points
-    //     .selectAll("circle")
-    //     .data(shelters)
-    //     .enter()
-    //     .append("circle")
-    //         .attr("class", "shelters")
-    //         .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
-    //         .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
-    //         .attr("r", 8)
-    //         .attr("fill", "#FFFFFF")
-    //         .attr("stroke", "#FFFFFF")
-    //         .attr("stroke-weight", 2)
-    //         .attr("fill-opacity", 0)
-    //         .attr("stroke-opacity", 0);
 }
 
 // Update shelter points
@@ -284,90 +199,113 @@ export function updateShelter(chartId, date, fill, r, opacity) {
     //     .remove();
 }
 
-
-// Create initial fire points
-export function initFire(chartId, fires) {
-
-    // let points = g
-    //         .append("g")
-
-    let points = d3.select(`#${chartId} svg`)
-                .append("g")
-
-    points
-        .selectAll("circle")
-        .data(fires)
-        .enter()
-        .append("circle")
-        .attr("class", "fire-point")
-
-    return points;
-}
-
 function fireBurnNDays(date, d) {
-
     let month = "0"+ date.toString().substr(0, 1);
     let day = date.toString().substr(1, 3);
-    let newDate = new Date(`2014-${month}-${day}`)
-    var diff = new Date(newDate.getTime() - d.startDay.getTime());
+    let newDate = new Date(`2014-${month}-${day}`);
+    let oldDate = new Date(d.startDay);
+    const diffTime = Math.abs(newDate - oldDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 
-    return diff.getUTCDate() - 1;
+    return diffDays;
 }
 
 // Update fire points
-export function updateFire(g, projection, date, colorScale, rScale) {
+export function updateFire(chartId, date) {
 
     const data = fires.filter((d) => date >= d.startDate);
 
-    let c = d3.selectAll(`#${chartId} .fire-point`)
-        .data(data, function(d) {return d.id;});
+    let svg = d3.select(`#${chartId} svg`)
 
-        c
-        .enter()
-        .append("circle")
-            .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
-            .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
-            .attr("r", function(d) {
-                if (date >= d.endDate) {
-                    return .5;
-                } else {
-                    return rScale(fireBurnNDays(date, d));
-                }
-            })
-            .attr("fill", function(d) { 
-                if (date >= d.endDate) {
-                    return "#473F41";
-                } else {
-                    return colorScale(fireBurnNDays(date, d));
-                }
-            })
-            .attr("stroke", function(d) {
-                if (date >= d.endDate) {
-                    return "#473F41";
-                } else {
-                    return colorScale(fireBurnNDays(date, d));
-                }
-            })
-            .attr("fill-opacity", function(d) {
-                if (date >= d.endDate) {
-                    return .3;
-                } else {
-                    return 1;
-                }
-            })
-            .attr("stroke-opacity", 1)
-            .attr("stroke-width", .5)
-        .merge(c)
-            .transition()
-            .duration(500)
-            .ease(d3.easeCircleIn)
+    svg
+        .selectAll(".fire-point")
+        .data(data, d => d.id)
+        .join(
+            enter  => enter
+            .append("circle")
+                .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
+                .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
+                .attr("r", function(d) {
+                    if (date >= d.endDate) {
+                        return .5;
+                    } else {
+                        return rScale(fireBurnNDays(date, d));
+                    }
+                })
+                .attr("fill", function(d) { 
+                    if (date >= d.endDate) {
+                        return "#473F41";
+                    } else {
+                        return colorScale(fireBurnNDays(date, d));
+                    }
+                })
+                .attr("stroke", function(d) {
+                    if (date >= d.endDate) {
+                        return "#473F41";
+                    } else {
+                        return colorScale(fireBurnNDays(date, d));
+                    }
+                })
+                .attr("fill-opacity", function(d) {
+                    if (date >= d.endDate) {
+                        return .3;
+                    } else {
+                        return 1;
+                    }
+                }),
+            update => update
+                // .attr("opacity", d => opacityScale(d.confusion))
+    );
 
-    c.exit()
-    .transition()
-    .duration(3000)
-    .ease(d3.easeCircleOut)
-    .attr("r", .5)
-    .remove();
+    // let c = d3.selectAll(".fire-point")
+    //     .data(data, function(d) {return d.id;});
+
+    //     c
+    //     .enter()
+    //     .append("circle")
+    //         .attr("cx", function(d) {return projection([d.long, d.lat])[0];})
+    //         .attr("cy", function(d) {return projection([d.long, d.lat])[1];})
+    //         .attr("r", function(d) {
+    //             if (date >= d.endDate) {
+    //                 return .5;
+    //             } else {
+    //                 return rScale(fireBurnNDays(date, d));
+    //             }
+    //         })
+    //         .attr("fill", function(d) { 
+    //             if (date >= d.endDate) {
+    //                 return "#473F41";
+    //             } else {
+    //                 return colorScale(fireBurnNDays(date, d));
+    //             }
+    //         })
+    //         .attr("stroke", function(d) {
+    //             if (date >= d.endDate) {
+    //                 return "#473F41";
+    //             } else {
+    //                 return colorScale(fireBurnNDays(date, d));
+    //             }
+    //         })
+    //         .attr("fill-opacity", function(d) {
+    //             if (date >= d.endDate) {
+    //                 return .3;
+    //             } else {
+    //                 return 1;
+    //             }
+    //         })
+    //         .attr("stroke-opacity", 1)
+    //         .attr("stroke-width", .5)
+    //     .merge(c)
+    //         .transition()
+    //         .duration(500)
+    //         .ease(d3.easeCircleIn)
+
+    // c.exit()
+    // .transition()
+    // .duration(3000)
+    // .ease(d3.easeCircleOut)
+    // .attr("r", .5)
+    // .remove();
 }
 
 export function initMapVis(chartId) {
@@ -401,9 +339,45 @@ export function initMapVis(chartId) {
     drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
 
     // Draw Points
-    initShelter(chartId, shelters);
-    initFire(chartId, fires);
-    initHouses(chartId, routesInitial, "household");
+    d3.select(`#${chartId} svg`)
+        .append("g")
+        .attr("class", "fires")
+        .selectAll("circle")
+        .data(fires)
+        .enter()
+        .append("circle")
+            .attr("class", "fire");
+
+    d3.select(`#${chartId} svg`)
+        .append("g")
+        .attr("class", "shelters")
+        .selectAll("path")
+        .data(shelters)
+        .enter()
+            .append("path")
+                .attr("class", "shelter")
+                .attr("transform", d => "translate(" + [
+                    projection([d.long, d.lat])[0],
+                    projection([d.long, d.lat])[1]] + ")")
+                .attr("d", d3.symbol().type(d3.symbolCross).size("50"))
+                .attr("fill", "#FFFFFF")
+                .attr("fill-opacity", 0);
+     
+    d3.select(`#${chartId} svg`)
+        .append("g")
+        .attr("class", "households")
+        .selectAll("circle")
+        .data(routesInitial)
+        .enter()
+        .append("circle")
+            .attr("class", "household")
+            .attr("cx", function(d) {return projection([d.properties.x, d.properties.y])[0];})
+            .attr("cy", function(d) {return projection([d.properties.x, d.properties.y])[1];})
+            .attr("r", 1)
+            .attr("fill", "#36479D")
+            .attr("fill-opacity", .5)
+            .attr("stroke", "#36479D")
+            .attr("stroke-opacity", 1);
 
     // var zoom = d3.zoom()
     // .scaleExtent([0, 15])
@@ -423,8 +397,8 @@ export function updateMapVis(chartId, date) {
     // Timer.draw(svgTimeline, paramsTimeline, xScaleTimeline, dataUpdate);
 
     // updateHouses(chartId, date);
-    updateShelter(chartId, date, "#EE2C25", 8, 1);
-    // updateFire(projection, date, colorScale, rScale);
+    // updateShelter(chartId, date, "#EE2C25", 8, 1);
+    updateFire(chartId, date);
 
     // if (date === 826) {
     //     drawPath(g, projection, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);
