@@ -232,7 +232,6 @@ export function initMapVis(chartId) {
     // Draw paths
     drawPath(chartId, countyBigStreets.features, "big-streets", "#000000", 1.5);
     drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
-     
 
     // var zoom = d3.zoom()
     // .scaleExtent([0, 15])
@@ -248,7 +247,6 @@ export function updateMapVis(chartId, date) {
 
     // Burn.draw(svgBurn, paramsBurn, xScaleBurn, yScaleBurn, dataUpdate);
     // Containment.draw(svgContainment, paramsContainment, xScaleContainment, dataUpdate);
-    // Timer.draw(svgTimeline, paramsTimeline, xScaleTimeline, dataUpdate);
 
     updateHouses(chartId, date);
     updateShelter(chartId, date);

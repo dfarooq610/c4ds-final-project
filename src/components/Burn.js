@@ -4,60 +4,68 @@ let xScale, yScale;
 
 export function initBurnVis(chartId, complex) {
 
-    // const margin = {top: 0, right: 10, bottom: 50, left: 10}
-    const barHeight = 50;
-    const width = 400;
-    const min = d3.min(complex, function(d) {return d.size;});
-    const max = d3.max(complex, function(d) {return d.size});
+    const margin = {top: 10, right: 10, bottom: 50, left: 10}
+    const width = 650;
+    const height = 175;
 
     xScale = d3.scaleSqrt()
-        .domain([min, max])
-        .range([0, width]);
+        .domain(d3.extent(complex, function(d) {return d.date}))
+        .range([margin.left, width - margin.right]);
 
     yScale = d3.scaleSqrt()
-        .domain([min, max])
-        .range([width, 0]);
+        .domain(d3.extent(complex, function(d) {return d.size}))
+        .range([height - margin.bottom, margin.top]);
 
     let svg = d3.select(`#${chartId}`)
         .append("svg")
         .attr("width", width)
-        .attr("height", width)
+        .attr("height", height)
         // .attr("viewBox", `0 0 ${width} ${width}`)
         // .attr("preserveAspectRatio", "xMidYMid meet")
         // .classed("svg-content", true);
 
-    svg
-        .append("rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("class", "burn")
-        .attr("width", xScale(min))
-        .attr("height", yScale(max))
-        .attr("fill", "#FFFFFF")
+    const xAxis = svg.append("g")
+        .attr("class", "axis")
+        .attr("transform",`translate(0,${height-margin.bottom})`)
+        .call(d3.axisBottom().scale(xScale).tickFormat(d3.format("Y")));
+
+    const yAxis = svg.append("g")
+        .attr("class", "axis")
+        .attr("transform",`translate(${margin.left},0)`)
+        .call(d3.axisLeft().scale(yScale));
 }
 
 // Draw burnt area
-export function drawBurnVis(chartId, data) {
+export function drawBurnVis(chartId) {
 
-    let bar = d3.select(`#${chartId} svg`)
-        .selectAll("rect")
-            .data(data)
-            .enter()
-            .attr("x", 0)
-            .attr("y", 0)
-            .attr("class", "burn")
-            .attr("width", function(d) {return xScale(d.size)} )
-            .attr("height",  function(d) {return xScale(d.size)})
-            .attr("fill", "#473F41");
+    let data = complex.filter(d => d.story !== "" && d.date === date);
 
-    let b = svg.selectAll(".burn")
-            .data(data, function(d) { return d.date; });
+    d3.select(`#${chartId} svg`)
 
-    b.transition()
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("class", "burn")
-        .attr("width",  function(d) {return xScale(d.size)})
-        .attr("height",  function(d) {return xScale(d.size)})
-        .attr("fill", "#473F41");
+    const line = d3.line()
+        .x(function(d) { return xScale(d.date); })
+        .y(function(d) { return yScale(d.size); })
+        .curve(d3.curveLinear);
+
+    // let bar = d3.select(`#${chartId} svg`)
+    //     .selectAll("rect")
+    //         .data(data)
+    //         .enter()
+    //         .attr("x", 0)
+    //         .attr("y", 0)
+    //         .attr("class", "burn")
+    //         .attr("width", function(d) {return xScale(d.size)} )
+    //         .attr("height",  function(d) {return xScale(d.size)})
+    //         .attr("fill", "#473F41");
+
+    // let b = svg.selectAll(".burn")
+    //         .data(data, function(d) { return d.date; });
+
+    // b.transition()
+    //     .attr("x", 0)
+    //     .attr("y", 0)
+    //     .attr("class", "burn")
+    //     .attr("width",  function(d) {return xScale(d.size)})
+    //     .attr("height",  function(d) {return xScale(d.size)})
+    //     .attr("fill", "#473F41");
 }

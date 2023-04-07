@@ -29,8 +29,8 @@ export default function Chapter1 ({}) {
 
   useEffect(() => {
     initMapVis(mapVis);
-    initTimelineVis(timelineVis, complex);
-    initContainmentVis(containmentVis);
+    // initTimelineVis(timelineVis, complex);
+    // initContainmentVis(containmentVis);
     initBurnVis(burnVis, complex);
     initLegendVis(legendVis, fires);
   }, [])
@@ -54,7 +54,7 @@ export default function Chapter1 ({}) {
                 </div>
                 <div className="MainChart">
                     <div className="chart" id={mapVis}></div>
-                    {/* <div className="chart" id={timelineVis}></div> */}
+                    <div className="chart" id={burnVis}></div>
                 </div>
             </div>
             {/* <div id="sidebar-right">
