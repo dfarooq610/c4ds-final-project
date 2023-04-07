@@ -9,6 +9,7 @@ import routes from "../data/route_sim2.json";
 import fires from "../data/fire_points2.json";
 import complex from "../data/complex_data.json";
 import {colorScale, rScale, uniqueArray} from "../utils/global";
+import fireBoundary from "../data/fire_boundary.json";
 
 let projection;
 let routesInitial = routes.features.filter((d) => d.properties.type === "initial");
@@ -231,7 +232,6 @@ export function initMapVis(chartId) {
     // Draw paths
     drawPath(chartId, countyBigStreets.features, "big-streets", "#000000", 1.5);
     drawPath(chartId, countyMedStreets.features, "med-streets", "#000000", 1);
-     
 
     // var zoom = d3.zoom()
     // .scaleExtent([0, 15])
@@ -247,13 +247,12 @@ export function updateMapVis(chartId, date) {
 
     // Burn.draw(svgBurn, paramsBurn, xScaleBurn, yScaleBurn, dataUpdate);
     // Containment.draw(svgContainment, paramsContainment, xScaleContainment, dataUpdate);
-    // Timer.draw(svgTimeline, paramsTimeline, xScaleTimeline, dataUpdate);
 
     updateHouses(chartId, date);
     updateShelter(chartId, date);
     updateFire(chartId, date);
 
-    // if (date === 826) {
-    //     drawPath(g, projection, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);
-    // }
+    if (date === 826) {
+        drawPath(chartId, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);
+    }
 }
