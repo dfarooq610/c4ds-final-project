@@ -1,10 +1,10 @@
 import * as d3 from 'd3';
 
-let xScale, yScale;
+let xScale, yScale, area;
 
 export function initBurnVis(chartId, complex) {
 
-    const margin = {top: 10, right: 0, bottom: 50, left: 80}
+    const margin = {top: 10, right: 0, bottom: 50, left: 100}
     const width = 650;
     const height = 175;
 
@@ -34,37 +34,47 @@ export function initBurnVis(chartId, complex) {
         .attr("transform",`translate(${margin.left},0)`)
         .call(d3.axisLeft().scale(yScale));
 
-        svg.append("text")
+    svg.append("text")
         .attr("class","axisLabel")
         .attr("x", (width - margin.left - margin.right)/2 + margin.left)
         .attr("y", height - 15)
         .attr("text-anchor","middle")
         .text("Date")
         .attr("fill", "#cbcbcb")
-        .attr("font-size", 12)
+        .attr("font-size", 13)
+        // .attr("font-weight", "bold");
 
-  svg.append("text")
+    svg.append("text")
         .attr("class","axisLabel")
-        .attr("x", -height/2)
-        .attr("y", 30)
+        .attr("x", -(height-margin.bottom)/2)
+        .attr("y", 45)
         .attr("text-anchor","middle")
         .attr("transform","rotate(-90)")
         .text("Acres")
         .attr("fill", "#cbcbcb")
-        .attr("font-size", 12)
+        .attr("font-size", 13)
+        // .attr("font-weight", "bold");
 }
 
 // Draw burnt area
 export function drawBurnVis(chartId) {
 
-    let data = complex.filter(d => d.story !== "" && d.date === date);
+    // let data = complex.filter(d => d.story !== "" && d.date === date);
+    let data = complex;
 
-    d3.select(`#${chartId} svg`)
+    let svg = d3.select(`#${chartId} svg`);
 
-    const line = d3.line()
-        .x(function(d) { return xScale(d.date); })
-        .y(function(d) { return yScale(d.size); })
+    area = d3.area()
+        .x(function(d) { return xScale(d.date__1); })
+        .y1(function(d) { return yScale(d.size); })
+        .y0(height-margin.bottom)
         .curve(d3.curveLinear);
+
+    let path = svg.append("path")
+        .datum(date)
+          .attr("d", function(d) { return area(d); })
+          .attr("stroke","none")
+          .attr("fill", "lightgray");
 
     // let bar = d3.select(`#${chartId} svg`)
     //     .selectAll("rect")
