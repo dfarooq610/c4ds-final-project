@@ -22,9 +22,9 @@ export function daysLabel(days, dates) {
 
 export function initBurnVis(chartId, complex) {
 
-    const margin = {top: 10, right: 0, bottom: 50, left: 100}
+    const margin = {top: 10, right: 0, bottom: 70, left: 100}
     const width = 650;
-    const height = 175;
+    const height = 250;
     const days = uniqueArray(complex, "date__1").sort(function(a, b) {return a - b});
     const days2 = daysLabel(days, complex);
 
@@ -33,7 +33,7 @@ export function initBurnVis(chartId, complex) {
         .range([margin.left, width - margin.right]);
 
     yScale = d3.scaleLinear()
-        .domain(d3.extent(complex, function(d) {return d.size}))
+        .domain(d3.extent(complex, function(d) {return d.size/1000}))
         .range([height - margin.bottom, margin.top]);
 
     let svg = d3.select(`#${chartId}`)
@@ -57,23 +57,39 @@ export function initBurnVis(chartId, complex) {
     svg.append("text")
         .attr("class","axisLabel")
         .attr("x", (width - margin.left - margin.right)/2 + margin.left)
-        .attr("y", height - 15)
+        .attr("y", height - 20)
         .attr("text-anchor","middle")
         .text("Date")
         .attr("fill", "#cbcbcb")
-        .attr("font-size", 13)
+        .attr("font-size", 14)
         // .attr("font-weight", "bold");
 
     svg.append("text")
         .attr("class","axisLabel")
         .attr("x", -(height-margin.bottom)/2)
-        .attr("y", 45)
+        .attr("y", 60)
         .attr("text-anchor","middle")
         .attr("transform","rotate(-90)")
-        .text("Acres")
+        .text("Acres (in thousands)")
         .attr("fill", "#cbcbcb")
-        .attr("font-size", 13)
+        .attr("font-size", 14)
         // .attr("font-weight", "bold");
+
+    const xWidth = (width - margin.left - margin.right)/days.length;
+
+    const july = svg.append("text")
+        .attr("class","axis--label")
+        .attr("x", margin.left + xWidth*17/2)
+        .attr("y", height-33)
+        .attr("font-size", 13)
+        .text("July");
+
+    const august = svg.append("text")
+        .attr("class","axis--label")
+        .attr("x", margin.left + xWidth*17 + xWidth*27/2)
+        .attr("y", height-33)
+        .attr("font-size", 13)
+        .text("August");
 }
 
 // Draw burnt area
