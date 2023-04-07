@@ -4,15 +4,15 @@ let xScale, yScale;
 
 export function initBurnVis(chartId, complex) {
 
-    const margin = {top: 10, right: 10, bottom: 50, left: 50}
+    const margin = {top: 10, right: 0, bottom: 50, left: 70}
     const width = 650;
     const height = 175;
 
-    xScale = d3.scaleSqrt()
+    xScale = d3.scaleLinear()
         .domain(d3.extent(complex, function(d) {return d.date}))
         .range([margin.left, width - margin.right]);
 
-    yScale = d3.scaleSqrt()
+    yScale = d3.scaleLinear()
         .domain(d3.extent(complex, function(d) {return d.size}))
         .range([height - margin.bottom, margin.top]);
 
