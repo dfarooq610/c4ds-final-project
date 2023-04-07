@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import complex from "../data/complex_data.json";
 import { uniqueArray } from "../utils/global";
 
-let xScale, yScale, area;
+let xScale, yScale, area, height, margin;
 
 // Create days label
 // Description an array for each date 
@@ -22,9 +22,9 @@ export function daysLabel(days, dates) {
 
 export function initBurnVis(chartId, complex) {
 
-    const margin = {top: 10, right: 0, bottom: 70, left: 100}
+    margin = {top: 10, right: 0, bottom: 70, left: 100}
     const width = 650;
-    const height = 250;
+    height = 250;
     const days = uniqueArray(complex, "date__1").sort(function(a, b) {return a - b});
     const days2 = daysLabel(days, complex);
 
@@ -93,11 +93,13 @@ export function initBurnVis(chartId, complex) {
 }
 
 // Draw burnt area
-export function drawBurnVis(chartId) {
+export function updateBurnVis(chartId) {
 
     // let data = complex.filter(d => d.story !== "" && d.date === date);
     let data = complex;
     let svg = d3.select(`#${chartId} svg`);
+
+    console.log(data)
 
     area = d3.area()
         .x(function(d) { return xScale(d.date__1); })
@@ -106,7 +108,7 @@ export function drawBurnVis(chartId) {
         .curve(d3.curveLinear);
 
     let path = svg.append("path")
-        .datum(date)
+        .datum(data)
           .attr("d", function(d) { return area(d); })
           .attr("stroke","none")
           .attr("fill", "lightgray");

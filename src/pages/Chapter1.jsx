@@ -9,6 +9,7 @@ import { initLegendVis } from "../components/Legend";
 import { initBurnVis } from "../components/Burn";
 import { initTimelineVis } from "../components/Timeline";
 import { initMapVis, updateMapVis } from "../components/Map";
+import { updateBurnVis } from "../components/Burn";
 
 const mapVis = "Map-Vis";
 const timelineVis = "Timeline-Vis";
@@ -39,6 +40,7 @@ export default function Chapter1 ({}) {
 
     if (currentStepIndex !== null) {
       updateMapVis(mapVis, complexFiltered[currentStepIndex].date__1);
+      updateBurnVis(burnVis)
     }
   }, [currentStepIndex])
 
