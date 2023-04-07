@@ -206,7 +206,7 @@ export function updateFire(chartId, date) {
 
 export function initMapVis(chartId) {
 
-    const width = 650, height = 500, initialScale = 25000,
+    const width = 650, height = 450, initialScale = 25000,
         initialCenterX = -24,
         initialCenterY = 48.25;
 
