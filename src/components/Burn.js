@@ -1,15 +1,35 @@
 import * as d3 from 'd3';
+import complex from "../data/complex_data.json";
+import { uniqueArray } from "../utils/global";
 
 let xScale, yScale, area;
+
+// Create days label
+// Description an array for each date 
+// Return array
+export function daysLabel(days, dates) {
+    let days2 = [];
+    days.forEach(function(d) {
+
+        let x = dates.filter(function(j) {
+            return j.date__1 === d;
+        });
+        days2.push(x[0].day);
+    });
+
+    return days2;
+}
 
 export function initBurnVis(chartId, complex) {
 
     const margin = {top: 10, right: 0, bottom: 50, left: 100}
     const width = 650;
     const height = 175;
+    const days = uniqueArray(complex, "date__1").sort(function(a, b) {return a - b});
+    const days2 = daysLabel(days, complex);
 
-    xScale = d3.scaleLinear()
-        .domain(d3.extent(complex, function(d) {return d.date__1}))
+    xScale = d3.scaleBand()
+        .domain(days)
         .range([margin.left, width - margin.right]);
 
     yScale = d3.scaleLinear()
@@ -27,7 +47,7 @@ export function initBurnVis(chartId, complex) {
     const xAxis = svg.append("g")
         .attr("class", "axis")
         .attr("transform",`translate(0,${height-margin.bottom})`)
-        .call(d3.axisBottom().scale(xScale).tickFormat(d3.format("Y")));
+        .call(d3.axisBottom().scale(xScale).tickValues(days).tickFormat((d, i) => days2[i]));
 
     const yAxis = svg.append("g")
         .attr("class", "axis")
@@ -61,7 +81,6 @@ export function drawBurnVis(chartId) {
 
     // let data = complex.filter(d => d.story !== "" && d.date === date);
     let data = complex;
-
     let svg = d3.select(`#${chartId} svg`);
 
     area = d3.area()
