@@ -4,7 +4,7 @@ let xScale, yScale;
 
 export function initBurnVis(chartId, complex) {
 
-    const margin = {top: 10, right: 10, bottom: 50, left: 10}
+    const margin = {top: 10, right: 10, bottom: 50, left: 50}
     const width = 650;
     const height = 175;
 
@@ -37,7 +37,7 @@ export function initBurnVis(chartId, complex) {
         svg.append("text")
         .attr("class","axisLabel")
         .attr("x", (width - margin.left - margin.right)/2 + margin.left)
-        .attr("y", height - 5)
+        .attr("y", height - 15)
         .attr("text-anchor","middle")
         .text("Date")
         .attr("fill", "#cbcbcb")
