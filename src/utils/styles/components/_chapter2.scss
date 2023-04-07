@@ -1,0 +1,18 @@
+.Chapter2Container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #f5f5f5;
+  color: #333;
+  text-align: center;
+  padding: 2rem 4rem;
+//   transform: translateX(-50%);
+}
+
+.Chapter2Subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: 'DM Sans', sans-serif;
+    color: #6857A5;
+}
