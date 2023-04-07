@@ -33,6 +33,25 @@ export function initBurnVis(chartId, complex) {
         .attr("class", "axis")
         .attr("transform",`translate(${margin.left},0)`)
         .call(d3.axisLeft().scale(yScale));
+
+        svg.append("text")
+        .attr("class","axisLabel")
+        .attr("x", (width - margin.left - margin.right)/2 + margin.left)
+        .attr("y", height - 5)
+        .attr("text-anchor","middle")
+        .text("Date")
+        .attr("fill", "#cbcbcb")
+        .attr("font-size", 12)
+
+  svg.append("text")
+        .attr("class","axisLabel")
+        .attr("x", -height/2)
+        .attr("y", 30)
+        .attr("text-anchor","middle")
+        .attr("transform","rotate(-90)")
+        .text("Acres")
+        .attr("fill", "#cbcbcb")
+        .attr("font-size", 12)
 }
 
 // Draw burnt area
