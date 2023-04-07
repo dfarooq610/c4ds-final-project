@@ -3,7 +3,7 @@
 }
 
 html, body {
-    background: linear-gradient(150deg, #0A0D14, #6857A5);
+    background: linear-gradient(150deg, $appDarkColor, #6857A5);
     color: $appColor;
     text-align: left;
 }
