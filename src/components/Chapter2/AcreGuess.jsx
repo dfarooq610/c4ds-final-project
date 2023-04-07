@@ -60,7 +60,7 @@ const AcreGuess = () => {
           }}
         >
           <img
-            src="src/assets/footballField.png"
+            src="/assets/footballField.png"
             alt="Football Field"
             onLoad={handleImageLoad}
           />

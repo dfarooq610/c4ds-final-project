@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AcreGuess from "../components/Chapter2/AcreGuess";
+import AcreGuess from "../components/Chapter2/AcreGuess.jsx";
 export default function Chapter2() {
   const [slide, setSlide] = useState(0);
   const slides = [];
