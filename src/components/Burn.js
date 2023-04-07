@@ -4,7 +4,7 @@ let xScale, yScale;
 
 export function initBurnVis(chartId, complex) {
 
-    const margin = {top: 10, right: 0, bottom: 50, left: 70}
+    const margin = {top: 10, right: 0, bottom: 50, left: 80}
     const width = 650;
     const height = 175;
 
