@@ -9,7 +9,7 @@ export function initBurnVis(chartId, complex) {
     const height = 175;
 
     xScale = d3.scaleLinear()
-        .domain(d3.extent(complex, function(d) {return d.date}))
+        .domain(d3.extent(complex, function(d) {return d.date__1}))
         .range([margin.left, width - margin.right]);
 
     yScale = d3.scaleLinear()
