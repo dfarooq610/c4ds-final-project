@@ -1,8 +1,6 @@
 import { useState } from "react";
-import AcreGuess from "../components/Chapter2/AcreGuess.jsx";
+import AcreInteractive from "../components/Chapter2/AcreInteractive.jsx";
 export default function Chapter2() {
-  const [slide, setSlide] = useState(0);
-  const slides = [];
   return (
     <div className="Chapter2Container">
       <header>
@@ -22,7 +20,7 @@ export default function Chapter2() {
           served as a stark reminder of the potential danger and far-reaching
           consequences of wildfires in an era of climate change.
         </p>
-        <AcreGuess />
+        <AcreInteractive />
       </article>
     </div>
   );
