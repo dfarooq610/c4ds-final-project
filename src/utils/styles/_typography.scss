@@ -4,17 +4,23 @@
 h1, h2, h3, h4, h5, h6, p {
     text-align: left;
     line-height: 135%;
+    font-size: 12pt;
 }
 
 h1 {
     font-family: 'Domine', serif;
+    font-size: 46pt;
+    margin-bottom: 1rem;
 }
 
 h2 {
     font-weight: 400;
+    font-size: 24pt;
+    margin-bottom: 1rem;
 }
 
 p {
     font-size: 12pt;
     font-family: 'DM Sans', sans-serif;
+    line-height: 133%;
 }

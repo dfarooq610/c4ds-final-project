@@ -9,9 +9,26 @@ function Header({}) {
     <header>
         <h1>Flee</h1>
         <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>
-        <p className="Description">The fire starts from a lightning strike on July 15th, 2014 and ended on August 14th, 2014. However, impacts from the fire were felt much longer than the timeline of the official event.</p>
+        <h3>By Jovi Dai, Joli Holmes, and Danish Farooq </h3>
+        <p>On July 15th, 2014, lightning struck in the Methow Valley, a remote area in eastern Washington, igniting a small fire in Cougar Flats, an area above Perrigan Lake. Weeks of hot and dry weather had left the valley particularly susceptible to fires that summer. Fortunately, two local residents saw the fire and put it out. Local residents Danny and Vicki Yanarella share their knowledge of a small, contained fire turned into one of the largest fires in Washington State's history.</p>
     </header>
   )
+}
+
+function Introduction({}) {
+  return(
+    <div className="Introduction">
+      <Header/>
+      <img src="./src/assets/lightning.svg"/>
+  </div>
+  )
+}
+
+function Landing({}) {
+  return(
+  <div className="Landing">
+      <Introduction/>
+  </div>)
 }
 
 function Footer({}) {
@@ -24,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header></Header>
+      <Landing/>
       <div className="Chapters">
         <Chapter1></Chapter1>
       </div>
