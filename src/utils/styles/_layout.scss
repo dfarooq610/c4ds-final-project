@@ -27,7 +27,7 @@ header {
     height: 100vh;
 }
 
-img {
+.lightning {
     max-width: 55vw;
 }
 
@@ -44,6 +44,14 @@ h1 {
 
     header {
         max-width: 100vw;
+    }
+
+    .lightning {
+        position: absolute;
+        right: 0;
+        top: 10vh;
+        max-width: 100%;
+        opacity: .5;
     }
 
     .Introduction {

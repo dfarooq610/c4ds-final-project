@@ -18,7 +18,7 @@ function Introduction({}) {
   return(
     <div className="Introduction">
       <Header/>
-      <img src="./src/assets/lightning.svg"/>
+      <img className="lightning" src="./src/assets/lightning.svg"/>
   </div>
   )
 }
