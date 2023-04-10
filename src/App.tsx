@@ -9,7 +9,8 @@ function Header({}) {
     <header>
         <h1>Flee</h1>
         <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>
-        <p>On July 15th, 2014, lightning struck in the Methow Valley, a remote area in eastern part of Washington State, igniting a small fire. Weeks of hot and dry weather had left the valley particularly susceptible to fires that summer. Fortunately, several local residents saw the fire and rushed to extinguish it. Local residents share their knowledge of how a small contained fire turned into one of the largest fires in Washington State's history.</p>
+        <p>In July 2014, lightning ignited a small fire in the Methow Valley, a remote area in eastern part of Washington State. Weeks of hot and dry weather left the valley particularly susceptible to fires that summer. Fortunately, several local residents saw the fire and rushed to extinguish it.</p>
+        <p>How did a small contained fire turn into one of the largest fires in Washington State's history? Local Danny and Vicki Yanarella share their knowledge. </p>
     </header>
   )
 }
