@@ -3,7 +3,7 @@ export default function Chapter2() {
   return (
     <div className="ChapterContainer Chapter2Container LightMode">
       <header>
-        <h2>Impacts</h2>
+        <h2 className="LightMode">Impacts</h2>
         <h3 className="Chapter2Subtitle">
           Measuring the impact of wildfires in the United States over the past
           decade
