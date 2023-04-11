@@ -1,57 +1,63 @@
-import { useState } from 'react'
+import { useState } from "react";
 // @ts-ignore
-import Chapter1  from "./pages/Chapter1";
+import Chapter1 from "./pages/Chapter1";
+// @ts-ignore
+import Chapter2 from "./pages/Chapter2.jsx";
+// @ts-ignore
+import Chapter3 from "./pages/Chapter3.jsx";
 import "./utils/styles/style.scss";
-// import { ReactComponent as Lightning } './assets/lightning.svg';
-
 function Header({}) {
-  return(
+  return (
     <header>
-        <h1>Flee</h1>
-        <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>
-        <h4>By Jovi Dai, Joli Holmes, and Danish Farooq </h4>
-        <p>On July 15th, 2014, lightning struck in the Methow Valley, a remote area in eastern part of Washington State, igniting a small fire. Weeks of hot and dry weather had left the valley particularly susceptible to fires that summer. Fortunately, several local residents saw the fire and rushed to extinguish it. Local residents share their knowledge of how a small contained fire turned into one of the largest fires in Washington State's history.</p>
+      <h1>Flee</h1>
+      <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>
+      <h4>By Jovi Dai, Joli Holmes, and Danish Farooq </h4>
+      <p>
+        On July 15th, 2014, lightning struck in the Methow Valley, a remote area
+        in eastern part of Washington State, igniting a small fire. Weeks of hot
+        and dry weather had left the valley particularly susceptible to fires
+        that summer. Fortunately, several local residents saw the fire and
+        rushed to extinguish it. Local residents share their knowledge of how a
+        small contained fire turned into one of the largest fires in Washington
+        State's history.
+      </p>
     </header>
-  )
+  );
 }
 
 function Introduction({}) {
-  return(
+  return (
     <div className="Introduction">
-      <Header/>
-      <img src="./src/assets/lightning.svg"/>
-  </div>
-  )
+      <Header />
+      <img src="/lightning.svg" />
+    </div>
+  );
 }
 
 function Landing({}) {
-  return(
-  <div className="Landing">
-      <Introduction/>
-  </div>)
+  return (
+    <div className="Landing">
+      <Introduction />
+    </div>
+  );
 }
 
 function Footer({}) {
-  return(
-    <footer></footer>
-  )
+  return <footer></footer>;
 }
 
 function App() {
-
   return (
     <div className="App">
-      <Landing/>
+      <Landing />
       <div className="Chapters">
-        <Chapter1></Chapter1>
-
-        <Chapter2></Chapter2>
-        
-        <Chapter3></Chapter3>
+        <Chapter1 />
+        <Chapter2 />
+        <Chapter3 />
       </div>
       <Footer></Footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
