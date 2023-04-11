@@ -1,50 +1,53 @@
-*{  
-    margin:0;   
-    color:white;  
-   }  
-   .title{  
-    cursor:pointer;  
-   }  
-   /*Properties for Nav-bar*/  
-   .navbar{  
-    display:flex;  
-    top:0;  
-    height:10vh;  
-    justify-content:space-between;  
-    align-items:center;   
-    padding:0px 20px;
-   }  
-   .nav-sub{  
-    display:flex;  
-    justify-content:space-between;  
-   }  
-   .list-item {  
-    padding:10px;  
-    list-style:none;  
-   }  
-   .nav-link{  
+// adapted from https://www.codewithrandom.com/2023/02/10/hamburger-menu-html-css-javascript-hamburger-menu-code/
+
+/*Properties for Nav-bar*/  
+.navbar{  
+    display: flex;  
+    top: 0;  
+    height: 10vh;  
+    justify-content: space-between;  
+    align-items: center;   
+    padding: 0px 20px;
+}
+
+.nav-sub {
+    display: flex;  
+    justify-content: space-between;  
+}
+
+.list-item {  
+    padding: 10px;  
+    list-style: none;  
+}
+
+.nav-link {
     color:inherit;  
     text-decoration:none;  
-   }  
-   /*Properties for Hamburger*/  
-   .ham{  
-    display:none;  
-    padding:5px;  
-    cursor:pointer;  
-   }  
-   .bar1,.bar2,.bar3{  
-    display:block;  
-    width:35px;  
-    height:3px;  
-    margin:5px auto;  
-    background-color:#101010;  
+}
+
+/*Properties for Hamburger*/  
+.ham {
+    display: none;  
+    padding: 5px;  
+    cursor: pointer;  
+}
+
+.bar1, 
+.bar2, 
+.bar3 {  
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    background-color:#d7d7d7;
     transition: 0.4s;  
-   }  
-   @media only screen and (max-width:768px){  
+}
+
+@media only screen and (max-width:768px){  
     *{  
         overflow:hidden;  
     }
-    .nav-sub{  
+    .nav-sub {  
         position:absolute;
         top: 10vh;
         right: 0px;
@@ -69,4 +72,4 @@
     .change .bar3 {  
         transform: rotate(-45deg) translate(8px,-3px);  
     }
-}
+    }
