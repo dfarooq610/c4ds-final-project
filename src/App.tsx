@@ -7,29 +7,30 @@ import "./utils/styles/style.scss";
 
 function Header({}) {
 
-  // useEffect(() => {
-  //   const hamburger = d3.select(".ham");
-  //   const navsub = d3.select(".nav-sub");
-  
-  //   hamburger.addEventListener('click', () => {  
-  //     hamburger.classList.toggle("change")  
-  //     navsub.classList.toggle("nav-change")  
-  //   });
-  // })
+  const hamburger = d3.select(".ham");
+  const navsub = d3.select(".nav-sub");
+
+  useEffect(() => {
+    hamburger.on("click", function(e: any, d: any) {
+      console.log(e, d)
+      hamburger.classList.toggle("change");
+      navsub.classList.toggle("nav-change");
+    });
+  });
 
   return(
-    <header>
+    <header id="Introduction">
       <nav className="navbar">
-          <div className="ham">
-            <span className="bar1"></span>
-            <span className="bar2"></span>
-            <span className="bar3"></span>
-          </div>
+        <div className="ham">
+          <span className="bar1"></span>
+          <span className="bar2"></span>
+          <span className="bar3"></span>
+        </div>
         <ul className="nav-sub">
-          <li className="list-item"><a href="#" className="nav-link">Introduction</a></li>
-          <li className="list-item"><a href="#" className="nav-link">Chapter 1</a></li>
-          <li className="list-item"><a href="#" className="nav-link">Chapter 2</a></li>
-          <li className="list-item"><a href="#" className="nav-link">Chapter 3</a></li>
+          <li className="list-item"><a href="#Introduction" className="nav-link">Introduction</a></li>
+          <li className="list-item"><a href="#Chapter1" className="nav-link">Chapter 1</a></li>
+          <li className="list-item"><a href="#Chapter2" className="nav-link">Chapter 2</a></li>
+          <li className="list-item"><a href="#Chapter3" className="nav-link">Chapter 3</a></li>
         </ul>
       </nav>
     </header>

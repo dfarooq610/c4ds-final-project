@@ -45,7 +45,7 @@ export default function Chapter1 ({}) {
   let arr = Array.from(Array(complexFiltered.length).keys());
 
   return (
-    <div className="Chapter1">
+    <div id="Chapter1">
       <div style={{ position: 'sticky', top: 20, right: 20}}>
         <div>
             <div className="Chart-Container">
