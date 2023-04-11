@@ -1,4 +1,3 @@
-import { useState } from "react";
 import AcreInteractive from "../components/Chapter2/AcreInteractive.jsx";
 export default function Chapter2() {
   return (

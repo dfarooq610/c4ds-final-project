@@ -3,9 +3,9 @@ import { useState } from "react";
 import Chapter1 from "./pages/Chapter1";
 // @ts-ignore
 import Chapter2 from "./pages/Chapter2.jsx";
+// @ts-ignore
+import Chapter3 from "./pages/Chapter3.jsx";
 import "./utils/styles/style.scss";
-// import { ReactComponent as Lightning } './assets/lightning.svg';
-
 function Header({}) {
   return(
     <header>
@@ -21,7 +21,7 @@ function Introduction({}) {
   return(
     <div className="Introduction">
       <Header/>
-      <img src="./src/assets/lightning.svg"/>
+      <img src="/lightning.svg"/>
   </div>
   )
 }
@@ -44,7 +44,9 @@ function App() {
     <div className="App">
       <Landing/>
       <div className="Chapters">
-        <Chapter1></Chapter1>
+        <Chapter1/>
+        <Chapter2/>
+        <Chapter3/>
       </div>
       <Footer></Footer>
     </div>
