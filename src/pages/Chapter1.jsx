@@ -47,6 +47,10 @@ export default function Chapter1 ({}) {
   return (
     <div id="Chapter1" className="ChapterContainer">
       <div className="ChapterContainer1">
+        <h2>The fire</h2>
+        <h3 className="Chapter1Subtitle">
+          From contained to catastrophe
+        </h3>
         <div style={{ position: 'sticky', top: 20, right: 20}}>
           <div>
               <div className="Chart-Container">

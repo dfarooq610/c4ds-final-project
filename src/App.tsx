@@ -26,7 +26,7 @@ function App() {
     <div className="App">
         <Introduction/>
         <div className="Chapters">
-          {/* <Chapter1/> */}
+          <Chapter1/>
           <Chapter2/>
           <Chapter3/>
         </div>
