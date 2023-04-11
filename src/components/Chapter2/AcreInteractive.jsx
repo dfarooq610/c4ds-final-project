@@ -24,10 +24,7 @@ const AcreInteractive = () => {
 
   return (
     <figure>
-      <h3>
-        Figure 1: Understanding the extent of acreage burned in the Carlton
-        Complex Fire
-      </h3>
+      <h4>Understanding the extent of acreage burned in the Carlton Complex Fire</h4>
         <div
           style={{
             position: "relative",
