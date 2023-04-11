@@ -7,7 +7,6 @@ html, body {
 .ChapterContainer2,
 .ChapterContainer3 {
     padding: 5rem;
-    // padding-top: 5rem;
 }
 
 img {
@@ -28,7 +27,7 @@ figure {
 
 .Row {
     display: grid;
-    grid-template-columns: minmax(200px, 25%) 1fr;
+    grid-template-columns: minmax(200px, 33%) 1fr;
 }
 
 @media screen and (max-width: 800px) {

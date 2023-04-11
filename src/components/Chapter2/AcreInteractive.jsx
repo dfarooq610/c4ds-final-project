@@ -24,7 +24,7 @@ const AcreInteractive = () => {
 
   return (
     <figure className="FootballFieldContainer">
-      <h4>Understanding the extent of acreage burned in the Carlton Complex Fire</h4>
+      {/* <h4>Understanding the extent of acreage burned in the Carlton Complex Fire</h4> */}
         <div
           style={{
             position: "relative",
