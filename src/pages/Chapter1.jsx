@@ -31,7 +31,7 @@ export default function Chapter1 ({}) {
     initMapVis(mapVis);
     // initTimelineVis(timelineVis, complex);
     // initContainmentVis(containmentVis);
-    initBurnVis(burnVis, complex);
+    // initBurnVis(burnVis, complex);
     initLegendVis(legendVis, fires);
   }, [])
 

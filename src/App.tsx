@@ -5,6 +5,8 @@ import Chapter1  from "./pages/Chapter1";
 import "./utils/styles/style.scss";
 // import { ReactComponent as Lightning } './assets/lightning.svg';
 
+// Crackle
+
 function Header({}) {
 
   const hamburger = d3.select(".ham");
@@ -78,7 +80,7 @@ function App() {
       <div className="Main">
         <Landing/>
         <div className="Chapters">
-          {/* <Chapter1></Chapter1> */}
+          <Chapter1></Chapter1>
         </div>
       </div>
       <Footer></Footer>
