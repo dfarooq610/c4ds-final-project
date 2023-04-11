@@ -1,7 +1,7 @@
 import AcreInteractive from "../components/Chapter2/AcreInteractive.jsx";
 export default function Chapter2() {
   return (
-    <div className="Chapter2Container">
+    <div className="ChapterContainer Chapter2Container">
       <header>
         <h2>Impacts</h2>
         <h3 className="Chapter2Subtitle">

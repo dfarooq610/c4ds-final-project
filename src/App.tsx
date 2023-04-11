@@ -47,7 +47,7 @@ function Header({}) {
 function Introduction({}) {
 
   return(
-    <div className="Introduction">
+    <div className="IntroductionContainer">
       <article>
         <h1>Flee</h1>
         <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>

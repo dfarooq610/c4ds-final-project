@@ -11,7 +11,7 @@ html, body {
     // grid-template-columns: minmax(200px, 66%) minmax(300px, 33%);
 }
 
-.Introduction {
+.IntroductionContainer {
     display: flex;
     flex-direction: row;
 }
@@ -39,6 +39,15 @@ img {
     max-width: 100%;
 }
 
+.ChapterContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    text-align: center;
+    padding: 16rem 20rem;
+}
+
 @media screen and (max-width: 800px) {
 
     h1 {
@@ -54,9 +63,8 @@ img {
         opacity: .5;
     }
 
-    .Introduction {
+    .IntroductionContainer {
         display: flex;
         flex-direction: column;
     }
-   
 }
