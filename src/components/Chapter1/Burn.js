@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
-import complex from "../data/complex_data.json";
-import { uniqueArray } from "../utils/global";
+import complex from "../../data/complex_data.json";
+import { uniqueArray } from "../../utils/global";
 
 let xScale, yScale, area;
 

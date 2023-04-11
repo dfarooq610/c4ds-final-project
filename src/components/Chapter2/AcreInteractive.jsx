@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const AcreInteractive = () => {
   const [showResults, setShowResults] = useState(false);
   const [fillPercentage, setFillPercentage] = useState(50);
-  const correctAnswer = 75.7;
+  const correctAnswer = 76;
 
 
   const fillStyle = {
@@ -23,11 +23,8 @@ const AcreInteractive = () => {
   };
 
   return (
-    <figure>
-      <h3>
-        Figure 1: Understanding the extent of acreage burned in the Carlton
-        Complex Fire
-      </h3>
+    <figure className="FootballFieldContainer">
+      {/* <h4>Understanding the extent of acreage burned in the Carlton Complex Fire</h4> */}
         <div
           style={{
             position: "relative",
@@ -36,8 +33,9 @@ const AcreInteractive = () => {
         >
           <div style={fillStyle}></div>
           <img
-            src="/footballField.png"
+            src="/assets/footballField.png"
             alt="football field"
+            className="FootballField"
           />
           <div style={sliderContainerStyle}>
             <input
@@ -55,7 +53,7 @@ const AcreInteractive = () => {
         </div>
       {showResults && (
         <p>
-          One acre is about <strong>75.7%</strong> of a football field including
+          One acre is about <strong>76%</strong> of a football field including
           the touchdown zones. That is extends to approximately the 85 yard line
           (including touchdown zones)
         </p>

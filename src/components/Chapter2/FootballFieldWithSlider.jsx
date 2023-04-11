@@ -9,6 +9,6 @@ export default function FootballFieldWithSlider({
       <a href="#">Live Demo</a>
       <a href="#">Case Study</a>
     </div>
-    <img src="/footballField.png" alt="Cat in the nature" />
+    <img src="/assets/footballField.png" alt="Cat in the nature" />
   </div>;
 }
