@@ -3,25 +3,13 @@ html, body {
     width: 100vw;
 }
 
-.Main {
-    margin: 0 auto;
-    // padding: 0 2rem;
-    // display: grid;
-    // grid-gap: 1rem;
-    // grid-template-columns: minmax(200px, 66%) minmax(300px, 33%);
-}
-
-h1 {
-    margin-top: 20vh;
+.ChapterContainer {
+    padding: 0 5rem;
 }
 
 img {
     max-width: 100%;
 }
-
-// .App {
-//     margin: 8rem 10rem;
-// }
 
 .ChapterContainer {
     display: flex;
@@ -29,6 +17,7 @@ img {
     min-height: 100vh;
     min-width: 100vw;
     text-align: center;
+    padding-top: 5rem;
 }
 
 @media screen and (max-width: 800px) {
