@@ -3,12 +3,19 @@ html, body {
     width: 100vw;
 }
 
-.ChapterContainer {
-    padding: 0 5rem;
+.ChapterContainer1,
+.ChapterContainer2,
+.ChapterContainer3 {
+    padding: 5rem;
+    // padding-top: 5rem;
 }
 
 img {
     max-width: 100%;
+}
+
+figure {
+    margin: 0;
 }
 
 .ChapterContainer {
@@ -17,7 +24,11 @@ img {
     min-height: 100vh;
     min-width: 100vw;
     text-align: center;
-    padding-top: 5rem;
+}
+
+.Row {
+    display: grid;
+    grid-template-columns: minmax(200px, 25%) 1fr;
 }
 
 @media screen and (max-width: 800px) {

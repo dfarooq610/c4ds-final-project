@@ -4,7 +4,12 @@
 }
 
 .Chapter2Subtitle {
-  color: #6857a5;
+  color: $appDarkColor;
+}
+
+.FootballFieldContainer {
+  margin-left: 1rem;
+  max-width: 80%;
 }
 
 .custom-range-slider {

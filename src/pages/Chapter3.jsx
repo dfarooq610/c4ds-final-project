@@ -22,12 +22,14 @@ function Carousel() {
 export default function Chapter3({}) {
 
     return (
-        <div className="ChapterContainer Chapter3Container DarkMode">
-          <h2>Response</h2>
-          <h3 className="Chapter3Subtitle">
-            Preparing for future threats
-          </h3>
-          <Carousel />
+        <div className="ChapterContainer DarkMode">
+          <div className="ChapterContainer3">
+            <h2>Response</h2>
+            <h3 className="Chapter3Subtitle">
+              Preparing for future threats
+            </h3>
+            <Carousel />
+          </div>
         </div>
       );
 
