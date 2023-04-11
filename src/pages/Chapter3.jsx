@@ -22,7 +22,7 @@ function Carousel() {
 export default function Chapter3({}) {
 
     return (
-        <div>
+        <div className="ChapterContainer Chapter3Container DarkMode">
           <h2>Response</h2>
           <Carousel />
         </div>
