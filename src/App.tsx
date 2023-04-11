@@ -1,4 +1,6 @@
-import { useState } from "react";
+// @ts-ignore
+import * as d3 from 'd3';
+import { useState, useEffect } from 'react'
 // @ts-ignore
 import Chapter1 from "./pages/Chapter1";
 // @ts-ignore
@@ -6,56 +8,88 @@ import Chapter2 from "./pages/Chapter2.jsx";
 // @ts-ignore
 import Chapter3 from "./pages/Chapter3.jsx";
 import "./utils/styles/style.scss";
+// import { ReactComponent as Lightning } './assets/lightning.svg';
+
+// Crackle
+
 function Header({}) {
-  return (
-    <header>
-      <h1>Flee</h1>
-      <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>
-      <h4>By Jovi Dai, Joli Holmes, and Danish Farooq </h4>
-      <p>
-        On July 15th, 2014, lightning struck in the Methow Valley, a remote area
-        in eastern part of Washington State, igniting a small fire. Weeks of hot
-        and dry weather had left the valley particularly susceptible to fires
-        that summer. Fortunately, several local residents saw the fire and
-        rushed to extinguish it. Local residents share their knowledge of how a
-        small contained fire turned into one of the largest fires in Washington
-        State's history.
-      </p>
+
+  const hamburger = d3.select(".ham");
+  const navsub = d3.select(".nav-sub");
+
+  useEffect(() => {
+    hamburger.on("click", function(e: any, d: any) {
+      console.log(e, d)
+      hamburger.classList.toggle("change");
+      navsub.classList.toggle("nav-change");
+    });
+  });
+
+  return(
+    <header id="Introduction">
+      <nav className="navbar">
+        <div className="ham">
+          <span className="bar1"></span>
+          <span className="bar2"></span>
+          <span className="bar3"></span>
+        </div>
+        <ul className="nav-sub">
+          <li className="list-item"><a href="#Introduction" className="nav-link">Introduction</a></li>
+          <li className="list-item"><a href="#Chapter1" className="nav-link">Chapter 1</a></li>
+          <li className="list-item"><a href="#Chapter2" className="nav-link">Chapter 2</a></li>
+          <li className="list-item"><a href="#Chapter3" className="nav-link">Chapter 3</a></li>
+        </ul>
+      </nav>
     </header>
   );
 }
 
 function Introduction({}) {
-  return (
+
+  return(
     <div className="Introduction">
-      <Header />
-      <img src="/lightning.svg" />
+      <article>
+        <h1>Flee</h1>
+        <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>
+        <div>
+          <p>In July 2014, lightning ignited a small fire in the Methow Valley, a remote area in eastern part of Washington State. Weeks of hot and dry weather left the valley particularly susceptible to fires that summer. Fortunately, several local residents saw the fire and rushed to extinguish it.</p>
+          <p>How did a small contained fire turn into one of the largest fires in Washington State's history? Local residents Danny and Vicki Yanarella share their knowledge. </p>
+        </div>
+      </article>
+      <img className="lightning" src="./src/assets/lightning.svg"/>
     </div>
-  );
+  )
 }
 
 function Landing({}) {
-  return (
+  return(
     <div className="Landing">
-      <Introduction />
+      <Header/>
+      <Introduction/>
     </div>
-  );
+  )
 }
 
 function Footer({}) {
-  return <footer></footer>;
+  return(
+    <footer>
+      <h4>By Jovi Dai, Joli Holmes, and Danish Farooq</h4>
+    </footer>
+  )
 }
 
 function App() {
   return (
     <div className="App">
-      <Landing />
-      <div className="Chapters">
-        <Chapter1 />
-        <Chapter2 />
-        <Chapter3 />
+      <div className="Main">
+        <Landing/>
+        <div className="Chapters">
+          <Chapter1/>
+          <Chapter2/>
+          <Chapter3/>
+        </div>
       </div>
-      <Footer></Footer>
+      <Footer/>
     </div>
   );
 }
