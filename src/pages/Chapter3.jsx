@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Flickity from "react-flickity-component";
 
-import "./styles.css";
-import "./flickity.css";
+// import "./styles.css";
+// import "./flickity.css";
 
 function Carousel() {
   return (
@@ -15,17 +15,14 @@ function Carousel() {
   );
 }
 
-function App() {
+export default function Chapter3() {
   return (
-    <div className="App">
+    <div>
       <h1>React Flickity</h1>
       <Carousel />
     </div>
   );
 }
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
 
 
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import FootballFieldWithSlider from "./FootballFieldWithSlider";
 
 const AcreInteractive = () => {
   const [showResults, setShowResults] = useState(false);
   const [fillPercentage, setFillPercentage] = useState(50);
   const correctAnswer = 75.7;
+
 
   const fillStyle = {
     position: "absolute",
@@ -28,11 +28,31 @@ const AcreInteractive = () => {
         Figure 1: Understanding the extent of acreage burned in the Carlton
         Complex Fire
       </h3>
-      <FootballFieldWithSlider 
-        onChange={(e) => { setFillPercentage(e.target.value); setShowResults(false); }}
-        onMouseUp={() => setShowResults(true)}
-        onMouseDown={() => setShowResults(false)}
-      />
+        <div
+          style={{
+            position: "relative",
+            display: "inline-block",
+          }}
+        >
+          <div style={fillStyle}></div>
+          <img
+            src="/footballField.png"
+            alt="football field"
+          />
+          <div style={sliderContainerStyle}>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={fillPercentage}
+              onChange={(e) => setFillPercentage(e.target.value)}
+              onMouseUp={() => setShowResults(true)}
+              onMouseDown={() => setShowResults(false)}
+              className="custom-range-slider"
+              style={{ width: "100%" }} 
+            />
+          </div>
+        </div>
       {showResults && (
         <p>
           One acre is about <strong>75.7%</strong> of a football field including
