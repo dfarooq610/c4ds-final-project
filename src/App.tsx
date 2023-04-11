@@ -22,11 +22,12 @@ function Header({}) {
       <nav className="navbar">  
         <div className="title"></div>  
           <div className="ham" >  
-            <span className="bar1"></span>
-            <span className="bar2"></span>
-            <span className="bar3"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
           </div>
-        <ul className="nav-sub">  
+        <ul className="nav-sub">
+          <li className="list-item"><a href="#" className="nav-link">Introduction</a></li>
           <li className="list-item"><a href="#" className="nav-link">Chapter 1</a></li>
           <li className="list-item"><a href="#" className="nav-link">Chapter 2</a></li>
           <li className="list-item"><a href="#" className="nav-link">Chapter 3</a></li>
