@@ -13,6 +13,7 @@
     "rc-slider": "^10.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-flickity-component": "^4.0.5",
     "react-scrollama": "^2.3.2",
     "sass": "^1.60.0"
   },
