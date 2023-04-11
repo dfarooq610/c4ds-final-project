@@ -4,11 +4,11 @@ import { Scrollama, Step } from 'react-scrollama';
 import complex from "../data/complex_data.json";
 import fires from "../data/fire_points2.json";
 
-import { initContainmentVis } from "../components/Containment";
-import { initLegendVis } from "../components/Legend";
-import { initBurnVis } from "../components/Burn";
-import { initTimelineVis } from "../components/Timeline";
-import { initMapVis, updateMapVis } from "../components/Map";
+import { initContainmentVis } from "../components/Chapter1/Containment";
+import { initLegendVis } from "../components/Chapter1/Legend";
+import { initBurnVis } from "../components/Chapter1/Burn";
+import { initTimelineVis } from "../components/Chapter1/Timeline";
+import { initMapVis, updateMapVis } from "../components/Chapter1/Map";
 
 const mapVis = "Map-Vis";
 const timelineVis = "Timeline-Vis";

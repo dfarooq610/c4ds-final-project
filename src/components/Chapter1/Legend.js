@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import { colors, uniqueArray } from "../utils/global";
+import { colors, uniqueArray } from "../../utils/global";
 
 let colorScale, max, rScale;
 
