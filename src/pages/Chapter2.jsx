@@ -3,11 +3,11 @@ export default function Chapter2() {
   return (
     <div className="Chapter2Container">
       <header>
-        <h1>Chapter 2</h1>
-        <h2 className="Chapter2Subtitle">
+        <h2>Impacts</h2>
+        <h3 className="Chapter2Subtitle">
           Measuring the impact of wildfires in the United States over the past
           decade
-        </h2>
+        </h3>
       </header>
       <article>
         <p>

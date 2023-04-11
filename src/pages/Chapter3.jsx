@@ -5,9 +5,16 @@ import Flickity from "react-flickity-component";
 function Carousel() {
   return (
     <Flickity>
-      <img src="https://placeimg.com/640/480/animals" />
-      <img src="https://placeimg.com/640/480/nature" />
-      <img src="https://placeimg.com/640/480/architecture" />
+        <figure>
+            <img src="./assets/Carlton Complex 2014.jpg" />
+            <p>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
+        </figure>
+        <figure>
+            <img src="https://placeimg.com/640/480/nature" />
+        </figure>
+        <figure>
+            <img src="https://placeimg.com/640/480/architecture" />
+        </figure>
     </Flickity>
   );
 }
@@ -15,8 +22,8 @@ function Carousel() {
 export default function Chapter3({}) {
 
     return (
-        <div className="App">
-          <h1>React Flickity</h1>
+        <div>
+          <h2>Response</h2>
           <Carousel />
         </div>
       );
