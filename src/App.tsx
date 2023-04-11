@@ -56,7 +56,7 @@ function Introduction({}) {
           <p>How did a small contained fire turn into one of the largest fires in Washington State's history? Local residents Danny and Vicki Yanarella share their knowledge. </p>
         </div>
       </article>
-      <img className="lightning" src="./src/assets/lightning.svg"/>
+      <img className="lightning" src="./assets/lightning.svg"/>
     </div>
   )
 }

@@ -36,7 +36,7 @@ const AcreInteractive = () => {
         >
           <div style={fillStyle}></div>
           <img
-            src="/footballField.png"
+            src="/assets/footballField.png"
             alt="football field"
           />
           <div style={sliderContainerStyle}>
