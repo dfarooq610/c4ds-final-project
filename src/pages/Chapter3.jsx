@@ -2,9 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Flickity from "react-flickity-component";
 
-// import "./styles.css";
-// import "./flickity.css";
-
 function Carousel() {
   return (
     <Flickity>
@@ -15,28 +12,14 @@ function Carousel() {
   );
 }
 
-function App() {
-  return (
-    <div className="App">
-      <h1>React Flickity</h1>
-      <Carousel />
-    </div>
-  );
-}
+export default function Chapter3({}) {
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
-
-// export default function Chapter3({}) {
-// //   const elem = document.querySelector(".carousel");
-
-// //     console.log(elem)
-
-// //   const flkty = new Flickity(elem, {
-// //     // options
-// //     cellAlign: "left",
-// //     contain: true,
-// //   });
+    return (
+        <div className="App">
+          <h1>React Flickity</h1>
+          <Carousel />
+        </div>
+      );
 
 //   return (
 //     <div className="Chapter3">
@@ -95,4 +78,4 @@ ReactDOM.render(<App />, rootElement);
 //     // Finally, we can initialize Flickity on our container element
 //     // The above code will create a carousel of paragraphs using Flickity.js
 //   );
-// }
+}
