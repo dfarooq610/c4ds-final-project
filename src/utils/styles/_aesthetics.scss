@@ -1,11 +1,13 @@
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background: linear-gradient(150deg, $appDarkColor, #6857A5);
+
 }
 
 html, body {
-    background: linear-gradient(150deg, #0A0D14, #6857A5);
     color: $appColor;
     text-align: left;
+    margin: 0
 }
 
 .axis--label {

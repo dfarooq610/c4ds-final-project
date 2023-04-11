@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "d3": "^7.8.3",
+<<<<<<< HEAD
     "flickity": "^2.3.0",
+=======
+    "rc-slider": "^10.1.1",
+>>>>>>> a4a8b678ab2f87f1618b5950b3c69d8ed2ceae1f
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-flickity-component": "^4.0.5",

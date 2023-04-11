@@ -7,8 +7,7 @@ import countyMedStreets from "../data/county_medstreets_reg.json";
 import shelters from "../data/shelters.json";
 import routes from "../data/route_sim2.json";
 import fires from "../data/fire_points2.json";
-import complex from "../data/complex_data.json";
-import {colorScale, rScale, uniqueArray} from "../utils/global";
+import { colorScale, rScale, uniqueArray } from "../utils/global";
 import fireBoundary from "../data/fire_boundary.json";
 
 let projection;
@@ -207,7 +206,7 @@ export function updateFire(chartId, date) {
 
 export function initMapVis(chartId) {
 
-    const width = 650, height = 500, initialScale = 25000,
+    const width = 650, height = 450, initialScale = 25000,
         initialCenterX = -24,
         initialCenterY = 48.25;
 
