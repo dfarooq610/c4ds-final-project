@@ -21,9 +21,9 @@ function Header({}) {
     <header>
       <nav className="navbar">
           <div className="ham">
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
+            <span className="bar1"></span>
+            <span className="bar2"></span>
+            <span className="bar3"></span>
           </div>
         <ul className="nav-sub">
           <li className="list-item"><a href="#" className="nav-link">Introduction</a></li>
