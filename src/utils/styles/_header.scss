@@ -1,15 +1,20 @@
 // adapted from https://www.codewithrandom.com/2023/02/10/hamburger-menu-html-css-javascript-hamburger-menu-code/
 
-/*Properties for Nav-bar*/  
+/*Properties for Nav-bar*/
+
+nav {
+    border-left: 1px solid #d7d7d7;
+}
+
 .navbar {
     position: absolute;
     display: flex;  
-    top:5vh;
+    top:40vh;
     right: 0;
     height: 20vh;  
     justify-content: space-between;  
     align-items: center;
-    padding: 0px 20px;
+    padding-right: 20px;
 }
 
 .nav-sub {
@@ -54,6 +59,18 @@
     *{  
         overflow:hidden;  
     }
+
+    .navbar {
+        position: absolute;
+        display: flex;  
+        top:5vh;
+        right: 0;
+        height: 20vh;  
+        justify-content: space-between;  
+        align-items: center;
+        padding: 0px 20px;
+    }
+
     .nav-sub {  
         position:absolute;
         top: 10vh;
@@ -64,6 +81,7 @@
         transition: transform 0.3s ease-in;
         transform: translate(100%);
     }
+
     .nav-change{  
         transform:translate(0%);  
     } 

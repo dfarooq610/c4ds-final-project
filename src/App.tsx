@@ -19,9 +19,8 @@ function Header({}) {
 
   return(
     <header>
-      <nav className="navbar">  
-        <div className="title"></div>  
-          <div className="ham" >  
+      <nav className="navbar">
+          <div className="ham">
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
