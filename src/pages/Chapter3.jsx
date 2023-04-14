@@ -22,8 +22,8 @@ function Carousel() {
 export default function Chapter3() {
 
     return (
-        <section id="Chapter3" className="ChapterContainer DarkMode">
-          <div className="ChapterContainer3">
+        <section id="Chapter3" className=" DarkMode">
+          <div className="ChapterContainer ChapterContainer3">
             <h2>Response</h2>
             <h3 className="Chapter3Subtitle">
               Preparing for future threats

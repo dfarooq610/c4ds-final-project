@@ -3,8 +3,8 @@
 export default function Introduction() {
 
     return(
-        <section id="Introduction" className="IntroductionContainer DarkMode">
-            <article>
+        <section id="Introduction" className="DarkMode">
+            <article classname="ChapterContainer IntroductionContainer">
                 <h1>To Flee or to Face</h1>
                 <h2>The lingering impacts from wildfires in the west after a decade has passed</h2>
                 <div>

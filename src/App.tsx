@@ -37,9 +37,7 @@ function App() {
           <h2>Impacts</h2>
           <p>…</p>
         </section>
-        <section id="Chapter3">
-          <h2>Response</h2>
-        </section>
+        <Chapter3/>
       </div>
       <nav className="section-nav">
         <ol>

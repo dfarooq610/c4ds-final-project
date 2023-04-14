@@ -57,15 +57,18 @@ li {
 /** page layout **/
 main {
     display: grid;
-    grid-template-columns: 1fr 6em;
+    grid-template-columns: 1fr 8em;
     max-width: 100em;
-    width: 90%;
     margin: 0 auto;
 }
 
 /** enlarge the sections for this demo, so that we have a long scrollable page **/
 section {
-    padding-bottom: 20rem;
+    // padding-bottom: 5rem;
+}
+
+.ChapterContainer {
+    padding: 2rem 5rem;
 }
 
 

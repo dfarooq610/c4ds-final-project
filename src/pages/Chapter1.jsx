@@ -46,8 +46,8 @@ export default function Chapter1 () {
   let arr = Array.from(Array(complexFiltered.length).keys());
 
   return (
-    <section id="Chapter1" className="ChapterContainer DarkMode">
-      <div className="ChapterContainer1">
+    <section id="Chapter1" className="DarkMode">
+      <div className="ChapterContainer ChapterContainer1">
         <h2>The fire</h2>
         <h3 className="Chapter1Subtitle">
           From contained to catastrophe
