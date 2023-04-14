@@ -40,7 +40,7 @@ export default function Chapter3() {
             <h3 className="Chapter3Subtitle">
               Preparing for Future Threats
             </h3>
-          
+
           <div className="ChapterContainer3">
             <p>The Carlton Complex Fire has highlighted the need for increased investment in wildfire prevention and response. As climate change continues exacerbating drought conditions and increasing the risk of wildfires, policymakers and communities must work together to prioritize wildfire preparedness and response.</p>
             <p>State and local officials have taken steps to improve wildfire preparedness and response in response to the Carlton Complex Fire. These efforts include increasing funding for wildfire prevention programs and investing in new technology to better detect and respond to wildfires.</p>

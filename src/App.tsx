@@ -18,7 +18,7 @@ import "./utils/styles/style.scss";
 function Footer({}) {
   return(
     <footer className="DarkMode">
-      <h4>By Jovi Dai, Joli Holmes, and Danish Farooq</h4>
+      <h5>By Jovi Dai, Joli Holmes, and Danish Farooq</h5>
     </footer>
   )
 }

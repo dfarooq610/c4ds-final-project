@@ -190,8 +190,13 @@ figure {
 }
 
 .Row {
-    display: grid;
-    grid-template-columns: minmax(200px, 33%) 1fr;
+    display:grid;
+    grid-template-columns: minmax(300px, 33%) 1fr;
+}
+
+.ChapterContainer2 {
+    margin-left: 300px;
+    margin-right: 300px; 
 }
 
 .ChapterContainer3 p {

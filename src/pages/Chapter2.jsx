@@ -24,7 +24,9 @@ export default function Chapter2() {
                 The devastation serves as a stark reminder of the potential danger and far-reaching
                 consequences of wildfires in an era of climate change. </p>
             </article>
+
             <AcreInteractive />
+            
           </div>
           <article>
             <section>
