@@ -53,6 +53,7 @@ function App() {
         </ol>
       </nav>
     </main>
+    <Footer/>
 
 
         {/* <Introduction/>
