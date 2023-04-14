@@ -4,7 +4,8 @@
 html, body {
     color: #333;
     text-align: left;
-    margin: 0
+    margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 .LightMode {
@@ -20,7 +21,6 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 135%;
     font-size: 12pt;
     margin-top: 0;
-    font-family: "DM Sans", sans-serif;
 }
 
 h1 {
@@ -45,14 +45,12 @@ h2 {
     font-weight: 600;
     font-size: 24pt;
     margin-bottom: 1rem;
-    font-family: "DM Sans", sans-serif;
     color: #fff;
 }
 
 h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  font-family: "DM Sans", sans-serif;
 }
 
 h4 {
@@ -63,7 +61,6 @@ h4 {
 
 p {
     font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
     line-height: 133%;
     margin-bottom: 1rem;
 }
