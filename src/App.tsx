@@ -41,12 +41,8 @@ function App() {
           <h2>Fire</h2>
           <p>…</p>
         </section>
-        <section id="Chapter2">
-          <h2>Impacts</h2>
-          <p>…</p>
-        </section>
-        {/* <Chapter2/> */}
-        <Chapter3/>
+        <Chapter2/>
+        {/* <Chapter3/> */}
       </div>
     </main>
     <Footer/>
