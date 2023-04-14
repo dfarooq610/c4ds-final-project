@@ -27,6 +27,14 @@ function App() {
   return (
     <div className="App">
     <main>
+    <nav className="section-nav">
+        <ol>
+          <li><a href="#Introduction">Introduction</a></li>
+          <li><a href="#Chapter1">Fire</a></li>
+          <li><a href="#Chapter2">Impacts</a></li>
+          <li><a href="#Chapter3">Response</a></li>
+        </ol>
+      </nav>
       <div>
         <Introduction/>
         <section id="Chapter1">
@@ -39,14 +47,6 @@ function App() {
         </section>
         <Chapter3/>
       </div>
-      <nav className="section-nav">
-        <ol>
-          <li><a href="#Introduction">Introduction</a></li>
-          <li><a href="#Chapter1">Fire</a></li>
-          <li><a href="#Chapter2">Impacts</a></li>
-          <li><a href="#Chapter3">Response</a></li>
-        </ol>
-      </nav>
     </main>
     <Footer/>
 

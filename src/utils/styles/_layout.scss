@@ -15,7 +15,7 @@ html {
 /* 2. Make nav sticky */
 main > nav {
     position: sticky;
-    top: 2rem;
+    top: 40%;
     align-self: start;
 }
 
@@ -57,14 +57,9 @@ li {
 /** page layout **/
 main {
     display: grid;
-    grid-template-columns: 1fr 8em;
+    grid-template-columns: 8em 1fr;
     max-width: 100em;
     margin: 0 auto;
-}
-
-/** enlarge the sections for this demo, so that we have a long scrollable page **/
-section {
-    // padding-bottom: 5rem;
 }
 
 .ChapterContainer {
