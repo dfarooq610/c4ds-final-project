@@ -21,6 +21,10 @@ function Carousel() {
             <img src="./assets/WA-Wild-Fire-8.jpg" />
             <p>"Carlton Complex Fire - image 3" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
+        <figure>
+            <img src="./assets/Carlton_Complex_mop_up.jpg" />
+            <p>"Carlton Complex mop up" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
+        </figure>
     </Flickity>
   );
 }
