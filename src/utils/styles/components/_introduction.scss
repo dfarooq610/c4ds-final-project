@@ -1,13 +1,15 @@
-.IntroductionContainer {
+.App {
     background: linear-gradient(150deg, $appDarkColor, #6857A5);
+}
+
+.IntroductionContainer {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    padding: 0 5rem;
 }
 
 article {
-    max-width: 45vw;
+    max-width: 40vw;
 }
 
 .lightning {

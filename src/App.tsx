@@ -28,10 +28,7 @@ function App() {
     <div className="App">
     <main>
       <div>
-        <section id="Introduction">
-          <h2>Introduction</h2>
-          <p>…</p>
-        </section>
+        <Introduction/>
         <section id="Chapter1">
           <h2>Fire</h2>
           <p>…</p>

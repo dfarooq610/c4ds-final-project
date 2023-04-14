@@ -46,7 +46,7 @@ export default function Chapter1 () {
   let arr = Array.from(Array(complexFiltered.length).keys());
 
   return (
-    <div id="Chapter1" className="ChapterContainer DarkMode">
+    <section id="Chapter1" className="ChapterContainer DarkMode">
       <div className="ChapterContainer1">
         <h2>The fire</h2>
         <h3 className="Chapter1Subtitle">
@@ -96,6 +96,6 @@ export default function Chapter1 () {
           ))}
         </Scrollama>
       </div>
-    </div>
+    </section>
   );
 };

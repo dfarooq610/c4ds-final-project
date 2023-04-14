@@ -22,7 +22,7 @@ function Carousel() {
 export default function Chapter3() {
 
     return (
-        <div id="Chapter3" className="ChapterContainer DarkMode">
+        <section id="Chapter3" className="ChapterContainer DarkMode">
           <div className="ChapterContainer3">
             <h2>Response</h2>
             <h3 className="Chapter3Subtitle">
@@ -30,7 +30,7 @@ export default function Chapter3() {
             </h3>
             <Carousel />
           </div>
-        </div>
+        </section>
       );
 
 //   return (

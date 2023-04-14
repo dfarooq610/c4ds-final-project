@@ -3,7 +3,7 @@
 export default function Introduction() {
 
     return(
-        <div id="Introduction" className="IntroductionContainer DarkMode">
+        <section id="Introduction" className="IntroductionContainer DarkMode">
             <article>
                 <h1>To Flee or to Face</h1>
                 <h2>The lingering impacts from wildfires in the west after a decade has passed</h2>
@@ -13,7 +13,7 @@ export default function Introduction() {
                 </div>
             </article>
             <img className="lightning" src="./assets/lightning.svg" alt="lightning strike"/>
-        </div>
+        </section>
       )
 }
 
