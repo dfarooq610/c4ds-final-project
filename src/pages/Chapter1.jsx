@@ -39,7 +39,7 @@ export default function Chapter1 ({}) {
 
     if (currentStepIndex !== null) {
       updateMapVis(mapVis, complexFiltered[currentStepIndex].date__1);
-      updateBurnVis(burnVis)
+      // updateBurnVis(burnVis)
     }
   }, [currentStepIndex])
 
