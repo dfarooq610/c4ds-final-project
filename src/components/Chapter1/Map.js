@@ -147,6 +147,7 @@ export function updateShelter(chartId, date) {
     );
 }
 
+
 function fireBurnNDays(date, d) {
     let month = "0"+ date.toString().substr(0, 1);
     let day = date.toString().substr(1, 3);
