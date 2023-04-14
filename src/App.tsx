@@ -1,36 +1,38 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 // @ts-ignore
-import Chapter1  from "./pages/Chapter1";
+import Chapter1 from "./pages/Chapter1";
+// @ts-ignore
+import Chapter2 from "./pages/Chapter2.jsx";
+// @ts-ignore
+import Chapter3 from "./pages/Chapter3.jsx";
+// @ts-ignore
+import Introduction from "./pages/Introduction.jsx";
 import "./utils/styles/style.scss";
 // import { ReactComponent as Lightning } './assets/lightning.svg';
 
-function Header({}) {
-  return(
-    <header>
-        <h1>Flee</h1>
-        <h2>Mapping the Increasing Impacts of Wildfires in the West</h2>
-        <p className="Description">The fire starts from a lightning strike on July 15th, 2014 and ended on August 14th, 2014. However, impacts from the fire were felt much longer than the timeline of the official event.</p>
-    </header>
-  )
-}
+// Crackle
+
 
 function Footer({}) {
   return(
-    <footer></footer>
+    <footer className="DarkMode">
+      <h4>By Jovi Dai, Joli Holmes, and Danish Farooq</h4>
+    </footer>
   )
 }
 
 function App() {
-
   return (
     <div className="App">
-      <Header></Header>
-      <div className="Chapters">
-        <Chapter1></Chapter1>
-      </div>
-      <Footer></Footer>
+        <Introduction/>
+        <div className="Chapters">
+          <Chapter1/>
+          <Chapter2/>
+          <Chapter3/>
+        </div>
+      <Footer/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

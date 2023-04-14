@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import { uniqueArray } from "../utils/global";
+import { uniqueArray } from "../../utils/global";
 
 let xScale, barHeight;
 

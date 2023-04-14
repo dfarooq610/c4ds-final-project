@@ -1,14 +1,14 @@
 import * as d3 from 'd3';
-import stateBoundaries from "../data/state_boundaries.json";
-import countyBoundaries from "../data/counties_geo.json";
-import cityBoundaries from "../data/city_poly.json";
-import countyBigStreets from "../data/county_bigstreets_reg.json";
-import countyMedStreets from "../data/county_medstreets_reg.json";
-import shelters from "../data/shelters.json";
-import routes from "../data/route_sim2.json";
-import fires from "../data/fire_points2.json";
-import { colorScale, rScale, uniqueArray } from "../utils/global";
-import fireBoundary from "../data/fire_boundary.json";
+import stateBoundaries from "../../data/state_boundaries.json";
+import countyBoundaries from "../../data/counties_geo.json";
+import cityBoundaries from "../../data/city_poly.json";
+import countyBigStreets from "../../data/county_bigstreets_reg.json";
+import countyMedStreets from "../../data/county_medstreets_reg.json";
+import shelters from "../../data/shelters.json";
+import routes from "../../data/route_sim2.json";
+import fires from "../../data/fire_points2.json";
+import { colorScale, rScale, uniqueArray } from "../../utils/global";
+import fireBoundary from "../../data/fire_boundary.json";
 
 let projection;
 let routesInitial = routes.features.filter((d) => d.properties.type === "initial");

@@ -2,10 +2,9 @@
 
 App link: https://c4ds-final-project.vercel.app/
 
-
 ## to install
 
-`npm install` install the packages first
+`npm install` install the packages first (only need to do this if there are new packages installed)
 
 ## start app
 
@@ -14,9 +13,12 @@ App link: https://c4ds-final-project.vercel.app/
 ## Git command line cheat sheet
 
 Adds and commits a file
+
 * `git add (name of file)`
 * `git commit -m "commit message"`
 * `git push` - pushes changes to the server
+
+Additional git commands
 
 * `git pull` - pulls changes from the server
 * `git status` - tells you which files were changes

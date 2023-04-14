@@ -1,0 +1,107 @@
+// adapted from https://www.codewithrandom.com/2023/02/10/hamburger-menu-html-css-javascript-hamburger-menu-code/
+
+/*Properties for Nav-bar*/
+
+nav {
+    border-left: 1px solid #d7d7d7;
+}
+
+.navbar {
+    position: absolute;
+    display: flex;  
+    top:40vh;
+    right: 0;
+    height: 20vh;  
+    justify-content: space-between;  
+    align-items: center;
+    padding-right: 20px;
+    z-index: 10;
+}
+
+.nav-sub {
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list-item {
+    padding: 10px;
+    list-style: none;
+    color: black;
+    // font-weight: bold;
+    font-size: .9rem;
+}
+
+.nav-link {
+    color:inherit;  
+    text-decoration:none;
+    background-color: #d7d7d7;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+/*Properties for Hamburger*/  
+.ham {
+    display: none;  
+    padding: 5px;  
+    cursor: pointer;  
+}
+
+.bar1, .bar2, .bar3 {  
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    background-color:#d7d7d7;
+    transition: 0.4s;  
+}
+
+@media only screen and (max-width:800px) {
+
+    * {
+        overflow:hidden;  
+    }
+
+    .navbar {
+        position: absolute;
+        display: flex;  
+        top: 5vh;
+        right: 0;
+        height: 20vh;  
+        justify-content: space-between;  
+        align-items: center;
+        padding: 0px 20px;
+        border-left: none;
+    }
+
+    .nav-sub {  
+        position:absolute;
+        top: 10vh;
+        right: 0px;
+        flex-direction:column;
+        background-color: rgb(0,0,0,0.75);
+        border-radius: 0px 0px 0px 20px;
+        transition: transform 0.3s ease-in;
+        transform: translate(100%);
+    }
+
+    .nav-change{  
+        transform:translate(0%);  
+    }
+
+    .ham {
+        display: block;  
+    }
+
+    .change .bar1 {
+        transform: rotate(45deg) translate(8px,3px);  
+    }
+
+    .change .bar2 {  
+        opacity: 0;
+    }
+
+    .change .bar3 {  
+        transform: rotate(-45deg) translate(8px,-3px);  
+    }
+}
