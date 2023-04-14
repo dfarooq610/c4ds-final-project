@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Flickity from "react-flickity-component";
 
-import Header from "../components/Header";
-
 function Carousel() {
   return (
     <Flickity>
@@ -25,7 +23,6 @@ export default function Chapter3() {
 
     return (
         <div id="Chapter3" className="ChapterContainer DarkMode">
-          <Header/>
           <div className="ChapterContainer3">
             <h2>Response</h2>
             <h3 className="Chapter3Subtitle">

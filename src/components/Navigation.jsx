@@ -2,7 +2,7 @@
 import * as d3 from 'd3';
 import { useEffect } from 'react'
 
-export default function Header() {
+export default function Navigation() {
 
     const hamburger = d3.select(".ham");
     const navsub = d3.select(".nav-sub");

@@ -7,6 +7,8 @@ import Chapter2 from "./pages/Chapter2.jsx";
 import Chapter3 from "./pages/Chapter3.jsx";
 // @ts-ignore
 import Introduction from "./pages/Introduction.jsx";
+// @ts-ignore
+import Navigation from "./components/Navigation";
 import "./utils/styles/style.scss";
 // import { ReactComponent as Lightning } './assets/lightning.svg';
 
@@ -30,6 +32,7 @@ function App() {
           <Chapter2/>
           <Chapter3/>
         </div>
+        <Navigation/>
       <Footer/>
     </div>
   );

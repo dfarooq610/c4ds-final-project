@@ -1,10 +1,7 @@
 import AcreInteractive from "../components/Chapter2/AcreInteractive.jsx";
-import Header from "../components/Header";
-
 export default function Chapter2() {
   return (
     <div id="Chapter2" className="ChapterContainer LightMode">
-      <Header/>
       <div className="ChapterContainer2">
         <header>
           <h2 className="LightMode">Impacts</h2>

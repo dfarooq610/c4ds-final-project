@@ -10,8 +10,6 @@ import { initBurnVis } from "../components/Chapter1/Burn";
 import { initTimelineVis } from "../components/Chapter1/Timeline";
 import { initMapVis, updateMapVis } from "../components/Chapter1/Map";
 
-import Header from "../components/Header";
-
 const mapVis = "Map-Vis";
 const timelineVis = "Timeline-Vis";
 const containmentVis = "Containment-Vis";
@@ -49,7 +47,6 @@ export default function Chapter1 () {
 
   return (
     <div id="Chapter1" className="ChapterContainer DarkMode">
-      <Header/>
       <div className="ChapterContainer1">
         <h2>The fire</h2>
         <h3 className="Chapter1Subtitle">
