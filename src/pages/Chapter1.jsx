@@ -50,7 +50,7 @@ export default function Chapter1 () {
       <div className="ChapterContainer ChapterContainer1">
         <h2>The fire</h2>
         <h3 className="Chapter1Subtitle">
-          From contained to catastrophe
+          From Contained to Catastrophe
         </h3>
         <div className="Chart-Wrapper" style={{ position: 'sticky', top: 20, right: 20}}>
           <div className="Chart-Container">

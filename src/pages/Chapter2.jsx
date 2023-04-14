@@ -6,7 +6,7 @@ export default function Chapter2() {
         <header>
           <h2 className="LightMode">Impacts</h2>
           <h3 className="Chapter2Subtitle">
-            Measuring the impact of wildfires in Washington State over the past decade
+            Measuring the Impact of Wildfires in Washington State Over the Past Decade
           </h3>
         </header>
           <div className="Row">
