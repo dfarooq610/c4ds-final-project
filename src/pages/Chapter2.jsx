@@ -31,23 +31,19 @@ export default function Chapter2() {
             <section>
               <h4>Environmental Impacts</h4>
               <p>
-                The Carlton Complex fire destroyed large areas of vegetation, which
-                had a significant ecological impact. The vegetation plays a critical
-                role in the ecosystem by providing a habitat for wildlife, reducing
-                soil erosion, and improving water quality.
+                The Carlton Complex fire destroyed large areas of vegetation. Vegetation 
+                plays a critical role in the ecosystem by providing a habitat for wildlife, reducing
+                soil erosion, and improving water quality. Local residents Debbie Grable and her husband, 
+                George Grable, shared their knowledge of the fires' impacts. Debbie Grable explains <i>"the fire 
+                destroyed large areas of forest, which will take years to regenerate. The 
+                forest is a vital ecosystem component and provides essential benefits such 
+                as carbon sequestration and habitat for wildlife."</i>
               </p>
               <p>
-                Local residents Debbie Grable and her husband, George Grable, shared their 
-                knowledge of the fires' impacts. <i>Debbie Grable explains "the fire also destroyed large areas of forest, which will take years
-                to regenerate. The forest is a vital ecosystem
-                component and provides essential benefits such as carbon sequestration
-                and habitat for wildlife."</i>
-              </p>
-              <p>
-                Furthermore, the Carlton Complex fire impacts the water quality in the
-                surrounding area. George Grable added, "the fire destroyed vegetation, 
+                Furthermore, the Carlton Complex fire impacted the water quality in the
+                surrounding area. George Grable added, <i>"the fire destroyed vegetation, 
                 which reduced the ability of the land to absorb rainfall. This increased 
-                the risk of flooding and soil erosion." The loss of forest cover could also 
+                the risk of flooding and soil erosion."</i> The loss of forest cover could also 
                 have long-term environmental consequences, such as reduced carbon sequestration 
                 and decreased wildlife habitat.
               </p>
@@ -76,22 +72,15 @@ export default function Chapter2() {
                 decline in air quality. The smoke and ash contained
                 harmful chemicals, which can cause respiratory problems in humans and
                 animals."</i> she said. Even after the fire was extinguished, the ash and debris from the
-                fire continued to pose a threat to public health. Ash and debris from the fire 
-                could contaminate water sources, affecting drinking water quality.
-              </p>
-              <p>
-                The Carlton Complex fire had a far-reaching impact on the environment
-                and the public's life. The destruction of homes and property, the loss
-                of vegetation, and the impact on water and air quality are just some
-                of the ways in which the fire affected the community.
-
+                fire continued to pose a threat to public health. Ash and debris 
+                can contaminate water sources, affecting drinking water quality.
               </p>
             </section>
             <section>
               <h4>Economic and Community Impacts</h4>
               <p>
                 The Grables highlighted that The Carlton
-                Complex fire caused significant economic losses to individuals,
+                Complex fire also caused significant economic losses to individuals,
                 businesses, and the community. <i>"The destruction of homes and property resulted in millions of dollars
                 in damages,"</i> Debbie Grable said. <i>"The economic impact of the fire was
                 felt across various industries, including agriculture, forestry, and
