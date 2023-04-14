@@ -42,7 +42,7 @@ function createLegend(chartId) {
     svg.append("text")
         .attr("x", 10)
         .attr("y", 10)
-        .attr("font-size", 12)
+        .attr("font-size", 13)
         .attr("fill", "#D8D8D8")
         .text("# of days burning")
 
@@ -65,7 +65,7 @@ function createLegend(chartId) {
     svg.append("text")
         .attr("x", 10)
         .attr("y", 140)
-        .attr("font-size", 12)
+        .attr("font-size", 13)
         .attr("fill", "#D8D8D8")
         .text("contained fire")
 
@@ -81,7 +81,7 @@ function createLegend(chartId) {
     svg.append("text")
         .attr("x", 10)
         .attr("y", 200)
-        .attr("font-size", 12)
+        .attr("font-size", 13)
         .attr("fill", "#D8D8D8")
         .text("shelter")
 
@@ -93,7 +93,7 @@ function createLegend(chartId) {
     svg.append("text")
         .attr("x", 10)
         .attr("y", 255)
-        .attr("font-size", 12)
+        .attr("font-size", 13)
         .attr("fill", "#D8D8D8")
         .text("household");
 
