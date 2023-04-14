@@ -10,7 +10,6 @@ import Introduction from "./pages/Introduction.jsx";
 // @ts-ignore
 import Navigation from "./components/Navigation";
 import "./utils/styles/style.scss";
-// import { ReactComponent as Lightning } './assets/lightning.svg';
 
 // Crackle
 
@@ -43,16 +42,6 @@ function App() {
       </div>
     </main>
     <Footer/>
-
-
-        {/* <Introduction/>
-        <div className="Chapters">
-          <Chapter1/>
-          <Chapter2/>
-          <Chapter3/>
-        </div>
-        <Navigation/>
-      <Footer/> */}
     </div>
   );
 }
