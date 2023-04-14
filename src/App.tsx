@@ -37,10 +37,7 @@ function App() {
       </nav>
       <div>
         <Introduction/>
-        <section id="Chapter1">
-          <h2>Fire</h2>
-          <p>…</p>
-        </section>
+        <Chapter1/>
         <Chapter2/>
         <Chapter3/>
       </div>
