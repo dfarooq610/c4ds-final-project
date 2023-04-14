@@ -6,14 +6,16 @@ function Carousel() {
   return (
     <Flickity>
         <figure>
-            <img src="./assets/Carlton Complex 2014.jpg" />
+            <img src="./assets/Carlton_Complex_2014.jpg" />
             <p>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
         </figure>
         <figure>
-            <img src="https://placeimg.com/640/480/nature" />
+            <img src="./assets/Carlton_Complex _2014_2.jpg" />
+            <p>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
         </figure>
         <figure>
-            <img src="https://placeimg.com/640/480/architecture" />
+            <img src="./assets/Burned_Home_from_Carlton_Complex_Wildfire.jpg" />
+            <p>"Burned Home from Carlton Complex Wildfire" by AdamCohn is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
     </Flickity>
   );
