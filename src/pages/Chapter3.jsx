@@ -17,6 +17,10 @@ function Carousel() {
             <img src="./assets/Burned_Home_from_Carlton_Complex_Wildfire.jpg" />
             <p>"Burned Home from Carlton Complex Wildfire" by AdamCohn is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
+        <figure>
+            <img src="./assets/WA-Wild-Fire-8.jpg" />
+            <p>"Carlton Complex Fire - image 3" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
+        </figure>
     </Flickity>
   );
 }
