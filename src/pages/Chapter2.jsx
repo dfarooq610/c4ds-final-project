@@ -9,7 +9,6 @@ export default function Chapter2() {
             Measuring the Impact of Wildfires in Washington State Over the Past Decade
           </h3>
         </header>
-          <div className="Row">
             <article>
               <p>
                 The Carlton Complex fire marked a significant turning point in
@@ -24,10 +23,7 @@ export default function Chapter2() {
                 The devastation serves as a stark reminder of the potential danger and far-reaching
                 consequences of wildfires in an era of climate change. </p>
             </article>
-
-            <AcreInteractive />
-            
-          </div>
+          <AcreInteractive />
           <article>
             <section>
               <h4>Environmental Impacts</h4>
