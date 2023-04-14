@@ -42,11 +42,13 @@
   width: 500px;
   height: 333px;
 }
+
 .container img {
 	position: relative;
   z-index: 1;
   width: 100%;
 }
+
 .overlay {
   display: none;
 	position: absolute;
@@ -57,22 +59,3 @@
   line-height: 333px;
   text-align: center;
 }
-
-// a {
-// 	padding: 1em 2em;
-//   background: #ecf0f1;
-//   color: #000;
-//   border-bottom: 3px solid #bdc3c7;
-//   border-radius: 4px;
-//   font-family: sans-serif;
-//   font-weight: bold;
-//   text-decoration: none;
-// }
-
-// a:active {
-// 	position: relative;
-// 	top: 3px;
-//   background: #34495e;
-//   border-color: #2c3e50;
-//   border: 0;
-// }
