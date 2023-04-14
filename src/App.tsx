@@ -26,14 +26,43 @@ function Footer({}) {
 function App() {
   return (
     <div className="App">
-        <Introduction/>
+    <main>
+      <div>
+        <section id="Introduction">
+          <h2>Introduction</h2>
+          <p>…</p>
+        </section>
+        <section id="Chapter1">
+          <h2>Fire</h2>
+          <p>…</p>
+        </section>
+        <section id="Chapter2">
+          <h2>Impacts</h2>
+          <p>…</p>
+        </section>
+        <section id="Chapter3">
+          <h2>Response</h2>
+        </section>
+      </div>
+      <nav className="section-nav">
+        <ol>
+          <li><a href="#Introduction">Introduction</a></li>
+          <li><a href="#Chapter1">Fire</a></li>
+          <li><a href="#Chapter2">Impacts</a></li>
+          <li><a href="#Chapter3">Response</a></li>
+        </ol>
+      </nav>
+    </main>
+
+
+        {/* <Introduction/>
         <div className="Chapters">
           <Chapter1/>
           <Chapter2/>
           <Chapter3/>
         </div>
         <Navigation/>
-      <Footer/>
+      <Footer/> */}
     </div>
   );
 }
