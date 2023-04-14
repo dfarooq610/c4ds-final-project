@@ -19,10 +19,10 @@ function Carousel() {
   );
 }
 
-export default function Chapter3({}) {
+export default function Chapter3() {
 
     return (
-        <div className="ChapterContainer DarkMode">
+        <div id="Chapter3" className="ChapterContainer DarkMode">
           <div className="ChapterContainer3">
             <h2>Response</h2>
             <h3 className="Chapter3Subtitle">

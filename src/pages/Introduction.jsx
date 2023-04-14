@@ -34,10 +34,10 @@ function Header({}) {
     );
 }
 
-export default function Introduction({}) {
+export default function Introduction() {
 
     return(
-        <div className="IntroductionContainer DarkMode">
+        <div id="Introduction" className="IntroductionContainer DarkMode">
             <Header/>
             <article>
                 <h1>To Flee or to Face</h1>

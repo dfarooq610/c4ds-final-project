@@ -16,7 +16,7 @@ const containmentVis = "Containment-Vis";
 const burnVis = "Burn-Vis";
 const legendVis = "Legend-Vis";
 
-export default function Chapter1 ({}) {
+export default function Chapter1 () {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
 
   // This callback fires when a Step hits the offset threshold. It receives the
