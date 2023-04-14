@@ -9,7 +9,6 @@ export default function Chapter2() {
             Measuring the impact of wildfires in Washington State over the past decade
           </h3>
         </header>
-          {/* <h4>Geographic Impacts</h4> */}
           <div className="Row">
             <article>
               <p>

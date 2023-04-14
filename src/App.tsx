@@ -45,6 +45,7 @@ function App() {
           <h2>Impacts</h2>
           <p>…</p>
         </section>
+        {/* <Chapter2/> */}
         <Chapter3/>
       </div>
     </main>
