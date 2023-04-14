@@ -42,7 +42,7 @@ function App() {
           <p>…</p>
         </section>
         <Chapter2/>
-        {/* <Chapter3/> */}
+        <Chapter3/>
       </div>
     </main>
     <Footer/>
