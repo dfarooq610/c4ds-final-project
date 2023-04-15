@@ -5,6 +5,12 @@ const AcreInteractive = () => {
   const [fillPercentage, setFillPercentage] = useState(50);
   const correctAnswer = 75.7;
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      setShowResults(true);
+    }
+  };
+
   const fillStyle = {
     position: "absolute",
     width: `${fillPercentage}%`,
@@ -48,37 +54,43 @@ const AcreInteractive = () => {
       <h4>
         Understanding the extent of acreage burned in the Carlton Complex Fire
       </h4>
-      <div
-        style={{
-          position: "relative",
-          display: "inline-block",
-        }}
-      >
-        <div style={fillStyle}></div>
-        <div style={userGuessBarStyle}></div>
-        <div style={correctAnswerBarStyle}></div>
-        <img
-          src="/assets/footballField.png"
-          alt="an image of a football field with endzones included. Users can drag a slider beneath the image to understand how big an acre is."
-          className="FootballField"
-        />
-        <div style={sliderContainerStyle}>
-          <input
-            type="range"
-            min="0"
-            value={fillPercentage}
-            onChange={(e) => setFillPercentage(e.target.value)}
-            onMouseUp={() => setShowResults(true)}
-            onMouseDown={() => setShowResults(false)}
-            className="custom-range-slider"
-            style={{ width: "100%" }}
+      <label>
+        <div
+          style={{
+            position: "relative",
+            display: "inline-block",
+          }}
+        >
+          <div style={fillStyle}></div>
+          <div style={userGuessBarStyle}></div>
+          <div style={correctAnswerBarStyle}></div>
+          <img
+            src="/assets/footballField.png"
+            alt="an image of a football field with endzones included. Users can drag a slider beneath the image to understand how big an acre is."
+            className="FootballField"
           />
+          <div style={sliderContainerStyle}>
+            <input
+              type="range"
+              min="0"
+              value={fillPercentage}
+              onChange={(e) => setFillPercentage(e.target.value)}
+              onMouseUp={() => setShowResults(true)}
+              onMouseDown={() => setShowResults(false)}
+              onKeyDown={handleKeyDown}
+              className="custom-range-slider"
+              style={{ width: "100%" }}
+            />
+          </div>
         </div>
-      </div>
+        How big is an acre? Use the slider to guess how big one acre is in
+        comparison to a football field.
+      </label>
       {showResults && (
-        <figcaption style={{marginTop: ".5rem"}}>
-          One acre extends roughly to the <strong>85 yard line</strong> including
-          the touchdown zones. That is approximately 75.7% of the length of a football field.
+        <figcaption style={{ marginTop: ".5rem" }}>
+          One acre extends roughly to the <strong>85 yard line</strong>{" "}
+          including the touchdown zones. That is approximately 75.7% of the
+          length of a football field.
         </figcaption>
       )}
     </figure>
