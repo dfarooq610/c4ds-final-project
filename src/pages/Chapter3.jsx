@@ -7,24 +7,24 @@ function Carousel() {
   return (
     <Flickity>
         <figure>
-            <img src="./assets/Carlton_Complex_2014.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." />
-            <p>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
+            <img src="./assets/Carlton_Complex_2014.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="800"/>
+            <p style={{textAlign: 'center'}}>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
         </figure>
         <figure>
-            <img src="./assets/Carlton_Complex _2014_2.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella."/>
-            <p>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
+            <img src="./assets/Carlton_Complex _2014_2.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="800"/>
+            <p style={{textAlign: 'center'}}>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
         </figure>
         <figure>
-            <img src="./assets/Burned_Home_from_Carlton_Complex_Wildfire.jpg" alt="Burned Home from Carlton Complex Wildfire by AdamCohn is licensed under CC BY-NC-ND 2.0."/>
-            <p>"Burned Home from Carlton Complex Wildfire" by AdamCohn is licensed under CC BY-NC-ND 2.0.</p>
+            <img src="./assets/Burned_Home_from_Carlton_Complex_Wildfire.jpg" alt="Burned Home from Carlton Complex Wildfire by AdamCohn is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <p style={{textAlign: 'center'}}>"Burned Home from Carlton Complex Wildfire" by AdamCohn is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
         <figure>
-            <img src="./assets/WA-Wild-Fire-8.jpg" alt="Carlton Complex Fire - image 3 by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0."/>
-            <p>"Carlton Complex Fire - image 3" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
+            <img src="./assets/WA-Wild-Fire-8.jpg" alt="Carlton Complex Fire - image 3 by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <p style={{textAlign: 'center'}}>"Carlton Complex Fire - image 3" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
         <figure>
-            <img src="./assets/Carlton_Complex_mop_up.jpg" alt="Carlton Complex mop up by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0."/>
-            <p>"Carlton Complex mop up" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
+            <img src="./assets/Carlton_Complex_mop_up.jpg" alt="Carlton Complex mop up by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <p style={{textAlign: 'center'}}>"Carlton Complex mop up" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
     </Flickity>
   );
