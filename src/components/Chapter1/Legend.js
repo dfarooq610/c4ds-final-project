@@ -46,7 +46,7 @@ function createLegend(chartId) {
 
         let svg = d3.select(`#${chartId} svg`);
 
-        const width = 350, height = 50;
+        const width = 350, height = 60;
 
         svg 
             .attr("width", width)

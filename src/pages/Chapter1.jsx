@@ -56,12 +56,12 @@ export default function Chapter1 () {
         </header>
         <div className="Chart-Wrapper" style={{ position: 'sticky', top: 20, right: 20}}>
           <div className="Chart-Container">
-              <div className="SideBar">
-                  <div className="chart" id={legendVis}></div>
-              </div>
               <div className="MainChart">
                   <div className="chart" id={mapVis}></div>
                   <div className="chart" id={burnVis}></div>
+              </div>
+              <div className="SideBar">
+                  <div className="chart" id={legendVis}></div>
               </div>
           </div>
           {/* I'm sticky. The current triggered step index is: {currentStepIndex} */}
