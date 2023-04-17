@@ -189,10 +189,8 @@ article {
 .topnav {
     overflow: hidden;
     position: relative;
-    // position: sticky;
-    // top: 40%;
-    // align-self: start;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
@@ -203,19 +201,18 @@ article {
 /* Style navigation menu links */
 .topnav a {
     color: #cbcbcb;
-    padding: 04px 16px;
+    padding: 10px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
     display: block;
 }
 
 /* Style the hamburger menu */
 .topnav a.icon {
-    background: black;
     display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
+    // position: absolute;
+    // left: 0;
+    // top: 0;
 }
 
 /* Add a grey background color on mouse-over */

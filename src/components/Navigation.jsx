@@ -28,7 +28,7 @@ export default function Navigation() {
 
     return(
         <div className="topnav">
-              <a className="icon" onClick={myFunction}>
+            <a className="icon" onClick={myFunction}>
                 <i className="fa fa-bars"></i>
             </a>
             <div id="myLinks">
