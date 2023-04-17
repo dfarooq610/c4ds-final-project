@@ -34,37 +34,21 @@ function Carousel() {
 export default function Chapter3() {
 
     return (
-        <section id="Chapter3" className=" DarkMode">
+        <section id="Chapter3" className="DarkMode">
           <div className="ChapterContainer ChapterContainer3">
-            <h2>Response</h2>
-            <h3 className="Chapter3Subtitle">
-              Preparing for Future Threats
-            </h3>
+            <header>
+              <h2>Response</h2>
+              <h3 className="Chapter3Subtitle">
+                Preparing for Future Threats
+              </h3>
+            </header>
 
-          <div className="ChapterContainer3">
+          <article>
             <p>The Carlton Complex Fire has highlighted the need for increased investment in wildfire prevention and response. As climate change continues exacerbating drought conditions and increasing the risk of wildfires, policymakers and communities must work together to prioritize wildfire preparedness and response.</p>
             <p>State and local officials have taken steps to improve wildfire preparedness and response in response to the Carlton Complex Fire. These efforts include increasing funding for wildfire prevention programs and investing in new technology to better detect and respond to wildfires.</p>
             <p>The government's response to The Carlton Complex Fire would depend on which government entity you are referring to. As the fire occurred in Washington State, the primary response would have been from the state government, specifically the Washington State Department of Natural Resources and the Washington State Patrol.</p>
             <p>However, federal agencies such as the Federal Emergency Management Agency (FEMA) and the U.S. Forest Service may have also been involved. The specific actions these agencies took would vary but could include coordinating firefighting efforts, providing resources and support to affected communities, and conducting investigations into the cause of the fire.</p>
-
-
-          </div>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-
             <Carousel />
-
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-
-          </div>
-
-          <div className="ChapterContainer3">
-
             <p>Debbie Grable, who personally experienced The Carlton Complex wildfire in 2014, shared insights about the local government's response in the aftermath of the disaster. <i>"As far as the actual government's response, the little towns here can do what they,"</i> Debbie Grable said. "But there is not much they don't have funds unless they get them from somewhere."</p>
             <p>She said it was people's house, so it was never going to be fast enough, and she does not if how they were reimbursed after insurance from the government. <i>"Everyone's insurance rates have gone up because of the fire danger, and now we are in a dangerous place,"</i> Debbie Grable said.</p>
             <p>According to the Washington State Patrol, there has been an observed trend of elevated medical and emergency department claims for asthma following exposure to wildfire smoke in Washington State from 2014 to 2018. Debbie Grable's husband, George Grable, said a group of Mennonites reportedly receives financial assistance from FEMA to reconstruct homes for affected individuals. <i>"When it comes to individuals whose homes were destroyed by fire, we were unaware of their eligibility for aid,"</i> he stated.</p>
@@ -75,22 +59,10 @@ export default function Chapter3() {
             <p>Despite the devastation caused by the Carlton Complex Fire, the community has come together to support one another in rebuilding. The Carlton Complex Long Term Recovery Group and various volunteer organizations have provided aid and resources to those affected. The group's efforts have helped many families and individuals rebuild their homes and lives.</p>
             <p>While the scars of the fire will remain, the resilience and strength of the community in the face of adversity have been genuinely inspiring. The Carlton Complex Fire serves as a reminder of the importance of disaster preparedness and the need for ongoing support for those affected by natural disasters.</p>
             <p><i>"If I was at that moment again, I don't care that much about anything I own,"</i> Viki Yanarella said. She said she might grab her boxes of photos from when her kids were little if she had time. And those photos, she thinks, would be irreplaceable that everything else is replaceable.</p>
-
-            <br></br>
             <p>Edited versions of interview audios go here.</p>
-
-
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-
+          </article>
           </div>
         </section>
-
-        
-
-        
       );
       
 
