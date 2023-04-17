@@ -127,7 +127,7 @@ function createLegend(chartId) {
             .enter()
             .append("circle")
                 .attr("cx", 15)
-                .attr("cy", (d, i) => 20 + i*20)
+                .attr("cy", (d, i) => 30 + i*20)
                 .attr("r", d => rScale(d.days))
                 .attr("fill", d => colorScale(d.color))
                 .attr("stroke", textColor)
@@ -139,20 +139,20 @@ function createLegend(chartId) {
             .enter()
             .append("text")
                 .attr("x", 30)
-                .attr("y", (d, i) => 23 + i*20)
+                .attr("y", (d, i) => 33 + i*20)
                 .attr("font-size", 10)
                 .attr("fill", textColor)
                 .text(d => d.text);
 
         svg.append("text")
             .attr("x", 10)
-            .attr("y", 160)
+            .attr("y", 165)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .text("shelter");
 
         svg.append("path")
-            .attr("transform", d => "translate(" + [20, 180] + ")")
+            .attr("transform", d => "translate(" + [20, 185] + ")")
             .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
             .attr("fill", "#EE2C25");
 
