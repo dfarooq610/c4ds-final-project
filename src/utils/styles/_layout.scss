@@ -125,8 +125,6 @@ article {
     max-width: 50vw;
 }
 
-
-
 @media screen and (max-width: 786px) {
 
     // * {
@@ -180,5 +178,9 @@ article {
         transform: translate(30%);
         margin: 0px auto;
         width: 125px;
+    }
+
+    .ChapterContainer {
+        margin-right: 0;
     }
 }

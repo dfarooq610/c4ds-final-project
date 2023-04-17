@@ -64,7 +64,7 @@ label {
 
 blockquote {
     font-size: 16pt; 
-    margin: 50px 200px;
+    margin: 2rem 8rem;
     font-style: italic;
     line-height: 130%;
 }
@@ -96,6 +96,12 @@ blockquote {
 
     p,
     label {
-        font-size: 13px;
+        font-size: 11pt;
+    }
+
+    blockquote {
+        margin: 2rem;
+        font-size: 13pt;
+        line-height: 125%;
     }
 }
