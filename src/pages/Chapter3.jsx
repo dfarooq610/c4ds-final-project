@@ -57,25 +57,14 @@ export default function Chapter3() {
             <br></br>
 
             <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster.</p>
-            
-            <br></br>
-
-            <p style={{ fontSize: 20, marginLeft: 200, marginRight: 200 }}>
-              <i><span className="soundcite" data-id="1494682795" data-start="10520" data-end="11030" data-plays="1">"As far as the actual government's response, the little towns here can do what they, but there is not much they don't have funds unless they get them from somewhere."</span></i>
-            
-            </p>
-            
-            <br></br>
-            
+            <blockquote>
+              <span className="soundcite" data-id="1494682795" data-start="10520" data-end="11030" data-plays="1">As far as the actual government's response, the little towns here can do what they, but there is not much they don't have funds unless they get them from somewhere.</span>
+            </blockquote>
             <p>She said it was people's house, so it was never going to be fast enough, and she does not if how they were reimbursed after insurance from the government. <i>"Everyone's insurance rates have gone up because of the fire danger, and now we are in a dangerous place,"</i> Debbie Grable said.</p>
             <p>George Grable said a group of Mennonites reportedly receives financial assistance from FEMA to reconstruct homes for affected individuals. <i>"When it comes to individuals whose homes were destroyed by fire, we were unaware of their eligibility for aid,"</i> he stated.</p>
             <p>Vicki Yanarella and her husband, Danny Yanarella, also provided commentary on the government's response and actions taken following the fire.</p>
-
-            <br></br>
-
-            <p style={{ fontSize: 20, marginLeft: 200, marginRight: 200 }}><i>"When the government came to this area, and they gave the net how natives, they were giving them a choice between going to a reservation or having or being deeded plot a plot of land here."</i></p>
             
-            <br></br>
+            <blockquote>When the government came to this area, and they gave the net how natives, they were giving them a choice between going to a reservation or having or being deeded plot a plot of land here.</blockquote>
             
             <p>She said two different agencies dealt with the native in this area, and they were both federal agencies. <i>"I don't know if there was any FEMA money from the government,"</i> Vicki Yanarella said. <i>"And that's interesting, and I don't think there were these fires, though, are declared national disasters."</i> But after that Danny Yanarella said one government thing she could think of is that flood when those winter lakes flooded, that was an irrigation system for the irrigation that runs in Benson Creek drainage. </p>
             <p><i>"I have some friends who live in Benson Creek,"</i> he said. <i>"It took their ditch organization, which is very small, several years to try and get some help fixing things.”</i> He said he thinks his friends finally got it from the conservation soil conservation district called Oak.</p>
@@ -139,11 +128,5 @@ export default function Chapter3() {
 //         </p>
 //       </div>
 //     </div>
-
-//     // First, we need to import the Flickity.js library
-//     // Then, we can create a container element for our paragraphs
-
-//     // Finally, we can initialize Flickity on our container element
-//     // The above code will create a carousel of paragraphs using Flickity.js
 //   );
 }

@@ -33,6 +33,7 @@ main > nav {
 .section-nav {
     padding-left: 0;
     border-left: 1px solid #efefef;
+    margin-left: 2rem;
 }
 
 .section-nav a {
@@ -62,15 +63,14 @@ li {
 /** page layout **/
 main {
     display: grid;
-    grid-template-columns: 8rem 1fr;
+    grid-template-columns: 10rem 1fr;
     // max-width: 100em;
-    margin-left: 2rem;
     // margin: auto 10rem;
 }
 
 .ChapterContainer {
     padding: 2rem 5rem;
-    border-left: 1px solid rgba(203, 203, 203, .55);
+    border-left: 1px solid rgba(203, 203, 203, .50);
     margin-right: 10rem;
 }
 
@@ -173,7 +173,7 @@ article {
         // right: 0px;
         // flex-direction: column;
         background-color: rgba(0, 0, 0, .75);
-        border: 1px solid rgba(255, 165, 0, 0.75);
+        border: 1px solid rgba(203, 203, 203, .75);
         border-radius: 5px;
         padding: 5px;
         transition: transform 0.3s ease-in;
@@ -181,9 +181,4 @@ article {
         margin: 0px auto;
         width: 125px;
     }
-
-    // .section-nav a {
-    //     color: $appDarkColor;
-    // }
-} 
-  
+}

@@ -74,6 +74,13 @@ label {
     margin-bottom: 1rem;
 }
 
+blockquote {
+    font-size: 16pt; 
+    margin: 50px 200px;
+    font-style: italic;
+    line-height: 130%;
+}
+
 @media screen and (max-width: 786px) {
 
     h1 {
