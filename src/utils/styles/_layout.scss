@@ -2,7 +2,6 @@
 // adapted from https://www.codewithrandom.com/2023/02/10/hamburger-menu-html-css-javascript-hamburger-menu-code/
 // adapted from https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/
 
-/** Poor man's reset **/
 * {
     box-sizing: border-box;
 }
@@ -72,33 +71,7 @@ main {
     padding: 2rem 5rem;
 }
 
-/*Properties for Nav-bar*/
-
-// .nav-sub {
-//     display: flex;  
-//     flex-direction: column;
-//     justify-content: space-between;
-//     padding-left: 5px;
-// }
-
-// .list-item {
-//     padding: 12px;
-//     list-style: none;
-//     color: $appDarkColor;
-//     font-size: .8rem;
-//     text-transform: uppercase;
-//     letter-spacing: .3px;
-// }
-
-// .nav-link {
-//     text-decoration: none;
-//     background-color: #d7d7d7;
-//     padding: 7px 10px;
-//     border-radius: 8px;
-//     box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 6px 6px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-// }
-
-// /*Properties for Hamburger*/  
+/*Properties for Hamburger*/  
 .ham {
     display: none;  
     padding: 5px;  
@@ -128,13 +101,6 @@ main {
 //         border-left: none;
 //     }
 
-// }
-
-
-// .ChapterContainer1,
-// .ChapterContainer2,
-// .ChapterContainer3 {
-//     padding: 5rem;
 // }
 
 .ChapterContainer {
@@ -179,7 +145,7 @@ article {
         padding: 2rem 2rem;
     }
 
-    .nav-change{  
+    .nav-change {
         transform:translate(0%);  
     }
 

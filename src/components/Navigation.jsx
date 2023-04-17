@@ -7,13 +7,15 @@ export default function Navigation() {
     const hamburger = d3.select(".ham");
     const navsub = d3.select(".nav-sub");
 
-    useEffect(() => {
+    // useEffect(() => {
       hamburger.on("click", function(e, d) {
         console.log(e, d)
-        hamburger.classList.toggle("change");
-        navsub.classList.toggle("nav-change");
+        hamburger.attr("class", "change")
+        navsub.attr("class", "nav-change")
+        // hamburger.classList.toggle("change");
+        // navsub.classList.toggle("nav-change");
       });
-    });
+    // });
 
     return(
         // <header>
