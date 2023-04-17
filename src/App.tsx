@@ -12,8 +12,6 @@ import Navigation from "./components/Navigation";
 import "./utils/styles/style.scss";
 
 // Crackle
-
-
 function Footer({}) {
   return(
     <footer className="DarkMode">

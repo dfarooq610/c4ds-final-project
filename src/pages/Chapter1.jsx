@@ -48,10 +48,12 @@ export default function Chapter1 () {
   return (
     <section id="Chapter1" className="DarkMode">
       <div className="ChapterContainer ChapterContainer1">
-        <h2>The fire</h2>
-        <h3 className="Chapter1Subtitle">
-          From Contained to Catastrophe
-        </h3>
+        <header>
+          <h2>Fire</h2>
+          <h3 className="Chapter1Subtitle">
+            From Contained to Catastrophe
+          </h3>
+        </header>
         <div className="Chart-Wrapper" style={{ position: 'sticky', top: 20, right: 20}}>
           <div className="Chart-Container">
               <div className="SideBar">
@@ -76,8 +78,8 @@ export default function Chapter1 () {
                 }}
                 className="step"
               >
-                  <p className="date">{complexFiltered[stepIndex].month_name + " " + complexFiltered[stepIndex].day}</p>
-                  <p className="story">{complexFiltered[stepIndex].story}</p>
+                <p className="date">{complexFiltered[stepIndex].month_name + " " + complexFiltered[stepIndex].day}</p>
+                <p className="story">{complexFiltered[stepIndex].story}</p>
               </div>
             </Step>
           ))}
