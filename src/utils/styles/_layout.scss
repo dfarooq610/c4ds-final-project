@@ -176,6 +176,11 @@ figure {
         grid-template-columns: 3rem 1fr;
     }
 
+    article,
+    header {
+        max-width: 90vw;
+    }
+
     .ChapterContainer {
         padding: 2rem 2rem;
     }
@@ -210,8 +215,5 @@ figure {
         transition: transform 0.3s ease-in;
         transform: translate(100%);
     }
-    
-    .ChapterContainer2 {
 
-    }
 }

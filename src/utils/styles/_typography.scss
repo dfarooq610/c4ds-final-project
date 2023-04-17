@@ -66,7 +66,8 @@ h5 {
     text-align: center;
 }
 
-p {
+p,
+label {
     font-size: 16px;
     line-height: 133%;
     margin-bottom: 1rem;
@@ -83,8 +84,7 @@ p {
     }
 
     h4 {
-        font-size: 9pt;
-        text-align: center;
+        font-size: 10pt;
     }
 
     h5 {
@@ -92,7 +92,8 @@ p {
         text-align: center;
     }
 
-    p {
+    p,
+    label {
         font-size: 13px;
     }
 }
