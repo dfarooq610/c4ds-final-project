@@ -11,34 +11,29 @@ export default function Chapter2() {
         </header>
         <article>
           <p>
-            The Carlton Complex fire marked a significant turning point in
-            the Washington State's experience with wildfires. As the largest wildfire
-            in Washington State's history, the Carlton Complex fire consumed over
-            250,000 acres, destroyed more than 300 homes, and cost millions of
-            dollars in damages.
+          The Carlton Complex fire marked a significant turning point in Washington State's experience with wildfires. 
+          As the largest wildfire in Washington State's history, the Carlton Complex fire consumed over 250,000 acres, 
+          destroyed more than 300 homes and damaged millions of dollars.
           </p>
-          <p>The fire burned the landscape so severly that it likely won't recover in our lifetimes.  
-            The Carlton Complex fire significantly impacted the environment and
-            public life during and after the event.
-            The devastation serves as a stark reminder of the potential danger and far-reaching
-            consequences of wildfires in an era of climate change. </p>
+          <p>The fire burned the landscape so severely that it likely will not recover in our lifetimes. 
+            The Carlton Complex fire significantly impacted the environment and public life during and after the event. 
+            The devastation is a stark reminder of the potential danger and far-reaching consequences of wildfires in an era of climate change. </p>
         </article>
         <AcreInteractive />
         <article>
           <section>
             <h4>Environmental Impacts</h4>
             <p>
-              The Carlton Complex fire destroyed large areas of vegetation. Vegetation 
-              plays a critical role in the ecosystem by providing a habitat for wildlife, reducing
-              soil erosion, and improving water quality. Local residents Debbie Grable and her husband, 
-              George Grable, shared their knowledge of the fires' impacts.</p>
+            The Carlton Complex fire destroyed large areas of vegetation. Vegetation plays a critical role in the ecosystem by providing a habitat for wildlife, 
+            reducing soil erosion, and improving water quality. 
+            Local residents Debbie Grable and her husband, George Grable, shared their knowledge of the fires' impacts.</p>
             <blockquote>The fire 
               destroyed large areas of forest, which will take years to regenerate. The 
               forest is a vital ecosystem component and provides essential benefits such 
               as carbon sequestration and habitat for wildlife.</blockquote>
             <p>
               Furthermore, the Carlton Complex fire impacted the water quality in the
-              surrounding area. George Grable added, <i>"the fire destroyed vegetation, 
+              surrounding area. George Grable added, <i>"The fire destroyed vegetation, 
               which reduced the ability of the land to absorb rainfall. This increased 
               the risk of flooding and soil erosion."</i> The loss of forest cover could also 
               have long-term environmental consequences, such as reduced carbon sequestration 
@@ -72,9 +67,8 @@ export default function Chapter2() {
               harmful chemicals, which can cause respiratory problems in humans and
               animals.</blockquote>
               
-            <p>Even after the fire was extinguished, the ash and debris from the
-              fire continued to pose a threat to public health. Ash and debris 
-              can contaminate water sources, affecting drinking water quality.
+            <p>Even after the fire was extinguished, the ash and debris from the fire continued to threaten public health. 
+              Ash and debris can contaminate water sources, affecting drinking water quality.
             </p>
           </section>
           <section>
@@ -90,7 +84,7 @@ export default function Chapter2() {
             <p>
               In the aftermath of the fire, the Grables and fellow community
               members had to band together to pick up the pieces. Many residents 
-              had to rebuild homes from scratch. George Grable remarked <i>"I have to say 
+              had to rebuild homes from scratch. George Grable remarked, <i>"I have to say 
               that the Carlton Complex fire had a profound impact on
               the public's life, and the destruction of homes and property led to
               significant economic losses for individuals and the community."</i>
