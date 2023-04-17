@@ -2,7 +2,6 @@ import * as d3 from 'd3';
 import { colors, uniqueArray } from "../../utils/global";
 
 let colorScale, max, rScale;
-let textColor = "#D8D8D8";
 
 export function initLegendVis(chartId, fires) {
 
@@ -34,8 +33,6 @@ export function initLegendVis(chartId, fires) {
 // Create Legend
 function createLegend(chartId) {
 
-    let svg = d3.select(`#${chartId} svg`);
-
     let data = [{"days": 1, "color": -1, "text": "Contained"},
                 {"days": 1, "color": 1, "text": "1"},
                 {"days": 6, "color": 6, "text": "6"},
@@ -44,6 +41,10 @@ function createLegend(chartId) {
                 {"days": 21, "color": 21, "text": "21"}]
 
     if (window.screen.width < 786) {
+
+        let textColor = "#D8D8D8";
+
+        let svg = d3.select(`#${chartId} svg`);
 
         const width = 350, height = 50;
 
@@ -109,14 +110,12 @@ function createLegend(chartId) {
 
     } else {
 
-        const width = 120, height = 300;
+        let svg = d3.select(`#Map-Vis svg`);
 
-        svg 
-            .attr("width", width)
-            .attr("height", height);
+        let textColor = "#0A0D14";
 
         svg.append("text")
-            .attr("x", 10)
+            .attr("x", 30)
             .attr("y", 10)
             .attr("font-size", 13)
             .attr("fill", textColor)
@@ -126,7 +125,7 @@ function createLegend(chartId) {
             .data(data)
             .enter()
             .append("circle")
-                .attr("cx", 15)
+                .attr("cx", 45)
                 .attr("cy", (d, i) => 30 + i*20)
                 .attr("r", d => rScale(d.days))
                 .attr("fill", d => colorScale(d.color))
@@ -138,33 +137,33 @@ function createLegend(chartId) {
             .data(data)
             .enter()
             .append("text")
-                .attr("x", 30)
+                .attr("x", 55)
                 .attr("y", (d, i) => 33 + i*20)
                 .attr("font-size", 10)
                 .attr("fill", textColor)
                 .text(d => d.text);
 
         svg.append("text")
-            .attr("x", 10)
+            .attr("x", 30)
             .attr("y", 165)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .text("shelter");
 
         svg.append("path")
-            .attr("transform", d => "translate(" + [20, 185] + ")")
+            .attr("transform", d => "translate(" + [50, 185] + ")")
             .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
             .attr("fill", "#EE2C25");
 
         svg.append("text")
-            .attr("x", 10)
+            .attr("x", 30)
             .attr("y", 220)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .text("household");
 
         svg.append("circle")
-            .attr("cx", 20)
+            .attr("cx", 50)
             .attr("cy", 240)
             .attr("r", 6)
             .attr("fill", "#36479D")
