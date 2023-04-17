@@ -7,23 +7,23 @@ function Carousel() {
   return (
     <Flickity>
         <figure>
-            <img src="./assets/Carlton_Complex_2014.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="800"/>
+            <img src="./assets/Carlton_Complex_2014.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
         </figure>
         <figure>
-            <img src="./assets/Carlton_Complex _2014_2.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="800"/>
+            <img src="./assets/Carlton_Complex _2014_2.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
         </figure>
         <figure>
-            <img src="./assets/Burned_Home_from_Carlton_Complex_Wildfire.jpg" alt="Burned Home from Carlton Complex Wildfire by AdamCohn is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <img src="./assets/Burned_Home_from_Carlton_Complex_Wildfire.jpg" alt="Burned Home from Carlton Complex Wildfire by AdamCohn is licensed under CC BY-NC-ND 2.0." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>"Burned Home from Carlton Complex Wildfire" by AdamCohn is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
         <figure>
-            <img src="./assets/WA-Wild-Fire-8.jpg" alt="Carlton Complex Fire - image 3 by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <img src="./assets/WA-Wild-Fire-8.jpg" alt="Carlton Complex Fire - image 3 by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>"Carlton Complex Fire - image 3" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
         <figure>
-            <img src="./assets/Carlton_Complex_mop_up.jpg" alt="Carlton Complex mop up by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <img src="./assets/Carlton_Complex_mop_up.jpg" alt="Carlton Complex mop up by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>"Carlton Complex mop up" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
     </Flickity>
@@ -49,6 +49,13 @@ export default function Chapter3() {
             <p>The government's response to The Carlton Complex Fire would depend on which government entity you are referring to. As the fire occurred in Washington State, the primary response would have been from the state government, specifically the Washington State Department of Natural Resources and the Washington State Patrol.</p>
             <p>However, federal agencies such as the Federal Emergency Management Agency (FEMA) and the U.S. Forest Service may have also been involved. The specific actions these agencies took would vary but could include coordinating firefighting efforts, providing resources and support to affected communities, and conducting investigations into the cause of the fire.</p>
             <Carousel />
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
             <p>Debbie Grable shared insights about the local government's response in the aftermath of the disaster. <i>"As far as the actual government's response, the little towns here can do what they,"</i> Debbie Grable said. "But there is not much they don't have funds unless they get them from somewhere."</p>
             <p>She said it was people's house, so it was never going to be fast enough, and she does not if how they were reimbursed after insurance from the government. <i>"Everyone's insurance rates have gone up because of the fire danger, and now we are in a dangerous place,"</i> Debbie Grable said.</p>
             <p>George Grable said a group of Mennonites reportedly receives financial assistance from FEMA to reconstruct homes for affected individuals. <i>"When it comes to individuals whose homes were destroyed by fire, we were unaware of their eligibility for aid,"</i> he stated.</p>
