@@ -26,14 +26,7 @@ function App() {
   return (
     <div className="App">
     <main>
-    <nav className="section-nav">
-        <ol>
-          <li><a href="#Introduction">Introduction</a></li>
-          <li><a href="#Chapter1">Fire</a></li>
-          <li><a href="#Chapter2">Impacts</a></li>
-          <li><a href="#Chapter3">Response</a></li>
-        </ol>
-      </nav>
+      <Navigation/>
       <div>
         <Introduction/>
         <Chapter1/>
