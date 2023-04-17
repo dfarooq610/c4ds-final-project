@@ -91,9 +91,8 @@ export default function Chapter3() {
               <iframe
                 width="100%"
                 height={300}
-                scrolling="no"
-                frameBorder="no"
                 allow="autoplay"
+                title="Interview with Debbie Grable and George Grable"
                 src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1494881827&color=%23554936&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
               />
               <div
@@ -140,8 +139,7 @@ export default function Chapter3() {
           <iframe
             width="100%"
             height={300}
-            scrolling="no"
-            frameBorder="no"
+            title="Interview with Vicki Yanarella and Danny Yanarella"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1494898483&color=%239b7d5d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
           />
