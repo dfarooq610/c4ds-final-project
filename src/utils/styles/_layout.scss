@@ -154,7 +154,7 @@ article {
     }
 
     .change .bar1 {
-        transform: rotate(45deg) translate(8px,3px);  
+        transform: rotate(45deg) translate(8px, 3px);  
     }
 
     .change .bar2 {  
@@ -162,7 +162,7 @@ article {
     }
 
     .change .bar3 {  
-        transform: rotate(-45deg) translate(8px,-3px);  
+        transform: rotate(-45deg) translate(8px, -3px);  
     }
 
     .nav-sub {  
@@ -191,11 +191,14 @@ article {
     position: relative;
     display: flex;
     flex-direction: column;
+    padding-left: 1rem;
+    padding-top: 2rem;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
 .topnav #myLinks {
     display: none;
+    border-left: .75px solid rgba(203, 203, 203, 1);
 }
 
 /* Style navigation menu links */
@@ -210,6 +213,8 @@ article {
 /* Style the hamburger menu */
 .topnav a.icon {
     display: block;
+    transition: 0.4s;
+    border-left: .75px solid rgba(203, 203, 203, 1);
     // position: absolute;
     // left: 0;
     // top: 0;
