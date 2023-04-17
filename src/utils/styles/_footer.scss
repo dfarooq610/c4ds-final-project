@@ -3,8 +3,10 @@ footer {
     min-height: 40px;
     margin: 0;
     padding: 10px;
+    border-top: .75px solid rgba(203, 203, 203, .5);
 }
 
-footer h4 {
+footer h5 {
+    padding-top: 10px;
     text-align: center;
 }
