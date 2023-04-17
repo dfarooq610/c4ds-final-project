@@ -47,7 +47,6 @@ export default function Chapter3() {
             <p>The Carlton Complex Fire has highlighted the need for increased investment in wildfire prevention and response. As climate change continues exacerbating drought conditions and increasing the risk of wildfires, policymakers and communities must work together to prioritize wildfire preparedness and response.</p>
             <p>State and local officials have taken steps to improve wildfire preparedness and response in response to the Carlton Complex Fire. These efforts include increasing funding for wildfire prevention programs and investing in new technology to better detect and respond to wildfires.</p>
             <p>The government's response to The Carlton Complex Fire would depend on which government entity you are referring to. As the fire occurred in Washington State, the primary response would have been from the state government, specifically the Washington State Department of Natural Resources and the Washington State Patrol.</p>
-            <p>However, federal agencies such as the Federal Emergency Management Agency (FEMA) and the U.S. Forest Service may have also been involved. The specific actions these agencies took would vary but could include coordinating firefighting efforts, providing resources and support to affected communities, and conducting investigations into the cause of the fire.</p>
             <Carousel />
 
             <br></br>
@@ -56,10 +55,17 @@ export default function Chapter3() {
             <br></br>
             <br></br>
 
+            <p>However, federal agencies such as the Federal Emergency Management Agency (FEMA) and the U.S. Forest Service may have also been involved. The specific actions these agencies took would vary but could include coordinating firefighting efforts, providing resources and support to affected communities, and conducting investigations into the cause of the fire.</p>
             <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster.</p>
+            
             <blockquote>
-              <span className="soundcite" data-id="1494682795" data-start="10520" data-end="11030" data-plays="1">As far as the actual government's response, the little towns here can do what they, but there is not much they don't have funds unless they get them from somewhere.</span>
+            <span className="soundcite" data-id={1494682795} data-start={652000} data-end={664000} data-plays={1}>
+            As far as the actual government's response, the little towns here can do what
+            they, but there is not much they don't have funds unless they get them from
+            somewhere.
+            </span>
             </blockquote>
+            
             <p>She said it was people's house, so it was never going to be fast enough, and she does not if how they were reimbursed after insurance from the government. <i>"Everyone's insurance rates have gone up because of the fire danger, and now we are in a dangerous place,"</i> Debbie Grable said.</p>
             <p>George Grable said a group of Mennonites reportedly receives financial assistance from FEMA to reconstruct homes for affected individuals. <i>"When it comes to individuals whose homes were destroyed by fire, we were unaware of their eligibility for aid,"</i> he stated.</p>
             <p>Vicki Yanarella and her husband, Danny Yanarella, also provided commentary on the government's response and actions taken following the fire.</p>
@@ -72,11 +78,112 @@ export default function Chapter3() {
             <p>Despite the devastation caused by the Carlton Complex Fire, the community has come together to support one another in rebuilding. The Carlton Complex Long Term Recovery Group and various volunteer organizations have provided aid and resources to those affected. The group's efforts have helped many families and individuals rebuild their homes and lives.</p>
             <p>While the scars of the fire will remain, the resilience and strength of the community in the face of adversity have been genuinely inspiring. The Carlton Complex Fire serves as a reminder of the importance of disaster preparedness and the need for ongoing support for those affected by natural disasters.</p>
             <p><i>"If I was at that moment again, I don't care that much about anything I own,"</i> Viki Yanarella said. She said she might grab her boxes of photos from when her kids were little if she had time. And those photos, she thinks, would be irreplaceable that everything else is replaceable.</p>
-            <p>Edited versions of interview audios go here.</p>
-          </article>
+            
+            <br></br>
+
+            <p><b>Click below to check them out: </b></p>
+
+            <br></br>
+
+            <p>
+
+            <>
+              <iframe
+                width="100%"
+                height={300}
+                scrolling="no"
+                frameBorder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1494881827&color=%23554936&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+              />
+              <div
+                style={{
+                  fontSize: 15,
+                  color: "#cccccc",
+                  lineBreak: "anywhere",
+                  wordBreak: "normal",
+                  overflow: "hidden",
+                  whiteSpace: "nowrap",
+                  textOverflow: "ellipsis",
+                  fontFamily:
+                    "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+                  fontWeight: 100
+                }}
+              >
+                <a
+                  href="https://soundcloud.com/zhaozhou-dai"
+                  title="Zhaozhou Dai and Joli Holmes"
+                  target="_blank"
+                  style={{ fontSize: 15, color: "#cccccc", textDecoration: "none" }}
+                >
+                  Zhaozhou Dai and Joli Holmes
+                </a>{" "}
+                ·{" "}
+                <a
+                  href="https://soundcloud.com/zhaozhou-dai/interview-with-debbie-grable-and-george-grable"
+                  title="Interview with Debbie Grable and George Grable"
+                  target="_blank"
+                  style={{ fontSize: 15, color: "#cccccc", textDecoration: "none" }}
+                >
+                  Interview with Debbie Grable and George Grable
+                </a>
+              </div>
+            </>
+            </p>
+
+          <br></br>
+          <br></br>
+
+            <p>
+
+            <>
+          <iframe
+            width="100%"
+            height={300}
+            scrolling="no"
+            frameBorder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1494898483&color=%239b7d5d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          />
+          <div
+            style={{
+              fontSize: 15,
+              color: "#cccccc",
+              lineBreak: "anywhere",
+              wordBreak: "normal",
+              overflow: "hidden",
+              whiteSpace: "nowrap",
+              textOverflow: "ellipsis",
+              fontFamily:
+                "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontWeight: 100
+            }}
+          >
+            <a
+              href="https://soundcloud.com/zhaozhou-dai"
+              title="Zhaozhou Dai and Joli Holmes"
+              target="_blank"
+              style={{ fontSize: 15, color: "#cccccc", textDecoration: "none" }}
+            >
+              Zhaozhou Dai and Joli Holmes
+            </a>{" "}
+            ·{" "}
+            <a
+              href="https://soundcloud.com/zhaozhou-dai/interview-with-vicki-yanarella-and-danny-yanarella"
+              title="Interview with Vicki Yanarella and Danny Yanarella"
+              target="_blank"
+              style={{ fontSize: 15, color: "#cccccc", textDecoration: "none" }}
+            >
+              Interview with Vicki Yanarella and Danny Yanarella
+            </a>
           </div>
-        </section>
-      );
+        </>
+           </p>
+                      
+                      </article>
+                      </div>
+                    </section>
+                  );
 
 //   return (
 //     <div className="Chapter3">
