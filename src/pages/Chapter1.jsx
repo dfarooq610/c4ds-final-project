@@ -16,8 +16,14 @@ const containmentVis = "Containment-Vis";
 const burnVis = "Burn-Vis";
 const legendVis = "Legend-Vis";
 
+let offset = .5
+
 export default function Chapter1 () {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
+  
+  if (window.screen.width < 786) {
+    offset = .9;
+  } 
 
   // This callback fires when a Step hits the offset threshold. It receives the
   // data prop of the step, which in this demo stores the index of the step.
@@ -67,7 +73,7 @@ export default function Chapter1 () {
             </div>
           </div>
           <div className="Scroll-Wrapper">
-            <Scrollama offset={0.5} onStepEnter={onStepEnter}>
+            <Scrollama offset={offset} onStepEnter={onStepEnter}>
               {arr.map((_, stepIndex) => (
                 <Step data={stepIndex} key={stepIndex}>
                   <div
