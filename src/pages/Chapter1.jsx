@@ -65,11 +65,11 @@ export default function Chapter1 () {
             <div className="Chart-Container">
                 <div className="MainChart">
                     <div className="chart" id={mapVis}></div>
-                    <div className="chart" id={burnVis}></div>
+                    {/* <div className="chart" id={burnVis}></div> */}
                 </div>
-                <div className="SideBar">
+                {/* <div className="SideBar">
                     <div className="chart" id={legendVis}></div>
-                </div>
+                </div> */}
             </div>
           </div>
           <div className="Scroll-Wrapper">
