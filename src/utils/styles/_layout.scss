@@ -17,48 +17,48 @@ html {
 }
   
 /* 2. Make nav sticky */
-main > nav {
-    position: sticky;
-    top: 40%;
-    align-self: start;
-}
+// main > nav {
+//     position: sticky;
+//     top: 40%;
+//     align-self: start;
+// }
 
-/* 3. ScrollSpy active styles (see JS tab for activation) */
-.section-nav li.active > a {
-    color: #333;
-    font-weight: 500;
-}
+// /* 3. ScrollSpy active styles (see JS tab for activation) */
+// .section-nav li.active > a {
+//     color: #333;
+//     font-weight: 500;
+// }
 
-/* Sidebar Navigation */
-.section-nav {
-    padding-left: 0;
-    border-left: 1px solid #efefef;
-    margin-left: 2rem;
-}
+// /* Sidebar Navigation */
+// .section-nav {
+//     padding-left: 0;
+//     border-left: 1px solid #efefef;
+//     margin-left: 2rem;
+// }
 
-.section-nav a {
-    text-decoration: none;
-    display: block;
-    padding: .125rem 0;
-    color: #ccc;
-    transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
-}
+// .section-nav a {
+//     text-decoration: none;
+//     display: block;
+//     padding: .125rem 0;
+//     color: #ccc;
+//     transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+// }
 
-.section-nav a:hover,
-.section-nav a:focus {
-    color: #fff;
-    font-weight: bold;
-}
+// .section-nav a:hover,
+// .section-nav a:focus {
+//     color: #fff;
+//     font-weight: bold;
+// }
 
-ul, ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+// ul, ol {
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+// }
 
-li {
-    margin-left: 1rem;
-}
+// li {
+//     margin-left: 1rem;
+// }
 
 /** page layout **/
 main {
@@ -75,19 +75,19 @@ main {
 }
 
 /*Properties for Hamburger*/  
-.ham {
-    display: none;  
-    padding: 5px;  
-    cursor: pointer;  
-}
+// .ham {
+//     display: none;  
+//     padding: 5px;  
+//     cursor: pointer;  
+// }
 
-.bar1, .bar2, .bar3 {  
-    display: block;
-    width: 20px;
-    height: 2px;
-    margin: 5px auto;
-    transition: 0.4s;  
-}
+// .bar1, .bar2, .bar3 {  
+//     display: block;
+//     width: 20px;
+//     height: 2px;
+//     margin: 5px auto;
+//     transition: 0.4s;  
+// }
 
 // @media only screen and (max-width:800px) {
 
@@ -141,54 +141,53 @@ article {
         max-width: 90vw;
     }
 
-    .ChapterContainer {
-        padding: 2rem 2rem;
-    }
+    // .nav-change {
+    //     transform:translate(0%);  
+    // }
 
-    .nav-change {
-        transform:translate(0%);  
-    }
+    // .ham {
+    //     display: block;  
+    // }
 
-    .ham {
-        display: block;  
-    }
+    // .change .bar1 {
+    //     transform: rotate(45deg) translate(8px, 3px);  
+    // }
 
-    .change .bar1 {
-        transform: rotate(45deg) translate(8px, 3px);  
-    }
+    // .change .bar2 {  
+    //     opacity: 0;
+    // }
 
-    .change .bar2 {  
-        opacity: 0;
-    }
+    // .change .bar3 {  
+    //     transform: rotate(-45deg) translate(8px, -3px);  
+    // }
 
-    .change .bar3 {  
-        transform: rotate(-45deg) translate(8px, -3px);  
-    }
-
-    .nav-sub {  
-        // position: absolute;
-        // top: 8vh;
-        // right: 0px;
-        // flex-direction: column;
-        background-color: rgba(0, 0, 0, .75);
-        border: 1px solid rgba(203, 203, 203, .75);
-        border-radius: 5px;
-        padding: 5px;
-        transition: transform 0.3s ease-in;
-        transform: translate(30%);
-        margin: 0px auto;
-        width: 125px;
-    }
+    // .nav-sub {  
+    //     // position: absolute;
+    //     // top: 8vh;
+    //     // right: 0px;
+    //     // flex-direction: column;
+    //     background-color: rgba(0, 0, 0, .75);
+    //     border: 1px solid rgba(203, 203, 203, .75);
+    //     border-radius: 5px;
+    //     padding: 5px;
+    //     transition: transform 0.3s ease-in;
+    //     transform: translate(30%);
+    //     margin: 0px auto;
+    //     width: 125px;
+    // }
 
     .ChapterContainer {
         margin-right: 0;
+        padding: 2rem 2rem;
     }
 }
 
 /* Style the navigation menu */
 .topnav {
     overflow: hidden;
-    position: relative;
+    position: sticky;
+    top: 40%;
+    align-self: start;
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
