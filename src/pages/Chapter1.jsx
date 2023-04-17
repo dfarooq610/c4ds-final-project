@@ -54,34 +54,38 @@ export default function Chapter1 () {
             From Contained to Catastrophe
           </h3>
         </header>
-        <div className="Chart-Wrapper" style={{ position: 'sticky', top: 20, right: 20}}>
-          <div className="Chart-Container">
-              <div className="MainChart">
-                  <div className="chart" id={mapVis}></div>
-                  <div className="chart" id={burnVis}></div>
-              </div>
-              <div className="SideBar">
-                  <div className="chart" id={legendVis}></div>
-              </div>
+        <div className="Scroll-Container">
+          <div className="Chart-Wrapper" style={{ position: 'sticky', top: 20, right: 20}}>
+            <div className="Chart-Container">
+                <div className="MainChart">
+                    <div className="chart" id={mapVis}></div>
+                    <div className="chart" id={burnVis}></div>
+                </div>
+                <div className="SideBar">
+                    <div className="chart" id={legendVis}></div>
+                </div>
+            </div>
+          </div>
+          <div className="Scroll-Wrapper">
+            <Scrollama offset={0.5} onStepEnter={onStepEnter}>
+              {arr.map((_, stepIndex) => (
+                <Step data={stepIndex} key={stepIndex}>
+                  <div
+                    style={{
+                      margin: '50vh 0',
+                      border: '1px',
+                      opacity: currentStepIndex === stepIndex ? 1 : 0.2,
+                    }}
+                    className="step"
+                  >
+                    <p className="date">{complexFiltered[stepIndex].month_name + " " + complexFiltered[stepIndex].day}</p>
+                    <p className="story">{complexFiltered[stepIndex].story}</p>
+                  </div>
+                </Step>
+              ))}
+            </Scrollama>
           </div>
         </div>
-        <Scrollama offset={0.5} onStepEnter={onStepEnter}>
-          {arr.map((_, stepIndex) => (
-            <Step data={stepIndex} key={stepIndex}>
-              <div
-                style={{
-                  margin: '50vh 0',
-                  border: '1px',
-                  opacity: currentStepIndex === stepIndex ? 1 : 0.2,
-                }}
-                className="step"
-              >
-                <p className="date">{complexFiltered[stepIndex].month_name + " " + complexFiltered[stepIndex].day}</p>
-                <p className="story">{complexFiltered[stepIndex].story}</p>
-              </div>
-            </Step>
-          ))}
-        </Scrollama>
       </div>
     </section>
   );

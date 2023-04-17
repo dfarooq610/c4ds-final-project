@@ -219,10 +219,10 @@ export function initMapVis(chartId) {
         initialCenterY = 48.25;
 
     } else {
-        width = 850;
-        height = 600;
-        initialScale = 50000;
-        initialCenterX = -23.9
+        width = 750;
+        height = 450;
+        initialScale = 35000;
+        initialCenterX = -24;
         initialCenterY = 48.3;
     }
 
