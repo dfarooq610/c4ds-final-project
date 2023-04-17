@@ -120,67 +120,56 @@ function createLegend(chartId) {
             .attr("y", 10)
             .attr("font-size", 13)
             .attr("fill", textColor)
-            .text("# of days burning")
+            .text("# of days burning");
 
-        for (var j = 1; j < max; j= j + 5) {
-            svg.append("circle")
+        svg.selectAll("legend-fire")
+            .data(data)
+            .enter()
+            .append("circle")
                 .attr("cx", 15)
-                .attr("cy", 20 + j*4)
-                .attr("r", rScale(j))
-                .attr("fill", colorScale(j));
+                .attr("cy", (d, i) => 20 + i*20)
+                .attr("r", d => rScale(d.days))
+                .attr("fill", d => colorScale(d.color))
+                .attr("stroke", textColor)
+                .attr("stroke-width", 1)
+                .attr("stroke-opacity", .3);
 
-            svg.append("text")
+        svg.selectAll("legend-text")
+            .data(data)
+            .enter()
+            .append("text")
                 .attr("x", 30)
-                .attr("y", 20 + j*4 + 4)
+                .attr("y", (d, i) => 23 + i*20)
                 .attr("font-size", 10)
-                .attr("text-anchor", "middle")
                 .attr("fill", textColor)
-                .text(j)
-        }
+                .text(d => d.text);
 
         svg.append("text")
             .attr("x", 10)
-            .attr("y", 140)
+            .attr("y", 160)
             .attr("font-size", 13)
             .attr("fill", textColor)
-            .text("contained fire")
-
-        svg.append("circle")
-            .attr("cx", 20)
-            .attr("cy", 160)
-            .attr("r", 6)
-            .attr("fill", "#473F41")
-            .attr("stroke", textColor)
-            .attr("stroke-width", .5)
-            .attr("fill-opacity", .3);
-
-        svg.append("text")
-            .attr("x", 10)
-            .attr("y", 200)
-            .attr("font-size", 13)
-            .attr("fill", textColor)
-            .text("shelter")
+            .text("shelter");
 
         svg.append("path")
-            .attr("transform", d => "translate(" + [20, 220] + ")")
+            .attr("transform", d => "translate(" + [20, 180] + ")")
             .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
             .attr("fill", "#EE2C25");
 
         svg.append("text")
             .attr("x", 10)
-            .attr("y", 255)
+            .attr("y", 220)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .text("household");
 
         svg.append("circle")
             .attr("cx", 20)
-            .attr("cy", 270)
-            .attr("r", 8)
+            .attr("cy", 240)
+            .attr("r", 6)
             .attr("fill", "#36479D")
             .attr("fill-opacity", .6)
             .attr("stroke", "#36479D")
             .attr("stroke-opacity", 1);
-
     }
 }

@@ -147,7 +147,6 @@ export function updateShelter(chartId, date) {
     );
 }
 
-
 function fireBurnNDays(date, d) {
     let month = "0"+ date.toString().substr(0, 1);
     let day = date.toString().substr(1, 3);
@@ -222,14 +221,13 @@ export function initMapVis(chartId) {
     } else {
         width = 650;
         height = 450;
-        initialScale = 25000
+        initialScale = 26000;
         initialCenterX = -24
         initialCenterY = 48.25;
-
     }
 
-        svg.attr("width", width)
-            .attr("height", height)
+    svg.attr("width", width)
+       .attr("height", height)
             // .attr("viewBox", `0 0 ${width} ${height}`)
             // .attr("preserveAspectRatio", "xMidYMid meet")
             // .classed("svg-content", true);
@@ -267,7 +265,7 @@ export function updateMapVis(chartId, date) {
     updateShelter(chartId, date);
     updateFire(chartId, date);
 
-    if (date === 826) {
-        drawPath(chartId, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);
-    }
+    // if (date === 826) {
+    //     drawPath(chartId, fireBoundary.features, "fire-boundary", "#473F41", .5, 1, "#473F41", .5);
+    // }
 }
