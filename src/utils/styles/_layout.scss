@@ -72,8 +72,6 @@ main {
     padding: 2rem 5rem;
 }
 
-
-
 /*Properties for Nav-bar*/
 
 // .nav-sub {
@@ -138,15 +136,6 @@ main {
 // .ChapterContainer3 {
 //     padding: 5rem;
 // }
-
-img {
-    max-width: 100%;
-    max-height: 70vh;
-}
-
-figure {
-    margin: 0;
-}
 
 .ChapterContainer {
     display: flex;
@@ -220,4 +209,9 @@ article {
         transition: transform 0.3s ease-in;
         transform: translate(100%);
     }
+
+    // img {
+    //     max-width: none;
+    //     max-height: none;
+    // }
 }
