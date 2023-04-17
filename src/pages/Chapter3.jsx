@@ -61,7 +61,7 @@ export default function Chapter3() {
             <br></br>
 
             <p style={{ fontSize: 20, marginLeft: 200, marginRight: 200 }}>
-              <i><span class="soundcite" data-id="1494682795" data-start="10520" data-end="11030" data-plays="1">"As far as the actual government's response, the little towns here can do what they, but there is not much they don't have funds unless they get them from somewhere."</span></i>
+              <i><span className="soundcite" data-id="1494682795" data-start="10520" data-end="11030" data-plays="1">"As far as the actual government's response, the little towns here can do what they, but there is not much they don't have funds unless they get them from somewhere."</span></i>
             
             </p>
             
