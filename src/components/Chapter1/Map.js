@@ -207,13 +207,28 @@ export function updateFire(chartId, date) {
 
 export function initMapVis(chartId) {
 
-    const width = 650, height = 450, initialScale = 25000,
-        initialCenterX = -24,
+    let svg = d3.select(`#${chartId}`)
+        .append("svg");
+
+    let width, height, initialScale,initialCenterX, initialCenterY;
+
+    if (window.screen.width < 786) {
+        width = 300;
+        height = 450;
+        initialScale = 25010
+        initialCenterX = -23.9;
         initialCenterY = 48.25;
 
-    d3.select(`#${chartId}`)
-            .append("svg")
-            .attr("width", width)
+    } else {
+        width = 650;
+        height = 450;
+        initialScale = 25000
+        initialCenterX = -24
+        initialCenterY = 48.25;
+
+    }
+
+        svg.attr("width", width)
             .attr("height", height)
             // .attr("viewBox", `0 0 ${width} ${height}`)
             // .attr("preserveAspectRatio", "xMidYMid meet")
