@@ -64,9 +64,7 @@ export default function Chapter1 () {
                   <div className="chart" id={legendVis}></div>
               </div>
           </div>
-          {/* I'm sticky. The current triggered step index is: {currentStepIndex} */}
         </div>
-        {/* debug */}
         <Scrollama offset={0.5} onStepEnter={onStepEnter}>
           {arr.map((_, stepIndex) => (
             <Step data={stepIndex} key={stepIndex}>
