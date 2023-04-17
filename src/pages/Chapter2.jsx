@@ -32,7 +32,6 @@ export default function Chapter2() {
               plays a critical role in the ecosystem by providing a habitat for wildlife, reducing
               soil erosion, and improving water quality. Local residents Debbie Grable and her husband, 
               George Grable, shared their knowledge of the fires' impacts.</p>
-              
             <blockquote>The fire 
               destroyed large areas of forest, which will take years to regenerate. The 
               forest is a vital ecosystem component and provides essential benefits such 
@@ -68,10 +67,10 @@ export default function Chapter2() {
               such as asthma and chronic obstructive pulmonary disease were
               particularly vulnerable.</p>            
               
-              <p><blockquote>Smoke and ash filled the air during the fire, resulting in a
+              <blockquote>Smoke and ash filled the air during the fire, resulting in a
               decline in air quality. The smoke and ash contained
               harmful chemicals, which can cause respiratory problems in humans and
-              animals.</blockquote></p>
+              animals.</blockquote>
               
             <p>Even after the fire was extinguished, the ash and debris from the
               fire continued to pose a threat to public health. Ash and debris 

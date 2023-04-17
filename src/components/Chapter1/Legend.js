@@ -46,7 +46,7 @@ function createLegend(chartId) {
 
         let svg = d3.select(`#${chartId} svg`);
 
-        const width = 350, height = 60;
+        const width = 350, height = 120;
 
         svg 
             .attr("width", width)
@@ -81,27 +81,27 @@ function createLegend(chartId) {
             .text(d => d.text);
 
         svg.append("text")
-            .attr("x", 220)
-            .attr("y", 10)
+            .attr("x", 5)
+            .attr("y", 90)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .text("shelter")
 
         svg.append("path")
-            .attr("transform", d => "translate(" + [230, 30] + ")")
+            .attr("transform", d => "translate(" + [10, 110] + ")")
             .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
             .attr("fill", "#EE2C25");
 
         svg.append("text")
-            .attr("x", 280)
-            .attr("y", 10)
+            .attr("x", 70)
+            .attr("y", 90)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .text("household");
 
         svg.append("circle")
-            .attr("cx", 290)
-            .attr("cy", 30)
+            .attr("cx", 75)
+            .attr("cy", 110)
             .attr("r", 6)
             .attr("fill", "#36479D")
             .attr("fill-opacity", .6)
