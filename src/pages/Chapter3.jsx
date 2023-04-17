@@ -88,9 +88,6 @@ export default function Chapter3() {
           </div>
         </section>
       );
-      
-
-      
 
 //   return (
 //     <div className="Chapter3">

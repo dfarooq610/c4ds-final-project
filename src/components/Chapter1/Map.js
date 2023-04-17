@@ -219,11 +219,11 @@ export function initMapVis(chartId) {
         initialCenterY = 48.25;
 
     } else {
-        width = 650;
-        height = 450;
-        initialScale = 26000;
-        initialCenterX = -24
-        initialCenterY = 48.25;
+        width = 900;
+        height = 600;
+        initialScale = 50000;
+        initialCenterX = -23.9
+        initialCenterY = 48.3;
     }
 
     svg.attr("width", width)
