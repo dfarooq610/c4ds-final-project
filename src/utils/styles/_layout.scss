@@ -159,16 +159,11 @@ figure {
     grid-template-columns: minmax(300px, 33%) 1fr;
 }
 
-.ChapterContainer2 {
-    margin-left: 300px;
-    margin-right: 300px; 
+.ChapterContainer2,
+.ChapterContainer3 {
+    padding: 5rem 10rem;
 }
 
-.ChapterContainer3 p {
-    margin-left: 300px;
-    margin-right: 300px;
-
-}
 
 @media screen and (max-width: 786px) {
 
@@ -216,4 +211,7 @@ figure {
         transform: translate(100%);
     }
     
+    .ChapterContainer2 {
+
+    }
 }
