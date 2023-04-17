@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import { colors, uniqueArray } from "../../utils/global";
 
 let colorScale, max, rScale;
+let textColor = "#0A0D14";
 
 export function initLegendVis(chartId, fires) {
 
@@ -21,17 +22,13 @@ export function initLegendVis(chartId, fires) {
         .domain(nDaysUni.concat([-1]))
         .range(colors.concat(["#473F41"]));
 
-    d3.select(`#${chartId}`)
-        .append("svg")
-        // .attr("viewBox", `0 0 ${width} ${width}`)
-        // .attr("preserveAspectRatio", "xMidYMid meet")
-        // .classed("svg-content", true);
-
     createLegend(chartId);
 }
 
 // Create Legend
 function createLegend(chartId) {
+
+    let svg = d3.select(`#Map-Vis svg`);
 
     let data = [{"days": 1, "color": -1, "text": "Contained"},
                 {"days": 1, "color": 1, "text": "1"},
@@ -42,20 +39,11 @@ function createLegend(chartId) {
 
     if (window.screen.width < 786) {
 
-        let textColor = "#D8D8D8";
-
-        let svg = d3.select(`#${chartId} svg`);
-
-        const width = 200, height = 120;
-
-        svg 
-            .attr("width", width)
-            .attr("height", height);
-
         svg.append("text")
-            .attr("x", 5)
-            .attr("y", 10)
+            .attr("x", 60)
+            .attr("y", 30)
             .attr("font-size", 13)
+            .attr("font-weight", "bold")
             .attr("fill", textColor)
             .text("# of days burning");
 
@@ -64,7 +52,7 @@ function createLegend(chartId) {
                 .data(data, d => d.text)
                 .enter()
                 .append("g")
-            .attr("transform", (d, i) => `translate(${(i * 32) + 25}, ${30})`);
+            .attr("transform", (d, i) => `translate(${(i * 32) + 85}, ${45})`);
     
         shape.append("circle")
             .attr("r", d => rScale(d.days))
@@ -81,26 +69,28 @@ function createLegend(chartId) {
             .text(d => d.text);
 
         svg.append("text")
-            .attr("x", 5)
+            .attr("x", 60)
             .attr("y", 90)
             .attr("font-size", 13)
+            .attr("font-weight", "bold")
             .attr("fill", textColor)
             .text("shelter")
 
         svg.append("path")
-            .attr("transform", d => "translate(" + [10, 110] + ")")
+            .attr("transform", d => "translate(" + [65, 110] + ")")
             .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
             .attr("fill", "#EE2C25");
 
         svg.append("text")
-            .attr("x", 70)
+            .attr("x", 150)
             .attr("y", 90)
             .attr("font-size", 13)
+            .attr("font-weight", "bold")
             .attr("fill", textColor)
             .text("household");
 
         svg.append("circle")
-            .attr("cx", 75)
+            .attr("cx", 155)
             .attr("cy", 110)
             .attr("r", 6)
             .attr("fill", "#36479D")
@@ -109,10 +99,6 @@ function createLegend(chartId) {
             .attr("stroke-opacity", 1);
 
     } else {
-
-        let svg = d3.select(`#Map-Vis svg`);
-
-        let textColor = "#0A0D14";
 
         svg.append("text")
             .attr("x", 60)

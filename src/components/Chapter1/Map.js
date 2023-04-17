@@ -98,7 +98,7 @@ export function updateHouses(chartId, date) {
                 .duration(1000)
                 .tween("pathTween", function(d, i) {
                     return pathTween(drawPath(chartId, [d], "escape-route"))
-                })
+            })
     );
 
     function pathTween(path) {
@@ -213,10 +213,10 @@ export function initMapVis(chartId) {
 
     if (window.screen.width < 786) {
         width = 300;
-        height = 450;
+        height = 475;
         initialScale = 25010
         initialCenterX = -23.9;
-        initialCenterY = 48.25;
+        initialCenterY = 48.35;
 
     } else {
         width = 750;
