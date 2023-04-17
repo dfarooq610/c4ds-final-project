@@ -7,23 +7,23 @@ function Carousel() {
   return (
     <Flickity>
         <figure>
-            <img src="./assets/Carlton_Complex_2014.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="800"/>
+            <img src="./assets/Carlton_Complex_2014.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
         </figure>
         <figure>
-            <img src="./assets/Carlton_Complex _2014_2.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="800"/>
+            <img src="./assets/Carlton_Complex _2014_2.jpg" alt="Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>Carlton Complex Fire behind a ridge, 2014. Photo by Danny Yanarella.</p>
         </figure>
         <figure>
-            <img src="./assets/Burned_Home_from_Carlton_Complex_Wildfire.jpg" alt="Burned Home from Carlton Complex Wildfire by AdamCohn is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <img src="./assets/Burned_Home_from_Carlton_Complex_Wildfire.jpg" alt="Burned Home from Carlton Complex Wildfire by AdamCohn is licensed under CC BY-NC-ND 2.0." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>"Burned Home from Carlton Complex Wildfire" by AdamCohn is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
         <figure>
-            <img src="./assets/WA-Wild-Fire-8.jpg" alt="Carlton Complex Fire - image 3 by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <img src="./assets/WA-Wild-Fire-8.jpg" alt="Carlton Complex Fire - image 3 by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>"Carlton Complex Fire - image 3" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
         <figure>
-            <img src="./assets/Carlton_Complex_mop_up.jpg" alt="Carlton Complex mop up by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="800"/>
+            <img src="./assets/Carlton_Complex_mop_up.jpg" alt="Carlton Complex mop up by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="600"/>
             <p style={{textAlign: 'center'}}>"Carlton Complex mop up" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
         </figure>
     </Flickity>
@@ -49,10 +49,34 @@ export default function Chapter3() {
             <p>The government's response to The Carlton Complex Fire would depend on which government entity you are referring to. As the fire occurred in Washington State, the primary response would have been from the state government, specifically the Washington State Department of Natural Resources and the Washington State Patrol.</p>
             <p>However, federal agencies such as the Federal Emergency Management Agency (FEMA) and the U.S. Forest Service may have also been involved. The specific actions these agencies took would vary but could include coordinating firefighting efforts, providing resources and support to affected communities, and conducting investigations into the cause of the fire.</p>
             <Carousel />
-            <p>Debbie Grable shared insights about the local government's response in the aftermath of the disaster. <i>"As far as the actual government's response, the little towns here can do what they,"</i> Debbie Grable said. "But there is not much they don't have funds unless they get them from somewhere."</p>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster.</p>
+            
+            <br></br>
+
+            <p style={{ fontSize: 20, marginLeft: 200, marginRight: 200 }}>
+              <i><span class="soundcite" data-id="1494682795" data-start="10520" data-end="11030" data-plays="1">"As far as the actual government's response, the little towns here can do what they, but there is not much they don't have funds unless they get them from somewhere."</span></i>
+            
+            </p>
+            
+            <br></br>
+            
             <p>She said it was people's house, so it was never going to be fast enough, and she does not if how they were reimbursed after insurance from the government. <i>"Everyone's insurance rates have gone up because of the fire danger, and now we are in a dangerous place,"</i> Debbie Grable said.</p>
             <p>George Grable said a group of Mennonites reportedly receives financial assistance from FEMA to reconstruct homes for affected individuals. <i>"When it comes to individuals whose homes were destroyed by fire, we were unaware of their eligibility for aid,"</i> he stated.</p>
-            <p>Vicki Yanarella and her husband, Danny Yanarella, provided commentary on the government's response and actions taken following the fire. <i>"When the government came to this area, and they gave the net how natives, they were giving them a choice between going to a reservation or having or being deeded plot a plot of land here,"</i> Vicki Yanarella said.</p>
+            <p>Vicki Yanarella and her husband, Danny Yanarella, also provided commentary on the government's response and actions taken following the fire.</p>
+
+            <br></br>
+
+            <p style={{ fontSize: 20, marginLeft: 200, marginRight: 200 }}><i>"When the government came to this area, and they gave the net how natives, they were giving them a choice between going to a reservation or having or being deeded plot a plot of land here."</i></p>
+            
+            <br></br>
+            
             <p>She said two different agencies dealt with the native in this area, and they were both federal agencies. <i>"I don't know if there was any FEMA money from the government,"</i> Vicki Yanarella said. <i>"And that's interesting, and I don't think there were these fires, though, are declared national disasters."</i> But after that Danny Yanarella said one government thing she could think of is that flood when those winter lakes flooded, that was an irrigation system for the irrigation that runs in Benson Creek drainage. </p>
             <p><i>"I have some friends who live in Benson Creek,"</i> he said. <i>"It took their ditch organization, which is very small, several years to try and get some help fixing things.”</i> He said he thinks his friends finally got it from the conservation soil conservation district called Oak.</p>
             <p><i>"So that's the only thing I can really think about, and that I can really that comes to mind where there was some government assistance,"</i> Danny Yanarella said. <i>"That irrigation district that needed it really had to pursue it, but I would think FEMA mining would be easy enough to track down."</i></p>
