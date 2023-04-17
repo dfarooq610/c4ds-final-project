@@ -116,9 +116,10 @@ function createLegend(chartId) {
 
         svg.append("text")
             .attr("x", 30)
-            .attr("y", 10)
+            .attr("y", 30)
             .attr("font-size", 13)
             .attr("fill", textColor)
+            .attr("font-weight", "bold")
             .text("# of days burning");
 
         svg.selectAll("legend-fire")
@@ -126,7 +127,7 @@ function createLegend(chartId) {
             .enter()
             .append("circle")
                 .attr("cx", 45)
-                .attr("cy", (d, i) => 30 + i*20)
+                .attr("cy", (d, i) => 50 + i*20)
                 .attr("r", d => rScale(d.days))
                 .attr("fill", d => colorScale(d.color))
                 .attr("stroke", textColor)
@@ -138,33 +139,35 @@ function createLegend(chartId) {
             .enter()
             .append("text")
                 .attr("x", 55)
-                .attr("y", (d, i) => 33 + i*20)
+                .attr("y", (d, i) => 53 + i*20)
                 .attr("font-size", 10)
                 .attr("fill", textColor)
                 .text(d => d.text);
 
         svg.append("text")
             .attr("x", 30)
-            .attr("y", 165)
+            .attr("y", 195)
             .attr("font-size", 13)
             .attr("fill", textColor)
+            .attr("font-weight", "bold")
             .text("shelter");
 
         svg.append("path")
-            .attr("transform", d => "translate(" + [50, 185] + ")")
+            .attr("transform", d => "translate(" + [50, 210] + ")")
             .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
             .attr("fill", "#EE2C25");
 
         svg.append("text")
             .attr("x", 30)
-            .attr("y", 220)
+            .attr("y", 240)
             .attr("font-size", 13)
             .attr("fill", textColor)
+            .attr("font-weight", "bold")
             .text("household");
 
         svg.append("circle")
             .attr("cx", 50)
-            .attr("cy", 240)
+            .attr("cy", 260)
             .attr("r", 6)
             .attr("fill", "#36479D")
             .attr("fill-opacity", .6)
