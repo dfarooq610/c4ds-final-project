@@ -115,8 +115,8 @@ function createLegend(chartId) {
         let textColor = "#0A0D14";
 
         svg.append("text")
-            .attr("x", 30)
-            .attr("y", 30)
+            .attr("x", 60)
+            .attr("y", 110)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .attr("font-weight", "bold")
@@ -126,8 +126,8 @@ function createLegend(chartId) {
             .data(data)
             .enter()
             .append("circle")
-                .attr("cx", 45)
-                .attr("cy", (d, i) => 50 + i*20)
+                .attr("cx", 75)
+                .attr("cy", (d, i) => 130 + i*20)
                 .attr("r", d => rScale(d.days))
                 .attr("fill", d => colorScale(d.color))
                 .attr("stroke", textColor)
@@ -138,36 +138,36 @@ function createLegend(chartId) {
             .data(data)
             .enter()
             .append("text")
-                .attr("x", 55)
-                .attr("y", (d, i) => 53 + i*20)
+                .attr("x", 85)
+                .attr("y", (d, i) => 133 + i*20)
                 .attr("font-size", 10)
                 .attr("fill", textColor)
                 .text(d => d.text);
 
         svg.append("text")
-            .attr("x", 30)
-            .attr("y", 195)
+            .attr("x", 60)
+            .attr("y", 275)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .attr("font-weight", "bold")
             .text("shelter");
 
         svg.append("path")
-            .attr("transform", d => "translate(" + [50, 210] + ")")
+            .attr("transform", d => "translate(" + [80, 290] + ")")
             .attr("d", d3.symbol().type(d3.symbolCross).size("100"))
             .attr("fill", "#EE2C25");
 
         svg.append("text")
-            .attr("x", 30)
-            .attr("y", 240)
+            .attr("x", 60)
+            .attr("y", 320)
             .attr("font-size", 13)
             .attr("fill", textColor)
             .attr("font-weight", "bold")
             .text("household");
 
         svg.append("circle")
-            .attr("cx", 50)
-            .attr("cy", 260)
+            .attr("cx", 80)
+            .attr("cy", 340)
             .attr("r", 6)
             .attr("fill", "#36479D")
             .attr("fill-opacity", .6)
