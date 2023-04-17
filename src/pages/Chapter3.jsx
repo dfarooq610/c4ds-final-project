@@ -20,11 +20,11 @@ function Carousel() {
         </figure>
         <figure>
             <img src="./assets/WA-Wild-Fire-8.jpg" alt="Carlton Complex Fire - image 3 by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="600"/>
-            <p style={{textAlign: 'center'}}>"Carlton Complex Fire - image 3" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
+            <p style={{textAlign: 'center'}}>"Carlton Complex Fire - image 3" by Washington State Department of Natural Resources.</p>
         </figure>
         <figure>
             <img src="./assets/Carlton_Complex_mop_up.jpg" alt="Carlton Complex mop up by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0." width="1000" height="600"/>
-            <p style={{textAlign: 'center'}}>"Carlton Complex mop up" by Washington State Department of Natural Resources is licensed under CC BY-NC-ND 2.0.</p>
+            <p style={{textAlign: 'center'}}>"Carlton Complex mop up" by Washington State Department of Natural Resources.</p>
         </figure>
     </Flickity>
   );
