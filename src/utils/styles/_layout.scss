@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 0;
+    width: 100vw;
+}
+
 /* 1. Enable smooth scrolling */
 html {
     scroll-behavior: smooth;
@@ -96,26 +101,22 @@ main {
 // }
 
 // /*Properties for Hamburger*/  
-// .ham {
-//     display: none;  
-//     padding: 5px;  
-//     cursor: pointer;  
-// }
+.ham {
+    display: none;  
+    padding: 5px;  
+    cursor: pointer;  
+}
 
-// .bar1, .bar2, .bar3 {  
-//     display: block;
-//     width: 20px;
-//     height: 2px;
-//     margin: 5px auto;
-//     background-color:#d7d7d7;
-//     transition: 0.4s;  
-// }
+.bar1, .bar2, .bar3 {  
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px auto;
+    background-color:#d7d7d7;
+    transition: 0.4s;  
+}
 
 // @media only screen and (max-width:800px) {
-
-//     * {
-//         overflow:hidden;  
-//     }
 
 //     .navbar {
 //         position: absolute;
@@ -129,42 +130,8 @@ main {
 //         border-left: none;
 //     }
 
-//     .nav-sub {  
-//         position:absolute;
-//         top: 10vh;
-//         right: 0px;
-//         flex-direction:column;
-//         background-color: rgb(0,0,0,0.75);
-//         border-radius: 0px 0px 0px 20px;
-//         transition: transform 0.3s ease-in;
-//         transform: translate(100%);
-//     }
-
-//     .nav-change{  
-//         transform:translate(0%);  
-//     }
-
-//     .ham {
-//         display: block;  
-//     }
-
-//     .change .bar1 {
-//         transform: rotate(45deg) translate(8px,3px);  
-//     }
-
-//     .change .bar2 {  
-//         opacity: 0;
-//     }
-
-//     .change .bar3 {  
-//         transform: rotate(-45deg) translate(8px,-3px);  
-//     }
 // }
 
-// html, body {
-//     margin: 0;
-//     width: 100vw;
-// }
 
 // .ChapterContainer1,
 // .ChapterContainer2,
@@ -185,8 +152,6 @@ figure {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    // min-width: 100vw;
-    // text-align: center;
 }
 
 .Row {
@@ -207,8 +172,8 @@ figure {
 
 @media screen and (max-width: 786px) {
 
-    // h1 {
-    //     margin-top: 5vh;
+    // * {
+    //      overflow:hidden;  
     // }
 
     main {
@@ -218,6 +183,37 @@ figure {
 
     .ChapterContainer {
         padding: 2rem 2rem;
+    }
+
+    .nav-change{  
+        transform:translate(0%);  
+    }
+
+    .ham {
+        display: block;  
+    }
+
+    .change .bar1 {
+        transform: rotate(45deg) translate(8px,3px);  
+    }
+
+    .change .bar2 {  
+        opacity: 0;
+    }
+
+    .change .bar3 {  
+        transform: rotate(-45deg) translate(8px,-3px);  
+    }
+
+    .nav-sub {  
+        position: absolute;
+        top: 10vh;
+        right: 0px;
+        flex-direction: column;
+        background-color: rgb(0,0,0,0.75);
+        border-radius: 0px 0px 0px 20px;
+        transition: transform 0.3s ease-in;
+        transform: translate(100%);
     }
     
 }

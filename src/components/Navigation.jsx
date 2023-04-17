@@ -33,11 +33,16 @@ export default function Navigation() {
         // </header>
 
         <nav className="section-nav">
-            <ol>
-            <li><a href="#Introduction">Introduction</a></li>
-            <li><a href="#Chapter1">Fire</a></li>
-            <li><a href="#Chapter2">Impacts</a></li>
-            <li><a href="#Chapter3">Response</a></li>
+            <div className="ham">
+                <span className="bar1"></span>
+                <span className="bar2"></span>
+                <span className="bar3"></span>
+            </div>
+            <ol className="nav-sub">
+                <li><a href="#Introduction">Introduction</a></li>
+                <li><a href="#Chapter1">Fire</a></li>
+                <li><a href="#Chapter2">Impacts</a></li>
+                <li><a href="#Chapter3">Response</a></li>
             </ol>
         </nav>
     );
