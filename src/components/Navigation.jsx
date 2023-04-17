@@ -28,15 +28,15 @@ export default function Navigation() {
 
     return(
         <div className="topnav">
+              <a className="icon" onClick={myFunction}>
+                <i className="fa fa-bars"></i>
+            </a>
             <div id="myLinks">
                 <a href="#Introduction">Introduction</a>
                 <a href="#Chapter1">Fire</a>
                 <a href="#Chapter2">Impacts</a>
                 <a href="#Chapter3">Response</a>
             </div>
-            <a className="icon" onClick={myFunction}>
-                <i className="fa fa-bars"></i>
-            </a>
         </div>
 
         // <nav className="section-nav navbar">
