@@ -29,7 +29,7 @@ function App() {
       <Navigation/>
       <div>
         <Introduction/>
-        <Chapter1/>
+        {/* <Chapter1/> */}
         <Chapter2/>
         <Chapter3/>
       </div>

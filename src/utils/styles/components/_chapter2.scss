@@ -60,3 +60,9 @@
   line-height: 333px;
   text-align: center;
 }
+
+@media screen and (max-width: 786px) {
+  .FootballFieldContainer {
+    margin: 0 .5rem 1rem .5rem;
+  }
+}
