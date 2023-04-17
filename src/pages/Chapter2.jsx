@@ -31,11 +31,17 @@ export default function Chapter2() {
               The Carlton Complex fire destroyed large areas of vegetation. Vegetation 
               plays a critical role in the ecosystem by providing a habitat for wildlife, reducing
               soil erosion, and improving water quality. Local residents Debbie Grable and her husband, 
-              George Grable, shared their knowledge of the fires' impacts. Debbie Grable explains <i>"the fire 
+              George Grable, shared their knowledge of the fires' impacts.</p>
+              
+              <br></br>
+              
+            <p style={{ fontSize: 20, marginLeft: 200, marginRight: 200 }}> Debbie Grable explains, <i>"The fire 
               destroyed large areas of forest, which will take years to regenerate. The 
               forest is a vital ecosystem component and provides essential benefits such 
-              as carbon sequestration and habitat for wildlife."</i>
-            </p>
+              as carbon sequestration and habitat for wildlife."</i></p>
+
+              <br></br>
+      
             <p>
               Furthermore, the Carlton Complex fire impacted the water quality in the
               surrounding area. George Grable added, <i>"the fire destroyed vegetation, 
@@ -65,10 +71,18 @@ export default function Chapter2() {
             <p>
               Debbie Grable said people with pre-existing respiratory conditions
               such as asthma and chronic obstructive pulmonary disease were
-              particularly vulnerable. <i>"Smoke and ash filled the air during the fire, resulting in a
+              particularly vulnerable.</p>
+              
+            <br></br>
+              
+            <p style={{ fontSize: 20, marginLeft: 200, marginRight: 200 }}> <i>"Smoke and ash filled the air during the fire, resulting in a
               decline in air quality. The smoke and ash contained
               harmful chemicals, which can cause respiratory problems in humans and
-              animals."</i> she said. Even after the fire was extinguished, the ash and debris from the
+              animals,"</i> she said. </p>
+
+            <br></br>
+              
+            <p>Even after the fire was extinguished, the ash and debris from the
               fire continued to pose a threat to public health. Ash and debris 
               can contaminate water sources, affecting drinking water quality.
             </p>
