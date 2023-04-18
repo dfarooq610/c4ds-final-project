@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 // @ts-ignore
 import Chapter1 from "./pages/Chapter1";
 // @ts-ignore
@@ -13,26 +13,26 @@ import "./utils/styles/style.scss";
 
 // Crackle
 function Footer({}) {
-  return(
+  return (
     <footer className="DarkMode">
-      <h5>By Jovi Dai, Joli Holmes, and Danish Farooq</h5>
+      <h3>A project by Jovi Dai, Joli Holmes, and Danish Farooq</h3>
     </footer>
-  )
+  );
 }
 
 function App() {
   return (
     <div className="App">
-    <main>
-      <Navigation/>
-      <div>
-        <Introduction/>
-        <Chapter1/>
-        <Chapter2/>
-        <Chapter3/>
-      </div>
-    </main>
-    <Footer/>
+      <main>
+        <Navigation />
+        <div>
+          <Introduction />
+          <Chapter1 />
+          <Chapter2 />
+          <Chapter3 />
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }

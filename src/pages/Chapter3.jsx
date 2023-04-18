@@ -101,12 +101,7 @@ export default function Chapter3() {
             Department of Natural Resources and the Washington State Patrol.
           </p>
           <Carousel />
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <p>
+          <p style={{marginTop: "20%"}}>
             However, federal agencies such as the Federal Emergency Management
             Agency (FEMA) and the U.S. Forest Service may have also been
             involved. The specific actions these agencies took would vary but
@@ -227,12 +222,9 @@ export default function Chapter3() {
             she thinks, would be irreplaceable that everything else is
             replaceable.
           </p>
-          <br></br>
-          <p>
-            <b>Click below to check them out: </b>
-          </p>
           {/* audios */}
           <iframe
+            style={{ marginTop: "2rem" }}
             width="80%"
             height={200}
             allow="autoplay"
@@ -317,9 +309,6 @@ export default function Chapter3() {
               </a>
             </div>
           </div>
-          <p>
-            <b>Click below to check them out: </b>
-          </p>
           {/* slides */}
           <div
             style={{
@@ -355,14 +344,6 @@ export default function Chapter3() {
               title="Safety tips for wildfires"
             ></iframe>
           </div>
-          <a
-            href="https://www.canva.com/design/DAFgafCOlwI/view?utm_content=DAFgafCOlwI&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-            target="_blank"
-            rel="noopener"
-          >
-            {/* Sources: Federal Emergency Management Agency */}
-          </a>{" "}
-          <a href="./ima"></a>
           {/* by ZhaoZhou Dai */}
         </article>
       </div>
