@@ -29,6 +29,7 @@ function Carousel() {
   );
 }
 
+
 export default function Chapter3() {
 
   return (
@@ -100,23 +101,18 @@ export default function Chapter3() {
             fontWeight: 100
           }}
         >
-        <a
+        {/* <div><a
           href="https://soundcloud.com/zhaozhou-dai"
           title="Zhaozhou Dai and Joli Holmes"
           target="_blank"
-          style={{ fontSize: 15, color: "#cccccc", textDecoration: "none" }}
-        >
-          Zhaozhou Dai and Joli Holmes
-        </a>{" "}
-        ·{" "}
-        <a
+          style={{ fontSize: 11, color: "#cccccc", textDecoration: "none" }}
+        >Zhaozhou Dai and Joli Holmes</a></div> */}
+        <div><a
           href="https://soundcloud.com/zhaozhou-dai/interview-with-debbie-grable-and-george-grable"
           title="Interview with Debbie Grable and George Grable"
           target="_blank"
-          style={{ fontSize: 15, color: "#cccccc", textDecoration: "none" }}
-        >
-          Interview with Debbie Grable and George Grable
-        </a>
+          style={{ fontSize:11, color: "#cccccc", textDecoration: "none" }}
+        >Interview with Debbie and George Grable</a></div>
       </div>
       <iframe
         width="80%"
@@ -139,23 +135,21 @@ export default function Chapter3() {
           fontWeight: 100
         }}
       >
+        {/* <div>
         <a
           href="https://soundcloud.com/zhaozhou-dai"
           title="Zhaozhou Dai and Joli Holmes"
           target="_blank"
-          style={{ fontSize: 15, color: "#cccccc", textDecoration: "none" }}
-        >
-          Zhaozhou Dai and Joli Holmes
-        </a>{" "}
-        ·{" "}
-        <a
+          style={{ fontSize: 11, color: "#cccccc", textDecoration: "none" }}
+        >Zhaozhou Dai and Joli Holmes</a></div> */}
+        <div><a
           href="https://soundcloud.com/zhaozhou-dai/interview-with-vicki-yanarella-and-danny-yanarella"
           title="Interview with Vicki Yanarella and Danny Yanarella"
           target="_blank"
-          style={{ fontSize: 15, color: "#cccccc", textDecoration: "none" }}
+          style={{ fontSize: 11, color: "#cccccc", textDecoration: "none" }}
         >
-          Interview with Vicki Yanarella and Danny Yanarella
-        </a>
+          Interview with Vicki and Danny Yanarella
+        </a></div>
       </div>
     </article>
     </div>
