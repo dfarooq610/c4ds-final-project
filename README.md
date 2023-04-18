@@ -6,7 +6,7 @@ App link: https://c4ds-final-project.vercel.app/
 
 ## This is a news article presented in a scrollytelling format, highlighting the long-term effects of western wildfires on people. The article includes interviews with four local residents who witnessed The Carlton Complex Fire a decade ago. They provided in-depth details and insights, which were transcribed and incorporated into the article through audio and written mediums. The article is segmented into three distinct chapters: "Fire," "Impact," and "Response." Additionally, interactive elements were incorporated using D3.js, Scrollams.js and Flickity.js.
 
-### How to use Commond Line
+### How to use Commond Line:
 ### to install
 
 `npm install` install the packages first (only need to do this if there are new packages installed)
