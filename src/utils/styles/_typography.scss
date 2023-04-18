@@ -16,6 +16,15 @@ html, body {
     color: $appColor;
 }
 
+.DarkMode blockquote {
+    color: rgb(255, 165, 0);
+}
+
+.LightMode blockquote {
+    color: #292049;
+}
+
+
 h1, h2, h3, h4, h5, h6, p {
     text-align: left;
     line-height: 135%;
@@ -67,6 +76,7 @@ blockquote {
     margin: 2rem 8rem;
     font-style: italic;
     line-height: 130%;
+
 }
 
 @media screen and (max-width: 786px) {
