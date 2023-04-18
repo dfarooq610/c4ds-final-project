@@ -83,10 +83,6 @@ export default function Chapter3() {
         <br></br>
 
         <p><b>Click below to check them out: </b></p>
-
-        <br></br>
-
-        <>
           <iframe
             width="80%"
             height={200}
@@ -126,13 +122,7 @@ export default function Chapter3() {
               Interview with Debbie Grable and George Grable
             </a>
           </div>
-        </>
 
-      <br></br>
-      <br></br>
-
-
-        <>
         <iframe
           width="80%"
           height={200}
@@ -172,7 +162,6 @@ export default function Chapter3() {
             Interview with Vicki Yanarella and Danny Yanarella
           </a>
         </div>
-      </>
     </article>
     </div>
   </section>
