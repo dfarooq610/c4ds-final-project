@@ -176,7 +176,7 @@ export default function Chapter3() {
             style={{
             position: "absolute",
             width: "100%",
-            height: "200",
+            height: "100%",
             top: 80,
             left: 0,
             border: "none",
