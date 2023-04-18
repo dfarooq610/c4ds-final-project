@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // @ts-ignore
-import { Scrollama, Step } from 'react-scrollama';
+import { Scrollama, Step } from "react-scrollama";
 import complex from "../data/complex_data.json";
 import fires from "../data/fire_points2.json";
 
@@ -16,14 +16,14 @@ const containmentVis = "Containment-Vis";
 const burnVis = "Burn-Vis";
 const legendVis = "Legend-Vis";
 
-let offset = .5
+let offset = 0.5;
 
-export default function Chapter1 () {
+export default function Chapter1() {
   const [currentStepIndex, setCurrentStepIndex] = useState(null);
-  
+
   if (window.screen.width < 786) {
-    offset = .9;
-  } 
+    offset = 0.9;
+  }
 
   // This callback fires when a Step hits the offset threshold. It receives the
   // data prop of the step, which in this demo stores the index of the step.
@@ -31,7 +31,7 @@ export default function Chapter1 () {
     setCurrentStepIndex(data);
   };
 
-  let complexFiltered = complex.filter(d => d.story !== "");
+  let complexFiltered = complex.filter((d) => d.story !== "");
 
   useEffect(() => {
     initMapVis(mapVis);
@@ -39,15 +39,14 @@ export default function Chapter1 () {
     // initContainmentVis(containmentVis);
     // initBurnVis(burnVis, complex);
     initLegendVis(legendVis, fires);
-  }, [])
+  }, []);
 
   useEffect(() => {
-
     if (currentStepIndex !== null) {
       updateMapVis(mapVis, complexFiltered[currentStepIndex].date__1);
       // updateBurnVis(burnVis)
     }
-  }, [currentStepIndex])
+  }, [currentStepIndex]);
 
   let arr = Array.from(Array(complexFiltered.length).keys());
 
@@ -56,18 +55,20 @@ export default function Chapter1 () {
       <div className="ChapterContainer ChapterContainer1">
         <header>
           <h2>Fire</h2>
-          <h3 className="Chapter1Subtitle">
-            From Contained to Catastrophe
-          </h3>
+          <h3 className="Chapter1Subtitle">From Contained to Catastrophe</h3>
         </header>
         <div className="Scroll-Container">
-          <div className="Chart-Wrapper" style={{ position: 'sticky', top: 20, right: 20}}>
+          <div
+            className="Chart-Wrapper"
+            style={{ position: "sticky", top: 20, right: 20 }}
+            aria-hidden="true"
+          >
             <div className="Chart-Container">
-                <div className="MainChart">
-                    <div className="chart" id={mapVis}></div>
-                    {/* <div className="chart" id={burnVis}></div> */}
-                </div>
-                {/* <div className="SideBar">
+              <div className="MainChart">
+                <div className="chart" id={mapVis}></div>
+                {/* <div className="chart" id={burnVis}></div> */}
+              </div>
+              {/* <div className="SideBar">
                     <div className="chart" id={legendVis}></div>
                 </div> */}
             </div>
@@ -78,13 +79,17 @@ export default function Chapter1 () {
                 <Step data={stepIndex} key={stepIndex}>
                   <div
                     style={{
-                      margin: '50vh 0',
-                      border: '1px',
+                      margin: "50vh 0",
+                      border: "1px",
                       opacity: currentStepIndex === stepIndex ? 1 : 0.2,
                     }}
                     className="step"
                   >
-                    <p className="date">{complexFiltered[stepIndex].month_name + " " + complexFiltered[stepIndex].day}</p>
+                    <p className="date">
+                      {complexFiltered[stepIndex].month_name +
+                        " " +
+                        complexFiltered[stepIndex].day}
+                    </p>
                     <p className="story">{complexFiltered[stepIndex].story}</p>
                   </div>
                 </Step>
@@ -95,4 +100,4 @@ export default function Chapter1 () {
       </div>
     </section>
   );
-};
+}

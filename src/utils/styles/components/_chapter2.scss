@@ -145,7 +145,7 @@ figure {
 .large-number {
   width: 250px; /* 250,000 pixels divided by 1,000 for easier visualization */
   height: 250px; /* 250,000 pixels divided by 1,000 for easier visualization */
-  margin: 5% auto;
+  margin: 5% auto 0 auto;
 }
 
 .one-px-container {
@@ -158,7 +158,7 @@ figure {
 }
 
 .large-px-container {
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -185,5 +185,12 @@ figure {
   .large-px-container {
     width: 100%;
     height: 80%;
+  }
+
+  .label {
+    font-size: 14px;
+    margin: 5%;
+    color: #ff9800;
+    margin: 5%;
   }
 }
