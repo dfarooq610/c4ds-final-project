@@ -42,7 +42,7 @@ export default function Chapter3() {
           </h3>
         </header>
         <article>
-        <p>The Carlton Complex Fire has highlighted the need for increased investment in wildfire prevention and response. As climate change continues exacerbating drought conditions and increasing the risk of wildfires, policymakers and communities must work together to prioritize wildfire preparedness and response.</p>
+        <p><span class="dropcap">T</span>he Carlton Complex Fire has highlighted the need for increased investment in wildfire prevention and response. As climate change continues exacerbating drought conditions and increasing the risk of wildfires, policymakers and communities must work together to prioritize wildfire preparedness and response.</p>
         <p>State and local officials have taken steps to improve wildfire preparedness and response to the Carlton Complex Fire. These efforts include increasing funding for wildfire prevention programs and investing in new technology to better detect and respond to wildfires.</p>
         <p>The government's response to The Carlton Complex Fire would depend on which government entity you are referring to. As the fire occurred in Washington State, the primary response would have been from the state government, specifically the Washington State Department of Natural Resources and the Washington State Patrol.</p>
         <Carousel />
@@ -54,7 +54,7 @@ export default function Chapter3() {
         <br></br>
 
         <p>However, federal agencies such as the Federal Emergency Management Agency (FEMA) and the U.S. Forest Service may have also been involved. The specific actions these agencies took would vary but could include coordinating firefighting efforts, providing resources and support to affected communities, and conducting investigations into the cause of the fire.</p>
-        <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster. "As far as the actual government's response, the little towns here can do what they," Debbie Grable said. "But there is not much they don't have funds unless they get them from somewhere."</p>
+        <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster. <i>"As far as the actual government's response, the little towns here can do what they,"</i> Debbie Grable said. <i>"But there is not much they don't have funds unless they get them from somewhere."</i></p>
         
         {/* <blockquote> */}
           {/* <span className="soundcite" data-id={1494682795} data-start={652000} data-end={664000} data-plays={1}>
@@ -68,7 +68,7 @@ export default function Chapter3() {
         <p>George Grable said a group of Mennonites reportedly receives financial assistance from FEMA to reconstruct homes for affected individuals. <i>"When it comes to individuals whose homes were destroyed by fire, we were unaware of their eligibility for aid,"</i> he stated.</p>
         <p>Vicki Yanarella and her husband, Danny Yanarella, also provided commentary on the government's response and actions taken following the fire. </p>
         
-        <blockquote>When the government came to this area, and they gave the net how natives, they were giving them a choice between going to a reservation or having or being deeded plot a plot of land here.</blockquote>
+        <blockquote><span class="dropcap-2">“</span>When the government came to this area, and they gave the net how natives, they were giving them a choice between going to a reservation or having or being deeded plot a plot of land here.<span class="dropcap-5">”</span></blockquote>
         
         <p>She said two different agencies dealt with the native in this area, and they were both federal agencies. <i>"I don't know if there was any FEMA money from the government,"</i> Vicki Yanarella said. <i>"And that's interesting, and I don't think there were these fires, though, are declared national disasters."</i> However, after that, Danny Yanarella said one government thing she could think of was that flood when those winter lakes flooded, that was an irrigation system for the irrigation that runs in Benson Creek drainage. </p>
         <p><i>"I have some friends who live in Benson Creek,"</i> he said. <i>"It took their ditch organization, which is very small, several years to try and get some help fixing things."</i> He said he thinks his friends finally got it from the conservation soil conservation district called Oak.</p>
@@ -154,6 +154,7 @@ export default function Chapter3() {
         </a></div>
       </div>
 
+      <p><b>Click below to check them out: </b></p>
       {/* slides */}
           <div
           style={{

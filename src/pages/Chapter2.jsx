@@ -11,7 +11,7 @@ export default function Chapter2() {
         </header>
         <article>
           <p>
-          The Carlton Complex fire marked a significant turning point in Washington State's experience with wildfires. 
+          <span class="dropcap">T</span>he Carlton Complex fire marked a significant turning point in Washington State's experience with wildfires. 
           As the largest wildfire in Washington State's history, the Carlton Complex fire consumed over 250,000 acres, 
           destroyed more than 300 homes and damaged millions of dollars.
           </p>
@@ -27,10 +27,10 @@ export default function Chapter2() {
             The Carlton Complex fire destroyed large areas of vegetation. Vegetation plays a critical role in the ecosystem by providing a habitat for wildlife, 
             reducing soil erosion, and improving water quality. 
             Local residents Debbie Grable and her husband, George Grable, shared their knowledge of the fires' impacts.</p>
-            <blockquote>The fire 
+            <blockquote><span class="dropcap-2">“</span>The fire 
               destroyed large areas of forest, which will take years to regenerate. The 
               forest is a vital ecosystem component and provides essential benefits such 
-              as carbon sequestration and habitat for wildlife.</blockquote>
+              as carbon sequestration and habitat for wildlife.<span class="dropcap-3">”</span></blockquote>
             <p>
               Furthermore, the Carlton Complex fire impacted the water quality in the
               surrounding area. George Grable added, <i>"The fire destroyed vegetation, 
@@ -62,10 +62,10 @@ export default function Chapter2() {
               such as asthma and chronic obstructive pulmonary disease were
               particularly vulnerable.</p>            
               
-              <blockquote>Smoke and ash filled the air during the fire, resulting in a
+              <blockquote><span class="dropcap-2">“</span>Smoke and ash filled the air during the fire, resulting in a
               decline in air quality. The smoke and ash contained
               harmful chemicals, which can cause respiratory problems in humans and
-              animals.</blockquote>
+              animals.<span class="dropcap-4">”</span></blockquote>
               
             <p>Even after the fire was extinguished, the ash and debris from the fire continued to threaten public health. 
               Ash and debris can contaminate water sources, affecting drinking water quality.
