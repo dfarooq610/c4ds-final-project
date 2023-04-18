@@ -41,9 +41,9 @@ export default function Chapter3() {
             Preparing for Future Threats
           </h3>
         </header>
-      <article>
+        <article>
         <p>The Carlton Complex Fire has highlighted the need for increased investment in wildfire prevention and response. As climate change continues exacerbating drought conditions and increasing the risk of wildfires, policymakers and communities must work together to prioritize wildfire preparedness and response.</p>
-        <p>State and local officials have taken steps to improve wildfire preparedness and response in response to the Carlton Complex Fire. These efforts include increasing funding for wildfire prevention programs and investing in new technology to better detect and respond to wildfires.</p>
+        <p>State and local officials have taken steps to improve wildfire preparedness and response to the Carlton Complex Fire. These efforts include increasing funding for wildfire prevention programs and investing in new technology to better detect and respond to wildfires.</p>
         <p>The government's response to The Carlton Complex Fire would depend on which government entity you are referring to. As the fire occurred in Washington State, the primary response would have been from the state government, specifically the Washington State Department of Natural Resources and the Washington State Patrol.</p>
         <Carousel />
 
@@ -70,11 +70,11 @@ export default function Chapter3() {
         
         <blockquote>When the government came to this area, and they gave the net how natives, they were giving them a choice between going to a reservation or having or being deeded plot a plot of land here.</blockquote>
         
-        <p>She said two different agencies dealt with the native in this area, and they were both federal agencies. <i>"I don't know if there was any FEMA money from the government,"</i> Vicki Yanarella said. <i>"And that's interesting, and I don't think there were these fires, though, are declared national disasters."</i> But after that Danny Yanarella said one government thing she could think of is that flood when those winter lakes flooded, that was an irrigation system for the irrigation that runs in Benson Creek drainage. </p>
-        <p><i>"I have some friends who live in Benson Creek,"</i> he said. <i>"It took their ditch organization, which is very small, several years to try and get some help fixing things.”</i> He said he thinks his friends finally got it from the conservation soil conservation district called Oak.</p>
+        <p>She said two different agencies dealt with the native in this area, and they were both federal agencies. <i>"I don't know if there was any FEMA money from the government,"</i> Vicki Yanarella said. <i>"And that's interesting, and I don't think there were these fires, though, are declared national disasters."</i> However, after that, Danny Yanarella said one government thing she could think of was that flood when those winter lakes flooded, that was an irrigation system for the irrigation that runs in Benson Creek drainage. </p>
+        <p><i>"I have some friends who live in Benson Creek,"</i> he said. <i>"It took their ditch organization, which is very small, several years to try and get some help fixing things."</i> He said he thinks his friends finally got it from the conservation soil conservation district called Oak.</p>
         <p><i>"So that's the only thing I can really think about, and that I can really that comes to mind where there was some government assistance,"</i> Danny Yanarella said. <i>"That irrigation district that needed it really had to pursue it, but I would think FEMA mining would be easy enough to track down."</i></p>
         <p>Despite the devastation caused by the Carlton Complex Fire, the community has come together to support one another in rebuilding. The Carlton Complex Long Term Recovery Group and various volunteer organizations have provided aid and resources to those affected. The group's efforts have helped many families and individuals rebuild their homes and lives.</p>
-        <p>While the scars of the fire will remain, the resilience and strength of the community in the face of adversity have been genuinely inspiring. The Carlton Complex Fire serves as a reminder of the importance of disaster preparedness and the need for ongoing support for those affected by natural disasters.</p>
+        <p>While the scars of the fire will remain, the resilience and strength of the community in the face of adversity has been genuinely inspiring. The Carlton Complex Fire serves as a reminder of the importance of disaster preparedness and the need for ongoing support for those affected by natural disasters.</p>
         <p><i>"If I was at that moment again, I don't care that much about anything I own,"</i> Viki Yanarella said. She said she might grab her boxes of photos from when her kids were little if she had time. And those photos, she thinks, would be irreplaceable that everything else is replaceable.</p>
 
         <br></br>
