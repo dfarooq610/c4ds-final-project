@@ -11,7 +11,7 @@ export default function Chapter2() {
         </header>
         <article>
           <p>
-          The Carlton Complex fire marked a significant turning point in Washington State's experience with wildfires. 
+          <span class="dropcap">T</span>he Carlton Complex fire marked a significant turning point in Washington State's experience with wildfires. 
           As the largest wildfire in Washington State's history, the Carlton Complex fire consumed over 250,000 acres, 
           destroyed more than 300 homes and damaged millions of dollars.
           </p>
