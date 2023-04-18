@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import NumberComparison from "./NumberComparison.jsx";
 
 const AcreInteractive = () => {
   const [showResults, setShowResults] = useState(false);
   const [fillPercentage, setFillPercentage] = useState(50);
   const correctAnswer = 75.7;
 
+  const displayResults = () => setShowResults(true);
+  const hideResults = () => setShowResults(false);
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      setShowResults(true);
+      displayResults();
     }
   };
 
@@ -75,23 +79,40 @@ const AcreInteractive = () => {
               min="0"
               value={fillPercentage}
               onChange={(e) => setFillPercentage(e.target.value)}
-              onMouseUp={() => setShowResults(true)}
-              onMouseDown={() => setShowResults(false)}
+              onMouseUp={displayResults}
+              onMouseDown={hideResults}
+              onTouchStart={hideResults}
+              onTouchEnd={displayResults}
               onKeyDown={handleKeyDown}
               className="custom-range-slider"
               style={{ width: "100%" }}
             />
           </div>
         </div>
-        How big is an acre? Use the slider to guess how big one acre is in
-        comparison to a football field.
+        {!showResults ? (
+          <p style={{ marginTop: ".5rem" }}>
+            <strong>How big is an acre?</strong> Use the slider to guess how big
+            one acre is incomparison to a football field.
+          </p>
+        ) : (
+          <aside style={{ marginTop: ".5rem" }}>
+            <p>
+              Your guess was the{" "}
+              <strong className="orange">{fillPercentage} yard-line</strong>.
+              The correct answer is the{" "}
+              <strong className="green">85 yard-line</strong> (including the
+              touchdown zones). That is approximately 76% of the length of a
+              football field.
+            </p>
+            <p>
+              So, what about the Carlton Complex fires? In the below figure, we
+              conceptualize the scale to which the Carlton Complex Fire burned.
+            </p>
+          </aside>
+        )}
       </label>
-      {showResults && (
-        <figcaption style={{ marginTop: ".5rem" }}>
-          Your guess was the <strong className="orange">{fillPercentage} yard-line</strong>. The correct answer is the <strong className="green">85 yard-line</strong>{" "}
-          (including the touchdown zones). That is approximately 75.7% of the length of a football field.
-        </figcaption>
-      )}
+
+      {showResults && <NumberComparison />}
     </figure>
   );
 };
