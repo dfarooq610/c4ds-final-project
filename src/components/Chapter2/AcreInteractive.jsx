@@ -23,7 +23,7 @@ const AcreInteractive = () => {
     left: `${fillPercentage}%`,
     height: "100%",
     width: "8px",
-    backgroundColor: "#844610",
+    backgroundColor: "rgb(255, 136, 0)",
     zIndex: 1,
     display: showResults ? "block" : "none",
   };
@@ -33,7 +33,7 @@ const AcreInteractive = () => {
     left: `${correctAnswer}%`,
     height: "100%",
     width: "8px",
-    backgroundColor: "#282525",
+    backgroundColor: "#2E8C43",
     zIndex: 1,
     display: showResults ? "block" : "none",
   };
@@ -88,9 +88,8 @@ const AcreInteractive = () => {
       </label>
       {showResults && (
         <figcaption style={{ marginTop: ".5rem" }}>
-          One acre extends roughly to the <strong>85 yard line</strong>{" "}
-          including the touchdown zones. That is approximately 75.7% of the
-          length of a football field.
+          Your guess was the <strong className="orange">{fillPercentage} yard-line</strong>. The correct answer is the <strong className="green">85 yard-line</strong>{" "}
+          (including the touchdown zones). That is approximately 75.7% of the length of a football field.
         </figcaption>
       )}
     </figure>
