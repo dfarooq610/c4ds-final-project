@@ -80,6 +80,8 @@ export default function Chapter3() {
         <br></br>
 
         <p><b>Click below to check them out: </b></p>
+
+        {/* audios */}
         <iframe
           width="80%"
           height={200}
@@ -151,10 +153,57 @@ export default function Chapter3() {
           Interview with Vicki and Danny Yanarella
         </a></div>
       </div>
-    </article>
-    </div>
-  </section>
-);
+
+      {/* slides */}
+          <div
+          style={{
+          position: "relative",
+          color: "#cccccc",
+          width: "100%",
+          height: 0,
+          paddingTop: "56.2500%",
+          paddingBottom: 0,
+          boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
+          marginTop: "1.6em",
+          marginBottom: "0.9em",
+          overflow: "hidden",
+          borderRadius: 8,
+          willChange: "transform"
+        }}
+      >
+        <iframe
+            loading="lazy"
+            style={{
+            position: "absolute",
+            width: "100%",
+            height: "200",
+            top: 80,
+            left: 0,
+            border: "none",
+            padding: 0,
+            margin: 0
+          }}
+          src="https://www.canva.com/design/DAFgafCOlwI/view?embed"
+          allowFullScreen="allowfullscreen"
+          allow="fullscreen"
+        ></iframe>
+        </div>
+        <a
+          href="https://www.canva.com/design/DAFgafCOlwI/view?utm_content=DAFgafCOlwI&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+          target="_blank"
+          rel="noopener"
+
+        >
+          {/* Sources: Federal Emergency Management Agency */}
+        </a>{" "}
+
+        <a href="./ima"></a>
+        {/* by ZhaoZhou Dai */}
+
+          </article>
+          </div>
+        </section>
+      );
 
 //   return (
 //     <div className="Chapter3">
