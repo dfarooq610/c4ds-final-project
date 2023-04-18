@@ -54,7 +54,7 @@ export default function Chapter3() {
         <br></br>
 
         <p>However, federal agencies such as the Federal Emergency Management Agency (FEMA) and the U.S. Forest Service may have also been involved. The specific actions these agencies took would vary but could include coordinating firefighting efforts, providing resources and support to affected communities, and conducting investigations into the cause of the fire.</p>
-        <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster. "As far as the actual government's response, the little towns here can do what they," Debbie Grable said. "But there is not much they don't have funds unless they get them from somewhere."</p>
+        <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster. <i>"As far as the actual government's response, the little towns here can do what they,"</i> Debbie Grable said. <i>"But there is not much they don't have funds unless they get them from somewhere."</i></p>
         
         {/* <blockquote> */}
           {/* <span className="soundcite" data-id={1494682795} data-start={652000} data-end={664000} data-plays={1}>
@@ -154,6 +154,7 @@ export default function Chapter3() {
         </a></div>
       </div>
 
+      <p><b>Click below to check them out: </b></p>
       {/* slides */}
           <div
           style={{
