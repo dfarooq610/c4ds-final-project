@@ -54,19 +54,19 @@ export default function Chapter3() {
         <br></br>
 
         <p>However, federal agencies such as the Federal Emergency Management Agency (FEMA) and the U.S. Forest Service may have also been involved. The specific actions these agencies took would vary but could include coordinating firefighting efforts, providing resources and support to affected communities, and conducting investigations into the cause of the fire.</p>
-        <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster.</p>
+        <p>Debbie Grable and George Grable shared insights about the local government's response in the aftermath of the disaster. "As far as the actual government's response, the little towns here can do what they," Debbie Grable said. "But there is not much they don't have funds unless they get them from somewhere."</p>
         
-        <blockquote>
+        {/* <blockquote> */}
           {/* <span className="soundcite" data-id={1494682795} data-start={652000} data-end={664000} data-plays={1}>
           As far as the actual government's response, the little towns here can do what
           they, but there is not much they don't have funds unless they get them from
           somewhere.
           </span> */}
-        </blockquote>
+        {/* </blockquote> */}
         
         <p>She said it was people's house, so it was never going to be fast enough, and she does not if how they were reimbursed after insurance from the government. <i>"Everyone's insurance rates have gone up because of the fire danger, and now we are in a dangerous place,"</i> Debbie Grable said.</p>
         <p>George Grable said a group of Mennonites reportedly receives financial assistance from FEMA to reconstruct homes for affected individuals. <i>"When it comes to individuals whose homes were destroyed by fire, we were unaware of their eligibility for aid,"</i> he stated.</p>
-        <p>Vicki Yanarella and her husband, Danny Yanarella, also provided commentary on the government's response and actions taken following the fire.</p>
+        <p>Vicki Yanarella and her husband, Danny Yanarella, also provided commentary on the government's response and actions taken following the fire. </p>
         
         <blockquote>When the government came to this area, and they gave the net how natives, they were giving them a choice between going to a reservation or having or being deeded plot a plot of land here.</blockquote>
         
